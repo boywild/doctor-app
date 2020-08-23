@@ -1,0 +1,233 @@
+@import "var", "mixins";
+
+.charge-header {
+  background: $white-bg;
+  padding: 10px;
+  .charge-count {
+    @include flex(space-between, flex-start);
+    .count-num {
+      flex: 1;
+      .base {
+        font-size: 16px;
+        span {
+          margin-right: 10px;
+        }
+      }
+      .num-count {
+        @include flex();
+        margin-top: 14px;
+        padding: 3px 0;
+        // background: #ff976a;
+        color: $text-color;
+        border-radius: 5px;
+        position: relative;
+        // &::before {
+        //   content: "";
+        //   position: absolute;
+        //   width: 1px;
+        //   height: 100%;
+        //   left: 50%;
+        //   background: #fff;
+        // }
+        .num-detail {
+          width: 50%;
+          text-align: center;
+          span {
+            display: block;
+            &:first-child {
+              font-weight: bold;
+              font-size: 18px;
+              margin-bottom: 3px;
+            }
+            &:last-child {
+            }
+          }
+        }
+      }
+    }
+    .balance {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      margin-left: 10px;
+      @include flex(center, center, column);
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
+      background-color: $theme-color;
+      background: rgba(61, 76, 226, 0.7);
+      color: #fff;
+      span {
+        text-align: center;
+        display: block;
+        &:first-child {
+          font-weight: bold;
+          font-size: 20px;
+        }
+        &:last-child {
+        }
+      }
+    }
+  }
+  .charge-btn {
+    text-align: center;
+    padding-top: 20px;
+    .van-button {
+      width: 48%;
+    }
+  }
+}
+.expense-record {
+  background: #fff;
+  padding: 10px;
+  .van-tabs__nav--card {
+    border-color: $theme-color;
+  }
+  .van-tabs__nav--card .van-tab {
+    color: $theme-color;
+    border-color: $theme-color;
+  }
+  .van-tabs__nav--card .van-tab.van-tab--active {
+    background-color: $theme-color;
+    color: #fff;
+  }
+}
+.expense-list {
+  padding: 10px 0 0 0;
+  .van-cell {
+    padding: 0;
+    &::after {
+      display: none;
+    }
+  }
+  .expense-tit,
+  .expense-item {
+    @include flex();
+    flex-wrap: wrap;
+    .expense-col {
+      text-align: center;
+      height: 35px;
+      @include flex();
+      font-size: 13px;
+      &.red {
+        color: #f00;
+      }
+      &.blue {
+        color: #07c160;
+      }
+      &:nth-child(1) {
+        width: 25%;
+      }
+      &:nth-child(2) {
+        width: 50%;
+      }
+      &:nth-child(3) {
+        width: 10%;
+      }
+      &:nth-child(4) {
+        width: 15%;
+      }
+    }
+  }
+  .expense-tit {
+  }
+  .expense-item {
+  }
+}
+.pay-box {
+  .pay-range {
+    background-color: #fff;
+    padding: 10px;
+    .pay-tit {
+      font-size: 16px;
+      font-weight: bold;
+      padding-bottom: 10px;
+    }
+    .pay-range-row {
+      @include flex(space-between);
+      flex-wrap: wrap;
+      text-align: center;
+      .range-col {
+        @include flex(center, center, column);
+        border: 1px solid $text-light-color;
+        border-radius: 5px;
+        width: 30%;
+        height: 60px;
+        margin-bottom: 5px;
+        .rela {
+          font-size: 17px;
+          color: #363636;
+          font-weight: bold;
+        }
+        .give {
+          color: #646363;
+        }
+      }
+    }
+    .pay-input {
+      @include flex();
+      margin-bottom: 10px;
+      .camera {
+        text-align: center;
+        margin-right: 10px;
+        span {
+          display: block;
+        }
+      }
+      .inp-box {
+        flex: 1;
+        position: relative;
+        display: flex;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 10px 16px;
+        overflow: hidden;
+        color: #323233;
+        font-size: 14px;
+        line-height: 24px;
+        padding-left: 8px;
+        background-color: #f7f8fa;
+        border-radius: 2px;
+        .inp {
+          display: block;
+          box-sizing: border-box;
+          width: 100%;
+          min-width: 0;
+          margin: 0;
+          padding: 0;
+          color: #323233;
+          line-height: inherit;
+          text-align: left;
+          background-color: transparent;
+          border: 0;
+          resize: none;
+        }
+      }
+      .charge {
+        position: relative;
+        box-sizing: border-box;
+        height: 44px;
+        width: 90px;
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+        line-height: 44px;
+        text-align: center;
+        border-radius: 2px;
+        cursor: pointer;
+        color: #fff;
+        background-color: #07c160;
+      }
+    }
+  }
+}
+.picker-market {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  z-index: 30;
+  transition: all 0.3s ease-in-out;
+  transform: translateY(100%);
+  &.active {
+    transform: translateY(0);
+  }
+}

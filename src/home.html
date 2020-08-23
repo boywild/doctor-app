@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="viewport"
+      content="initial-scale=1.0, maximum-scale=1, user-scalable=no, width=device-width, height=device-height,user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="x5-orientation" content="portrait" />
+    <title>首页</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/vant.css" />
+    <script src="./script/lib/vue.min.js"></script>
+    <script src="./script/lib/vant.min.js"></script>
+    <script src="./script/lib/rem.js"></script>
+  </head>
+  <body>
+    <div id="home">
+      <van-nav-bar
+        title="首页"
+        left-text="返回"
+        left-arrow
+        @click-left="onClickLeft"
+      ></van-nav-bar>
+      <ol>
+        <li v-for="todo in todos">
+          {{ todo.text }}
+        </li>
+      </ol>
+      <van-button type="primary">主要按钮</van-button>
+    </div>
+  </body>
+  <script>
+    new Vue({
+      el: "#home",
+      data: {
+        todos: [
+          { text: "学习 JavaScript" },
+          { text: "学习 Vue" },
+          { text: "整个牛项目" },
+        ],
+      },
+      methods: {
+        onClickLeft() {},
+        onClickRight() {
+          console.log("====");
+        },
+      },
+    });
+  </script>
+</html>

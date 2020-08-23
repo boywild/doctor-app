@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+            name="viewport"
+            content="initial-scale=1.0, maximum-scale=1, user-scalable=no, width=device-width, height=device-height,user-scalable=no, viewport-fit=cover"
+        />
+        <meta name="x5-orientation" content="portrait" />
+        <title>个人中心</title>
+        <link rel="stylesheet" href="./css/common.css" />
+        <link rel="stylesheet" href="./css/vant.css" />
+        <link rel="stylesheet" href="./css/user-center.css" />
+        <script src="./script/lib/vue.min.js"></script>
+        <script src="./script/lib/vant.min.js"></script>
+        <script src="./script/lib/rem.js"></script>
+    </head>
+    <body>
+        <div class="app-layout" id="userCenter">
+            <!-- 顶部导航栏 -->
+            <van-nav-bar title="个人中心" left-arrow @click-left="onClickLeft"></van-nav-bar>
+            <div class="app-content gray-bg has-footer">
+                <div class="user-bg">
+                    <div class="user-info">
+                        <div class="base-info">
+                            <div class="name"><span>钟农非</span></div>
+                            <div class="sys-id">XYW10923823</div>
+                            <div class="switch">
+                                <a href="./relation-list.html"> <van-icon size="16" name="exchange"></van-icon>切换 </a>
+                            </div>
+                        </div>
+                        <div class="qr-img" @click="dialogShow=!dialogShow">
+                            <img src="./uploads/qr.png" />
+                            <span>刷卡时请点击</span>
+                        </div>
+                    </div>
+                    <!-- 账户预览 -->
+                    <div class="vip-box">
+                        <div class="txt">华美超级会员专享福利等你来领</div>
+                        <img src="./images/vip.png" />
+                    </div>
+                    <div class="account-view">
+                        <div class="account-item">
+                            <div class="num">100</div>
+                            <div class="txt">积分</div>
+                        </div>
+                        <div class="account-item">
+                            <a href="./my-charge.html">
+                                <div class="num">100</div>
+                                <div class="txt">储值</div>
+                            </a>
+                        </div>
+                        <div class="account-item">
+                            <div class="num">9999990</div>
+                            <div class="txt">奖励金</div>
+                        </div>
+                        <div class="account-item">
+                            <a href="./my-card.html">
+                                <div class="num">100</div>
+                                <div class="txt">我的卡劵</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 我的订单 -->
+                <div class="user-block">
+                    <div class="user-b-tit">我的订单</div>
+                    <div class="user-b-content">
+                        <div class="user-b-order">
+                            <div class="icon order"></div>
+                            <div class="txt">全部订单</div>
+                        </div>
+                        <div class="user-b-order">
+                            <div class="icon dfk"></div>
+                            <div class="txt">待付款</div>
+                        </div>
+                        <div class="user-b-order">
+                            <div class="icon wsy"></div>
+                            <div class="txt">未使用</div>
+                        </div>
+                        <div class="user-b-order">
+                            <div class="icon dfh"></div>
+                            <div class="txt">待发货</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 就诊服务 -->
+                <div class="user-block">
+                    <div class="user-b-tit">就诊服务</div>
+                    <div class="user-b-content">
+                        <div class="user-b-order">
+                            <a href="./my-appoint.html">
+                                <div class="icon yy"></div>
+                                <div class="txt">我的预约</div>
+                            </a>
+                        </div>
+                        <div class="user-b-order">
+                            <a href="./my-medical.html">
+                                <div class="icon yzbl"></div>
+                                <div class="txt">医嘱病历</div>
+                            </a>
+                        </div>
+                        <div class="user-b-order">
+                            <a href="./my-waiting-pay.html">
+                                <div class="icon wgjf"></div>
+                                <div class="txt">无感缴费</div>
+                            </a>
+                        </div>
+                        <div class="user-b-order">
+                            <a href="./my-end-pay.html">
+                                <div class="icon fy"></div>
+                                <div class="txt">我的费用</div>
+                            </a>
+                        </div>
+                        <div class="user-b-order">
+                            <a href="./my-medical.html">
+                                <div class="icon pjys"></div>
+                                <div class="txt">评价医生</div>
+                            </a>
+                        </div>
+                        <div class="user-b-order">
+                            <a href="./yc-list.html">
+                                <div class="icon jgj"></div>
+                                <div class="txt">我的加工件</div>
+                            </a>
+                        </div>
+                        <div class="user-b-order">
+                            <div class="icon gzys"></div>
+                            <div class="txt">关注医生</div>
+                        </div>
+                        <div class="user-b-order">
+                            <div class="icon gzsp"></div>
+                            <div class="txt">关注商品</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="invoice">
+                    <img src="./uploads/invoice.png" alt="" />
+                </div>
+                <div class="logout-btn">
+                    <van-button round type="info" block size="small">退出登录</van-button>
+                </div>
+                <!-- 弹窗 -->
+                <van-dialog class="common-dialog" v-model="dialogShow">
+                    <div class="qr-detail">
+                        <div class="shape">
+                            <img src="./uploads/shape.png" alt="" />
+                        </div>
+                        <div class="qr">
+                            <img src="./uploads/qr.png" alt="" />
+                        </div>
+                        <span>XYX820102839</span>
+                    </div>
+                </van-dialog>
+                <!-- 全局底部导航 -->
+                <van-tabbar v-model="active" active-color="#3d4ce2">
+                    <van-tabbar-item icon="wap-home" name="home">就诊服务</van-tabbar-item>
+                    <van-tabbar-item icon="service" name="online">在线问诊</van-tabbar-item>
+                    <van-tabbar-item icon="cart" name="hop">优选商城</van-tabbar-item>
+                    <van-tabbar-item icon="manager" name="usercenter">个人中心</van-tabbar-item>
+                </van-tabbar>
+            </div>
+        </div>
+    </body>
+    <script>
+        new Vue({
+            el: '#userCenter',
+            data: {
+                active: 'usercenter',
+                dialogShow: false,
+            },
+            methods: {
+                onClickLeft() {},
+                onLoad() {
+                    // 模拟异步加载数据
+                    setTimeout(() => {
+                        for (let i = 0; i < 10; i++) {
+                            this.list.push(this.list.length + 1)
+                        }
+                        // 加载状态结束
+                        this.loading = false
+                        // 数据全部加载完成
+                        if (this.list.length >= 40) {
+                            this.finished = true
+                        }
+                    }, 1000)
+                },
+            },
+        })
+    </script>
+</html>

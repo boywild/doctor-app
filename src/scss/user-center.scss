@@ -1,0 +1,171 @@
+@import 'var', 'mixins';
+.user-bg {
+    background: rgba(86, 100, 246, 1);
+}
+.user-info {
+    color: #fff;
+    font-size: 13px;
+    @include flex(space-between, flex-start);
+    padding: 20px 15px 30px 15px;
+    .base-info {
+        .name {
+            font-size: 18px;
+        }
+        .sys-id {
+            padding: 5px 0 45px 0;
+        }
+        .switch {
+            border: 1px solid #fff;
+            border-radius: 20px;
+            text-align: center;
+            padding: 3px 0;
+            vertical-align: baseline;
+            // line-height: 35px;
+            a {
+                color: #fff;
+            }
+        }
+    }
+    .qr-img {
+        width: 110px;
+        padding: 10px;
+        background: #fff;
+        border-radius: 3px;
+        color: $text-color;
+        img {
+            max-width: 100%;
+            display: block;
+        }
+    }
+}
+.vip-box {
+    position: relative;
+    .txt {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        @include flex(flex-start);
+        padding-left: 10px;
+        color: #33312e;
+        font-size: 14px;
+    }
+    img {
+        display: block;
+        max-width: 100%;
+    }
+}
+.account-view {
+    background: #fff;
+    padding: 10px;
+    height: 70px;
+    @include flex();
+    .account-item {
+        width: 25%;
+        color: $text-color;
+        text-align: center;
+
+        .num {
+            font-size: 16px;
+            font-weight: bold;
+            padding-bottom: 5px;
+        }
+        .txt {
+            font-size: $font-size-small;
+        }
+    }
+}
+.user-block {
+    padding: 10px;
+    background: #fff;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.08);
+    .user-b-tit {
+        font-size: 14px;
+        padding-bottom: 10px;
+    }
+    .user-b-content {
+        @include flex(space-between);
+        flex-flow: wrap;
+        .user-b-order {
+            width: 25%;
+            text-align: center;
+            margin-bottom: 15px;
+            .icon {
+                width: 30px;
+                height: 30px;
+                margin: 0 auto;
+                background-size: contain !important;
+                &.order {
+                    background: url(../images/icon-dd.png) center center no-repeat;
+                }
+                &.dfk {
+                    background: url(../images/icon-dfk.png) center center no-repeat;
+                }
+                &.wsy {
+                    background: url(../images/icon-wsy.png) center center no-repeat;
+                }
+                &.dfh {
+                    background: url(../images/icon-dfh.png) center center no-repeat;
+                }
+
+                &.yy {
+                    background: url(../images/icon-yy.png) center center no-repeat;
+                }
+                &.yzbl {
+                    background: url(../images/icon-yzbl.png) center center no-repeat;
+                }
+                &.wgjf {
+                    background: url(../images/icon-wgjf.png) center center no-repeat;
+                }
+                &.fy {
+                    background: url(../images/icon-wgjf.png) center center no-repeat;
+                }
+                &.pjys {
+                    background: url(../images/icon-pjys.png) center center no-repeat;
+                }
+                &.jgj {
+                    background: url(../images/icon-jgj.png) center center no-repeat;
+                }
+                &.gzys {
+                    background: url(../images/icon-gzys.png) center center no-repeat;
+                }
+                &.gzsp {
+                    background: url(../images/icon-gzys.png) center center no-repeat;
+                }
+            }
+            .txt {
+                padding-top: 5px;
+            }
+        }
+    }
+}
+.logout-btn {
+    width: 70%;
+    margin: 15px auto;
+}
+.invoice {
+    margin: 0 10px;
+    > img {
+        max-width: 100%;
+    }
+}
+.qr-detail {
+    text-align: center;
+    padding: 10px 0;
+    .shape {
+        width: 70%;
+        margin: 0 auto;
+    }
+    .qr {
+        width: 120px;
+        height: 120px;
+        margin: 10px auto;
+    }
+    img {
+        max-width: 100%;
+        display: block;
+    }
+}

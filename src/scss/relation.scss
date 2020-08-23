@@ -1,0 +1,55 @@
+@import 'var', 'mixins';
+.relation-box {
+    margin: 10px;
+}
+.relation-list {
+    margin: 10px 0;
+    .relation-item {
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0 0 0.3125rem;
+        padding: 10px;
+        @include flex(space-between, flex-start);
+        position: relative;
+        .relation-msg {
+            flex: 1;
+            font-size: 13px;
+            .name {
+                font-size: 16px;
+                font-weight: bold;
+                padding-bottom: 5px;
+            }
+            .id {
+                font-size: 16px;
+            }
+            .manager-block {
+                @include flex(flex-start);
+                color: $theme-color;
+                position: absolute;
+                left: 10px;
+                bottom: 10px;
+                z-index: 20;
+            }
+        }
+        .qr-img {
+            width: 80px;
+            height: 80px;
+            > img {
+                max-width: 100%;
+            }
+        }
+    }
+}
+.relation-btn {
+    @include flex(space-between);
+    .van-button {
+        width: 49%;
+    }
+}
+.relation-tips {
+    .title {
+        font-weight: bold;
+    }
+    .content {
+        color: $text-light-color;
+    }
+}

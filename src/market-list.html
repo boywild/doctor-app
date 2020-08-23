@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="viewport"
+      content="initial-scale=1.0, maximum-scale=1, user-scalable=no, width=device-width, height=device-height,user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="x5-orientation" content="portrait" />
+    <title>门店列表</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/vant.css" />
+    <link rel="stylesheet" href="./css/market-list.css" />
+    <script src="./script/lib/vue.min.js"></script>
+    <script src="./script/lib/vant.min.js"></script>
+    <script src="./script/lib/rem.js"></script>
+  </head>
+  <body>
+    <div class="app-layout" id="marketList">
+      <!-- 顶部导航栏 -->
+      <van-nav-bar
+        title="门店列表"
+        left-arrow
+        @click-left="onClickLeft"
+      ></van-nav-bar>
+      <div class="app-content gray-bg has-footer">
+        <!-- 轮播图 -->
+        <van-swipe
+          class="market-swipe"
+          :autoplay="3000"
+          indicator-color="white"
+        >
+          <van-swipe-item>
+            <van-image src="./uploads/market-banner.png" />
+          </van-swipe-item>
+          <van-swipe-item>
+            <van-image src="./uploads/market-banner2.png" />
+          </van-swipe-item>
+          <van-swipe-item>
+            <van-image src="./uploads/market-banner3.png" />
+          </van-swipe-item>
+        </van-swipe>
+        <van-dropdown-menu>
+          <van-dropdown-item
+            v-model="location"
+            :options="locationList"
+          ></van-dropdown-item>
+          <van-dropdown-item
+            v-model="near"
+            :options="nearList"
+          ></van-dropdown-item>
+        </van-dropdown-menu>
+        <!-- 门店列表 -->
+        <div class="market-list">
+          <van-list
+            v-model="loading"
+            :finished="finished"
+            finished-text="没有更多了"
+            @load="onLoad"
+          >
+            <van-cell v-for="item in list" :key="item">
+              <a href="./market-detail.html" class="market-item">
+                <div class="store-thumb">
+                  <img src="./uploads/market-default.png" />
+                </div>
+                <div class="market-info">
+                  <div class="tit">双流华美口腔医院超长名字的医院测试aaa</div>
+                  <div class="phone">电话：028-72372733477</div>
+                  <div class="address">
+                    地址：双流敲他3号双流敲他3号双流敲他3号
+                  </div>
+                </div>
+                <div class="guide">
+                  <div class="km">129km</div>
+                  <div class="destination">
+                    <div class="icon"><van-icon name="share" /></div>
+                    <span>到这去</span>
+                  </div>
+                </div>
+              </a>
+            </van-cell>
+          </van-list>
+        </div>
+        <!-- 全局底部导航 -->
+        <van-tabbar v-model="active" active-color="#3d4ce2">
+          <van-tabbar-item icon="wap-home" name="home"
+            >就诊服务</van-tabbar-item
+          >
+          <van-tabbar-item icon="service" name="online"
+            >在线问诊</van-tabbar-item
+          >
+          <van-tabbar-item icon="cart" name="hop">优选商城</van-tabbar-item>
+          <van-tabbar-item icon="manager" name="usercenter"
+            >个人中心</van-tabbar-item
+          >
+        </van-tabbar>
+      </div>
+    </div>
+  </body>
+  <script>
+    new Vue({
+      el: "#marketList",
+      data: {
+        active: "home",
+        location: "all",
+        near: "a",
+        locationList: [
+          { text: "全部地区", value: "all" },
+          { text: "重庆", value: "cq" },
+          { text: "城都", value: "cd" },
+          { text: "武汉", value: "wh" },
+          { text: "北京", value: "bj" },
+          { text: "上海", value: "sh" },
+          { text: "广州", value: "gz" },
+        ],
+        nearList: [
+          { text: "智能排序", value: "a" },
+          { text: "离我最近", value: "b" },
+          { text: "好评度", value: "c" },
+          { text: "预约次数", value: "d" },
+        ],
+        list: [],
+        loading: false,
+        finished: false,
+      },
+      methods: {
+        onClickLeft() {},
+        onLoad() {
+          // 模拟异步加载数据
+          setTimeout(() => {
+            for (let i = 0; i < 10; i++) {
+              this.list.push(this.list.length + 1);
+            }
+            // 加载状态结束
+            this.loading = false;
+            // 数据全部加载完成
+            if (this.list.length >= 40) {
+              this.finished = true;
+            }
+          }, 1000);
+        },
+      },
+    });
+  </script>
+</html>

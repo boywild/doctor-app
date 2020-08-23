@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="viewport"
+      content="initial-scale=1.0, maximum-scale=1, user-scalable=no, width=device-width, height=device-height,user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="x5-orientation" content="portrait" />
+    <title>医生详情</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/vant.css" />
+    <link rel="stylesheet" href="./css/doctor-list.css" />
+    <script src="./script/lib/vue.min.js"></script>
+    <script src="./script/lib/vant.min.js"></script>
+    <script src="./script/lib/rem.js"></script>
+  </head>
+  <body>
+    <div class="app-layout" id="doctor">
+      <!-- 顶部导航栏 -->
+      <van-nav-bar
+        title="医生详情"
+        left-arrow
+        @click-left="onClickLeft"
+      ></van-nav-bar>
+      <div class="app-content has-footer">
+        <div class="doctor-home">
+          <div class="doctor-h-box">
+            <!-- 医生基本信息 -->
+            <div class="current-doctor">
+              <div class="d-base-info">
+                <div class="d-thumb">
+                  <img src="./images/doctor-default.png" />
+                </div>
+                <div class="name">钟龙飞</div>
+                <div class="km">距离130km</div>
+              </div>
+              <div class="d-main-info" @click="dialogShow=!dialogShow">
+                <div class="main-info-row position">
+                  <div class="label">主任医师、医务主任</div>
+                  <div class="content">
+                    <div class="d-main-rate">
+                      <van-rate
+                        v-model="rate"
+                        :size="12"
+                        color="#ffd21e"
+                        void-icon="star"
+                        void-color="#eee"
+                      ></van-rate>
+                      <span class="num">5.0</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="main-info-row best">
+                  <div class="label">擅长：</div>
+                  <div class="content">种植、正畸、拔牙</div>
+                </div>
+                <div class="main-info-row address">
+                  <div class="label">介绍：</div>
+                  <div class="content">毕业于川北医学院口腔系</div>
+                </div>
+              </div>
+              <div class="fav-btn active">关注</div>
+            </div>
+            <!-- 排班计划 -->
+            <div class="plan-sort">
+              <div class="sort-title">排班</div>
+              <div :class="['plan-row',showMore?'show':'']">
+                <div class="plan-item">
+                  <div class="plan-info">
+                    <div class="hospital">
+                      <div class="name">双流华美口腔医院</div>
+                      <div class="km">19.8 Km</div>
+                    </div>
+                    <div class="date">排班：周一、周二、周三、周四、周五</div>
+                  </div>
+                  <a href="./doctor-detail-appoint.html" class="plan-status"
+                    >预约</a
+                  >
+                </div>
+                <div class="plan-item">
+                  <div class="plan-info">
+                    <div class="hospital">
+                      <div class="name">双流华美口腔医院</div>
+                      <div class="km">19.8 Km</div>
+                    </div>
+                    <div class="date">排班：周一、周二、周三、周四、周五</div>
+                  </div>
+                  <div class="plan-status finished">约满</div>
+                </div>
+                <div class="plan-item">
+                  <div class="plan-info">
+                    <div class="hospital">
+                      <div class="name">双流华美口腔医院</div>
+                      <div class="km">19.8 Km</div>
+                    </div>
+                    <div class="date">排班：周一、周二、周三、周四、周五</div>
+                  </div>
+                  <div class="plan-status finished">约满</div>
+                </div>
+              </div>
+              <div class="show-more" @click="showMore=!showMore">
+                {{showMore?'收起':'展开'}}<van-icon
+                  :name="showMore?'arrow-up':'arrow-down'"
+                />
+              </div>
+            </div>
+            <!-- 医生二维码 -->
+            <div class="doctor-wx">
+              <div class="wx-img">
+                <img src="./uploads/qr.png" alt="" />
+              </div>
+              <div>长按识别二维码加医生好友</div>
+              <div class="btn" @click="addWxShow=!addWxShow">
+                如何添加医生好友？
+              </div>
+            </div>
+            <!-- 医生评价 -->
+            <div class="doctor-comment">
+              <div class="d-comment-tit">医生评价</div>
+              <div class="d-comment-row">
+                <van-list
+                  v-model="loading"
+                  :finished="finished"
+                  finished-text="没有更多了"
+                  @load="onLoad"
+                >
+                  <van-cell v-for="item in list" :key="item">
+                    <div class="comment-item">
+                      <div class="from">
+                        <div class="name">李*</div>
+                        <van-rate
+                          v-model="rate"
+                          :size="12"
+                          color="#ffd21e"
+                          void-icon="star"
+                          void-color="#eee"
+                        ></van-rate>
+                      </div>
+                      <div class="time">2020-03-26</div>
+                      <div class="txt">
+                        态度好，特别细心！！！态度好，特别细心！！！态度好，特别细心！！！态度好，特别细心！！！态度好，特别细心！！！
+                      </div>
+                    </div>
+                  </van-cell>
+                </van-list>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 弹窗 -->
+        <van-dialog class="common-dialog" v-model="dialogShow">
+          <div class="doctor-info-more">
+            <div class="thumb">
+              <img src="./images/doctor-default.png" alt="" />
+            </div>
+            <div class="tag">
+              <van-tag type="primary">执业医生</van-tag
+              ><van-tag type="primary">副主任医师</van-tag
+              ><van-tag type="primary">学科带头人</van-tag>
+            </div>
+            <div class="resume-box">
+              <div class="res-row">
+                <div class="tit">擅长：</div>
+                <div class="desc">种植、正畸、口外修复、颌面外科</div>
+              </div>
+              <div class="res-row">
+                <div class="tit">简介：</div>
+                <div class="desc">
+                  毕业于四川大学华西口腔医学院，华西口腔医院副主任医师、教授、硕士生导师，现任华美牙科连锁医务总监。30多年来一直从事口腔颌面外科临床、教学和科研工作，其中1998-2010年赴国外进行学术交流工作，临床经验丰富，医疗技术精湛，培养了大量的口腔专业技术人才。
+                </div>
+              </div>
+            </div>
+          </div>
+        </van-dialog>
+        <!-- 添加医生微信弹窗 -->
+        <van-dialog class="common-dialog" v-model="addWxShow">
+          <div class="rich-box">
+            <div class="rich-text">
+              <p>
+                打开手机端微信，找到如图所示的位置：通讯录；然后点击右上角位置的+添加符号
+              </p>
+              <img src="./uploads/wx.png" />
+            </div>
+          </div>
+        </van-dialog>
+        <!-- 全局底部导航 -->
+        <van-tabbar v-model="active" active-color="#3d4ce2">
+          <van-tabbar-item icon="wap-home" name="home"
+            >就诊服务</van-tabbar-item
+          >
+          <van-tabbar-item icon="service" name="online"
+            >在线问诊</van-tabbar-item
+          >
+          <van-tabbar-item icon="cart" name="hop">优选商城</van-tabbar-item>
+          <van-tabbar-item icon="manager" name="usercenter"
+            >个人中心</van-tabbar-item
+          >
+        </van-tabbar>
+      </div>
+    </div>
+  </body>
+  <script>
+    new Vue({
+      el: "#doctor",
+      data: {
+        active: "home",
+        list: [],
+        loading: false,
+        finished: false,
+        rate: 4,
+        showMore: false,
+        dialogShow: false,
+        addWxShow: false,
+      },
+      methods: {
+        onClickLeft() {},
+        onLoad() {
+          // 模拟异步加载数据
+          setTimeout(() => {
+            for (let i = 0; i < 10; i++) {
+              this.list.push(this.list.length + 1);
+            }
+            // 加载状态结束
+            this.loading = false;
+            // 数据全部加载完成
+            if (this.list.length >= 40) {
+              this.finished = true;
+            }
+          }, 1000);
+        },
+      },
+    });
+  </script>
+</html>

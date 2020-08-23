@@ -1,0 +1,47 @@
+@import "var", "mixins";
+.appoint-list {
+  margin: 10px 10px;
+  .appoint-item {
+    border-radius: 10px;
+    background: $white-bg;
+    padding: 10px;
+    margin-bottom: 10px;
+    .apponit-info {
+      @include flex(space-between, flex-start);
+      .a-msg {
+      }
+      .a-msg-cell {
+        @include flex(flex-start);
+        font-size: 13px;
+        color: $text-light-color;
+        line-height: 25px;
+        &.main {
+          color: $text-color;
+          font-size: 16px;
+          font-weight: bold;
+          .label {
+            margin-right: 10px;
+          }
+        }
+        .label {
+        }
+        .value {
+        }
+      }
+    }
+    .apponit-btn {
+      text-align: right;
+      .van-button {
+        padding: 0 25px;
+      }
+    }
+  }
+}
+.want-apponit {
+  position: fixed;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  padding: 0 20px;
+  @include flex();
+}

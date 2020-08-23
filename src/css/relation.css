@@ -1,0 +1,52 @@
+.relation-box {
+  margin: 0.625rem; }
+
+.relation-list {
+  margin: 0.625rem 0; }
+  .relation-list .relation-item {
+    border-radius: 0.3125rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0 0 0.3125rem;
+    padding: 0.625rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    position: relative; }
+    .relation-list .relation-item .relation-msg {
+      flex: 1;
+      font-size: 0.8125rem; }
+      .relation-list .relation-item .relation-msg .name {
+        font-size: 1rem;
+        font-weight: bold;
+        padding-bottom: 0.3125rem; }
+      .relation-list .relation-item .relation-msg .id {
+        font-size: 1rem; }
+      .relation-list .relation-item .relation-msg .manager-block {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+        color: #3d4ce2;
+        position: absolute;
+        left: 0.625rem;
+        bottom: 0.625rem;
+        z-index: 20; }
+    .relation-list .relation-item .qr-img {
+      width: 5rem;
+      height: 5rem; }
+      .relation-list .relation-item .qr-img > img {
+        max-width: 100%; }
+
+.relation-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row; }
+  .relation-btn .van-button {
+    width: 49%; }
+
+.relation-tips .title {
+  font-weight: bold; }
+
+.relation-tips .content {
+  color: #7d7d7d; }

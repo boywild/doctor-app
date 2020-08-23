@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+            name="viewport"
+            content="initial-scale=1.0, maximum-scale=1, user-scalable=no, width=device-width, height=device-height,user-scalable=no, viewport-fit=cover"
+        />
+        <meta name="x5-orientation" content="portrait" />
+        <title>关联档案</title>
+        <link rel="stylesheet" href="./css/common.css" />
+        <link rel="stylesheet" href="./css/vant.css" />
+        <link rel="stylesheet" href="./css/coupon.css" />
+        <link rel="stylesheet" href="./css/relation.css" />
+        <script src="./script/lib/vue.min.js"></script>
+        <script src="./script/lib/vant.min.js"></script>
+        <script src="./script/lib/rem.js"></script>
+    </head>
+    <body>
+        <div class="app-layout" id="relationBind">
+            <!-- 顶部导航栏 -->
+            <van-nav-bar title="关联档案" left-arrow @click-left="onClickLeft"></van-nav-bar>
+            <div class="app-content gray-bg has-footer">
+                <van-notice-bar
+                    wrapable
+                    :scrollable="false"
+                    text="将自动使用您在门店预留手机号进行关联最多只能关联5份档案"
+                ></van-notice-bar>
+                <van-form class="card-form">
+                    <van-field v-model="phone" placeholder="手机号"></van-field>
+                    <van-field v-model="sms" placeholder="验证码">
+                        <template #button>
+                            <van-button size="small" type="primary">发送验证码</van-button>
+                        </template>
+                    </van-field>
+                    <van-field name="market">
+                        <template #input>
+                            <van-checkbox-group v-model="market" direction="horizontal">
+                                <van-checkbox style="margin-bottom:10px" name="1"  shape="square">双流华美口腔医院 （钟龙飞）</van-checkbox>
+                                <van-checkbox style="margin-bottom:10px" name="2"  shape="square">成华建设店 （张三）</van-checkbox>
+                                <van-checkbox name="3"  shape="square">金堂华美口腔医院 （李四）</van-checkbox>
+                            </van-checkbox-group>
+                        </template>
+                    </van-field>
+                    <div>
+                        <van-button block type="info" url="/coupon-detail.html" native-type="submit">
+                            确认关联
+                        </van-button>
+                    </div>
+                </van-form>
+                <!-- 全局底部导航 -->
+                <van-tabbar v-model="active" active-color="#3d4ce2">
+                    <van-tabbar-item icon="wap-home" name="home">就诊服务</van-tabbar-item>
+                    <van-tabbar-item icon="service" name="online">在线问诊</van-tabbar-item>
+                    <van-tabbar-item icon="cart" name="hop">优选商城</van-tabbar-item>
+                    <van-tabbar-item icon="manager" name="usercenter">个人中心</van-tabbar-item>
+                </van-tabbar>
+            </div>
+        </div>
+    </body>
+    <script>
+        new Vue({
+            el: '#relationBind',
+            data: {
+                active: 'usercenter',
+                phone: '',
+                sms: '',
+                market:[]
+            },
+            methods: {
+                onClickLeft() {},
+            },
+        })
+    </script>
+</html>

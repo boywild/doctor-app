@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="viewport"
+      content="initial-scale=1.0, maximum-scale=1, user-scalable=no, width=device-width, height=device-height,user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="x5-orientation" content="portrait" />
+    <title>充值</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/vant.css" />
+    <link rel="stylesheet" href="./css/my-card.css" />
+    <script src="./script/lib/vue.min.js"></script>
+    <script src="./script/lib/vant.min.js"></script>
+    <script src="./script/lib/rem.js"></script>
+  </head>
+  <body>
+    <div class="app-layout" id="myCardBuy">
+      <!-- 顶部导航栏 -->
+      <van-nav-bar
+        title="充值"
+        left-arrow
+        @click-left="onClickLeft"
+      ></van-nav-bar>
+      <div class="app-content theme-light-bg has-footer">
+        <div class="my-card-buy">
+          <div class="card-detail-head">
+            <div class="card-name">超爽洁牙 自尊VIP卡</div>
+            <div class="card-desc">
+              限：青样永信店，金堂华美口腔医院，成华建设店，青羊永信店
+            </div>
+            <div class="card-time-range">有效期：2020-03-01~2020-12-31</div>
+          </div>
+          <div class="qr-bxo">
+            <div class="vertical-qr">
+              <img src="./uploads/shape.png" alt="" />
+            </div>
+            <div class="react-qr">
+              <img src="./uploads/qr.png" alt="" />
+            </div>
+            <div class="qr-code">130382973645</div>
+          </div>
+          <van-button round block type="primary" url="./market-list.html"
+            >立即使用</van-button
+          >
+        </div>
+        <div class="use-desc">
+          使用说明：
+          <br />
+          1、请至可以使用门店前台在结账前出示此核销码进行消费核销。
+          <br />
+          2、如受到限制使用，请至可以使用门店进行使用。
+        </div>
+        <!-- 全局底部导航 -->
+        <van-tabbar v-model="active" active-color="#3d4ce2">
+          <van-tabbar-item icon="wap-home" name="home"
+            >就诊服务</van-tabbar-item
+          >
+          <van-tabbar-item icon="service" name="online"
+            >在线问诊</van-tabbar-item
+          >
+          <van-tabbar-item icon="cart" name="hop">优选商城</van-tabbar-item>
+          <van-tabbar-item icon="manager" name="usercenter"
+            >个人中心</van-tabbar-item
+          >
+        </van-tabbar>
+      </div>
+    </div>
+  </body>
+  <script>
+    new Vue({
+      el: "#myCardBuy",
+      data: {
+        active: "usercenter",
+        showMarketPicker: false,
+        columns: [
+          "杭州",
+          "宁波",
+          "温州",
+          "绍兴",
+          "湖州",
+          "嘉兴",
+          "金华",
+          "衢州",
+        ],
+      },
+      methods: {
+        onClickLeft() {},
+        onConfirm(value, index) {
+          this.showMarketPicker = false;
+          this.$toast(`当前值：${value}, 当前索引：${index}`);
+        },
+        onCancel() {
+          this.showMarketPicker = false;
+          this.$toast("取消");
+        },
+      },
+    });
+  </script>
+</html>

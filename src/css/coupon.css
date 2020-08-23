@@ -1,0 +1,71 @@
+.card-form {
+  margin: 1.875rem 1.25rem; }
+  .card-form .van-cell {
+    margin-bottom: 1.25rem;
+    border-radius: 0.3125rem; }
+
+.receice-coupon {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 1.25rem;
+  height: 3.125rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background: #fff; }
+
+.coupon-card {
+  font-size: 0.8125rem;
+  margin: 0.625rem;
+  border-radius: 0.625rem;
+  background: #fff;
+  padding: 0.625rem; }
+  .coupon-card .card-base {
+    padding-left: 0.9375rem; }
+    .coupon-card .card-base .title {
+      font-size: 1rem;
+      color: #333;
+      font-weight: bold; }
+    .coupon-card .card-base .desc {
+      color: #7d7d7d; }
+  .coupon-card .card-detail {
+    padding: 0.5rem 0 0.5rem 0.9375rem; }
+    .coupon-card .card-detail .card-cell {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: row;
+      padding-bottom: 0.1875rem; }
+      .coupon-card .card-detail .card-cell .val {
+        color: #7d7d7d; }
+  .coupon-card .card-t-use li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    height: 1.875rem;
+    padding-left: 0.9375rem; }
+    .coupon-card .card-t-use li:first-child {
+      border-bottom: 0.0625rem solid #ebedf0; }
+
+.suitable {
+  background: #fff;
+  border-radius: 0.625rem;
+  margin: 0.625rem;
+  font-size: 0.75rem;
+  width: calc(100% - 1.25rem);
+  text-align: center;
+  table-layout: fixed;
+  min-height: 12.5rem; }
+  .suitable tbody td,
+  .suitable thead th {
+    height: 1.875rem;
+    vertical-align: middle; }
+    .suitable tbody td .name,
+    .suitable thead th .name {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis; }

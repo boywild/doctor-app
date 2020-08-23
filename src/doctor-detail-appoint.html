@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="viewport"
+      content="initial-scale=1.0, maximum-scale=1, user-scalable=no, width=device-width, height=device-height,user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="x5-orientation" content="portrait" />
+    <title>医生预约</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/vant.css" />
+    <link rel="stylesheet" href="./css/doctor-list.css" />
+    <script src="./script/lib/vue.min.js"></script>
+    <script src="./script/lib/vant.min.js"></script>
+    <script src="./script/lib/rem.js"></script>
+  </head>
+  <body>
+    <div class="app-layout" id="doctorAppoint">
+      <!-- 顶部导航栏 -->
+      <van-nav-bar
+        title="医生预约"
+        left-arrow
+        @click-left="onClickLeft"
+      ></van-nav-bar>
+      <div class="app-content">
+        <van-form @submit="onSubmit">
+          <van-field
+            :value="info.username"
+            name="username"
+            readonly
+            label="预约人"
+            placeholder="预约人"
+          ></van-field>
+          <van-field
+            :value="info.id"
+            name="id"
+            readonly
+            label="预约人ID"
+            placeholder="预约人ID"
+          ></van-field>
+          <van-field
+            v-model="info.content"
+            @click="selectContent"
+            name="content"
+            label="预约内容"
+            readonly
+            right-icon="arrow"
+            placeholder="请选择预约内容"
+          ></van-field>
+          <van-field
+            :value="info.date|f-date"
+            @click="selectDate"
+            name="date"
+            readonly
+            label="预约时间"
+            right-icon="arrow"
+            placeholder="请选择预约时间"
+          ></van-field>
+          <van-field
+            :value="info.market"
+            name="market"
+            readonly
+            label="预约门店"
+            placeholder="预约门店"
+          ></van-field>
+          <van-field
+            :value="info.doctor"
+            name="doctor"
+            readonly
+            label="预约医生"
+            placeholder="预约医生"
+          ></van-field>
+          <div class="appoint-btn">
+            <van-button round block type="info" native-type="submit">
+              立即预约
+            </van-button>
+          </div>
+        </van-form>
+        <!-- 内容选择 -->
+        <div :class="['poup-content',showContent?'active':'']">
+          <van-picker
+            show-toolbar
+            :columns="columns"
+            @confirm="contentConfirm"
+            @cancel="toggleContent(false)"
+          ></van-picker>
+        </div>
+        <!-- 选择时间 -->
+        <div :class="['poup-date',showDate?'active':'']">
+          <van-datetime-picker
+            v-model="currentDate"
+            type="datetime"
+            :min-date="minDate"
+            :max-date="maxDate"
+            :formatter="dateFormatter"
+            @confirm="dateConfirm"
+            @cancel="toggleDate(false)"
+          ></van-datetime-picker>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    new Vue({
+      el: "#doctorAppoint",
+      data: {
+        active: "home",
+        info: {
+          username: "张三丰",
+          id: "XYX2873433859",
+          content: "",
+          date: "",
+          market: "双流华美口腔医院",
+          doctor: "钟龙飞",
+        },
+        columns: ["根管治疗", "种植牙齿", "牙齿矫正", "镶金牙", "换牙齿"],
+        minDate: new Date(2020, 0, 1),
+        maxDate: new Date(2025, 10, 1),
+        currentDate: new Date(),
+        showContent: false,
+        showDate: false,
+      },
+      filters: {
+        "f-date"(val) {
+          if (val) {
+            const year = val.getFullYear();
+            const month = val.getMonth() + 1;
+            const day = val.getDay();
+            const hour = val.getHours();
+            const minute = val.getMinutes();
+            return year + "-" + month + "-" + day + " " + hour + ":" + minute;
+            // return 1;
+          }
+        },
+      },
+      methods: {
+        onClickLeft() {},
+        onSubmit(values) {
+          console.log("submit", values);
+        },
+        contentConfirm(value, index) {
+          this.info.content = value;
+          this.toggleContent(false);
+          console.log(`当前值：${value}, 当前索引：${index}`);
+        },
+        dateConfirm(val) {
+          console.log(val);
+          this.info.date = val;
+          this.toggleDate(false);
+        },
+        selectContent() {
+          this.toggleContent();
+          this.toggleDate(false);
+        },
+        selectDate() {
+          this.toggleDate();
+          this.toggleContent(false);
+        },
+        toggleContent(flag = true) {
+          this.showContent = flag;
+        },
+        toggleDate(flag = true) {
+          this.showDate = flag;
+        },
+        dateFormatter(type, val) {
+          if (type === "year") {
+            return val + "年";
+          }
+          if (type === "month") {
+            return val + "月";
+          }
+          if (type === "day") {
+            return val + "日";
+          }
+          if (type === "hour") {
+            return val + "时";
+          }
+          if (type === "minute") {
+            return val + "分";
+          }
+          return val;
+        },
+      },
+    });
+  </script>
+</html>

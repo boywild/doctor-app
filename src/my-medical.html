@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+            name="viewport"
+            content="initial-scale=1.0, maximum-scale=1, user-scalable=no, width=device-width, height=device-height,user-scalable=no, viewport-fit=cover"
+        />
+        <meta name="x5-orientation" content="portrait" />
+        <title>我的病历</title>
+        <link rel="stylesheet" href="./css/common.css" />
+        <link rel="stylesheet" href="./css/vant.css" />
+        <link rel="stylesheet" href="./css/my-medical.css" />
+        <script src="./script/lib/vue.min.js"></script>
+        <script src="./script/lib/vant.min.js"></script>
+        <script src="./script/lib/rem.js"></script>
+    </head>
+    <body>
+        <div class="app-layout" id="myMedical">
+            <!-- 顶部导航栏 -->
+            <van-nav-bar title="我的病历" left-arrow @click-left="onClickLeft"></van-nav-bar>
+            <div class="app-content gray-bg has-footer">
+                <div class="medical-box">
+                    <div class="common-card mgb20">
+                        <a class="c-card-head" href="./my-medical-detail.html">
+                            <div class="head-msg">
+                                <div class="user">张三 XYX783493894</div>
+                                <div class="time">新诊 2020-03-23 18:00:23</div>
+                            </div>
+                            <div class="head-right-now">
+                                <van-icon name="arrow" size="18" />
+                            </div>
+                        </a>
+                        <div class="c-card-body">
+                            <div class="c-card-content">
+                                <div class="c-card-cell">
+                                    <div class="label">门店：</div>
+                                    <div class="val">双流华美口腔医院（张三丰/李四）</div>
+                                </div>
+                                <div class="c-card-cell">
+                                    <div class="label">主诉：</div>
+                                    <div class="val">左右大牙咬东西痛一周。</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="c-card-foot">
+                            <van-button size="small" type="primary" @click="show=!show">评价医生</van-button>
+                            <van-button size="small" disabled type="info" url="./doctor-detail.html"
+                                >联系医生</van-button
+                            >
+                        </div>
+                    </div>
+                    <div class="common-card">
+                        <a class="c-card-head" href="./my-medical-detail.html">
+                            <div class="head-msg">
+                                <div class="user">张三 XYX783493894</div>
+                                <div class="time">新诊 2020-03-23 18:00:23</div>
+                            </div>
+                            <div class="head-right-now">
+                                <van-icon name="arrow" size="18" />
+                            </div>
+                        </a>
+                        <div class="c-card-body">
+                            <div class="c-card-content">
+                                <div class="c-card-cell">
+                                    <div class="label">门店：</div>
+                                    <div class="val">双流华美口腔医院（张三丰/李四）</div>
+                                </div>
+                                <div class="c-card-cell">
+                                    <div class="label">主诉：</div>
+                                    <div class="val">左右大牙咬东西痛一周。</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="c-card-foot">
+                            <van-button size="small" disabled type="primary" @click="show=!show">评价医生</van-button>
+                            <van-button size="small" type="info" url="./doctor-detail.html">联系医生</van-button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 评价 -->
+                <van-popup v-model="show" position="top" :style="{ height: '50%' }">
+                    <div class="comment-for-doctor">
+                        <div class="comment-title">治疗效果</div>
+                        <van-radio-group v-model="good" direction="horizontal">
+                            <van-radio name="1">好评</van-radio>
+                            <van-radio name="2">一般</van-radio>
+                            <van-radio name="3">差评</van-radio>
+                        </van-radio-group>
+                        <div class="comment-title">服务态度</div>
+                        <van-radio-group v-model="attitude" direction="horizontal">
+                            <van-radio name="1">好评</van-radio>
+                            <van-radio name="2">一般</van-radio>
+                            <van-radio name="3">差评</van-radio>
+                        </van-radio-group>
+                        <van-field v-model="message" rows="3" type="textarea" placeholder="请输入留言"></van-field>
+                        <van-button block round type="primary" @click="submit">提交评价</van-button>
+                    </div>
+                </van-popup>
+
+                <!-- 全局底部导航 -->
+                <van-tabbar v-model="active" active-color="#3d4ce2">
+                    <van-tabbar-item icon="wap-home" name="home">就诊服务</van-tabbar-item>
+                    <van-tabbar-item icon="service" name="online">在线问诊</van-tabbar-item>
+                    <van-tabbar-item icon="cart" name="hop">优选商城</van-tabbar-item>
+                    <van-tabbar-item icon="manager" name="usercenter">个人中心</van-tabbar-item>
+                </van-tabbar>
+            </div>
+        </div>
+    </body>
+    <script>
+        new Vue({
+            el: '#myMedical',
+            data: {
+                active: 'usercenter',
+                show: false,
+                good: '',
+                attitude: '',
+                message: '',
+            },
+            methods: {
+                onClickLeft() {},
+                submit() {
+                    this.show = false
+                    const { good, attitude, message } = this
+                    this.$toast(JSON.stringify({ good, attitude, message }))
+                },
+            },
+        })
+    </script>
+</html>

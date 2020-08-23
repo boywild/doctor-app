@@ -1,0 +1,76 @@
+.market-swipe {
+  margin-bottom: 0.625rem; }
+
+.market-list {
+  background: #fff; }
+  .market-list.card {
+    border-radius: 0.625rem;
+    margin: 0.625rem;
+    overflow: hidden; }
+  .market-list .van-cell {
+    padding-left: 0.3125rem;
+    padding-right: 0.3125rem; }
+
+.market-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  background: #fff;
+  font-size: 0.75rem; }
+  .market-item.detail {
+    padding: 0.3125rem 0; }
+    .market-item.detail .market-info .tit {
+      height: 1.875rem; }
+  .market-item .store-thumb {
+    width: 5rem;
+    height: 5rem;
+    flex: 0 0 5rem;
+    background: #eee; }
+    .market-item .store-thumb img {
+      max-width: 100%; }
+  .market-item .market-info {
+    flex: 1 1 auto;
+    padding-left: 0.9375rem;
+    overflow: hidden; }
+    .market-item .market-info .tit {
+      font-size: 0.9375rem;
+      font-weight: bold;
+      color: #333;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      line-height: normal; }
+    .market-item .market-info .phone {
+      color: #949494;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      line-height: normal; }
+    .market-item .market-info .address {
+      color: #949494;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      line-height: normal; }
+  .market-item .guide {
+    width: 3.75rem;
+    flex: 0 0 3.75rem;
+    text-align: center; }
+    .market-item .guide .km {
+      color: #3d4ce2; }
+    .market-item .guide .destination {
+      color: #949494; }
+      .market-item .guide .destination .icon {
+        color: #fff;
+        width: 1.875rem;
+        height: 1.875rem;
+        background: #3d4ce2;
+        border-radius: 50%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        margin: 0 auto; }

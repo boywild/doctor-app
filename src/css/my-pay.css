@@ -1,0 +1,163 @@
+.my-pay-box .van-tabs__nav--card {
+  border-color: #3d4ce2; }
+
+.my-pay-box .van-tabs__nav--card .van-tab {
+  color: #3d4ce2;
+  border-color: #3d4ce2; }
+
+.my-pay-box .van-tabs__nav--card .van-tab.van-tab--active {
+  background-color: #3d4ce2;
+  color: #fff; }
+
+.pay-detail-msg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border: 0.0625rem solid #eee;
+  border-bottom: none; }
+  .pay-detail-msg .pay-d-cell {
+    width: calc(100% / 2);
+    text-align: center;
+    padding: 0.1875rem 0;
+    border-bottom: 0.0625rem solid #eee; }
+    .pay-detail-msg .pay-d-cell:nth-child(2n) {
+      border-left: 0.0625rem solid #eee; }
+    .pay-detail-msg .pay-d-cell.block {
+      width: 100%; }
+    .pay-detail-msg .pay-d-cell .num {
+      color: #3d4ce2;
+      font-weight: bold;
+      font-size: 1.125rem; }
+    .pay-detail-msg .pay-d-cell .desc {
+      color: #7d7d7d; }
+
+.pay-d-list {
+  border-radius: 0.3125rem;
+  background-color: #fff;
+  padding: 0.625rem;
+  font-size: 0.8125rem; }
+  .pay-d-list .tit {
+    font-weight: bold;
+    font-size: 0.9375rem;
+    padding-bottom: 0.625rem; }
+  .pay-d-list .pay-list-row.active .pay-list-body {
+    height: auto; }
+  .pay-d-list .pay-list-row .pay-list-head .pay-list-item,
+  .pay-d-list .pay-list-row .pay-list-body .pay-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center; }
+    .pay-d-list .pay-list-row .pay-list-head .pay-list-item .item-cell,
+    .pay-d-list .pay-list-row .pay-list-body .pay-list-item .item-cell {
+      height: 1.875rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row; }
+      .pay-d-list .pay-list-row .pay-list-head .pay-list-item .item-cell:nth-child(1),
+      .pay-d-list .pay-list-row .pay-list-body .pay-list-item .item-cell:nth-child(1) {
+        flex: 1;
+        text-align: left;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        justify-content: flex-start; }
+      .pay-d-list .pay-list-row .pay-list-head .pay-list-item .item-cell:nth-child(2),
+      .pay-d-list .pay-list-row .pay-list-body .pay-list-item .item-cell:nth-child(2) {
+        width: 12%; }
+      .pay-d-list .pay-list-row .pay-list-head .pay-list-item .item-cell:nth-child(3),
+      .pay-d-list .pay-list-row .pay-list-body .pay-list-item .item-cell:nth-child(3) {
+        width: 12%; }
+      .pay-d-list .pay-list-row .pay-list-head .pay-list-item .item-cell:nth-child(4),
+      .pay-d-list .pay-list-row .pay-list-body .pay-list-item .item-cell:nth-child(4) {
+        width: 12%; }
+      .pay-d-list .pay-list-row .pay-list-head .pay-list-item .item-cell:nth-child(5),
+      .pay-d-list .pay-list-row .pay-list-body .pay-list-item .item-cell:nth-child(5) {
+        width: 12%; }
+      .pay-d-list .pay-list-row .pay-list-head .pay-list-item .item-cell:nth-child(6),
+      .pay-d-list .pay-list-row .pay-list-body .pay-list-item .item-cell:nth-child(6) {
+        width: 12%; }
+      .pay-d-list .pay-list-row .pay-list-head .pay-list-item .item-cell:nth-child(7),
+      .pay-d-list .pay-list-row .pay-list-body .pay-list-item .item-cell:nth-child(7) {
+        width: 12%; }
+  .pay-d-list .pay-list-row .pay-list-body {
+    height: 5.625rem;
+    overflow: hidden; }
+  .pay-d-list .show-more {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    color: #3d4ce2; }
+
+.pay-num {
+  border-radius: 0.3125rem;
+  background-color: #fff;
+  padding: 0.625rem;
+  font-size: 0.8125rem; }
+  .pay-num .pay-num-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    height: 1.875rem; }
+    .pay-num .pay-num-item .value {
+      font-weight: bold;
+      font-size: 0.9375rem;
+      color: #3d4ce2; }
+  .pay-num .pay-result {
+    text-align: right; }
+    .pay-num .pay-result .num {
+      font-size: 1.125rem;
+      color: #f00; }
+
+.pay-way {
+  border-radius: 0.3125rem;
+  background-color: #fff;
+  padding: 0.625rem;
+  font-size: 0.8125rem; }
+  .pay-way .van-radio-group .van-radio {
+    margin-bottom: 0.625rem; }
+  .pay-way .checked-coupon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    height: 2.5rem; }
+    .pay-way .checked-coupon .coupon-label {
+      width: 5rem; }
+    .pay-way .checked-coupon .coupon-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+      flex: 1;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden; }
+      .pay-way .checked-coupon .coupon-content .coupon-val {
+        color: #7d7d7d;
+        text-align: right;
+        flex: 1;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        color: #7d7d7d; }
+
+.picker-coupon {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+  transform: translateY(100%);
+  z-index: 0; }
+  .picker-coupon.active {
+    transform: translateY(0);
+    z-index: 50; }

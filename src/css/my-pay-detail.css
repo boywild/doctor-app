@@ -1,0 +1,121 @@
+body {
+    font-size: 14px;
+}
+.wrapper-box {
+    width: 980px;
+    margin: 0 auto;
+    padding: 30px 60px 0 60px;
+}
+.payment-paper {
+}
+.payment-paper .paper-title {
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    padding-bottom: 30px;
+}
+.payment-paper .paper-head {
+}
+.payment-paper .paper-head .department {
+}
+.payment-paper .paper-head .payment-user {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 10px 0;
+    margin-top: 10px;
+}
+.payment-paper .paper-head .payment-user .p-user-cell {
+    width: 25%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.payment-paper .paper-head .payment-user .p-user-cell .label {
+}
+.payment-paper .paper-head .payment-user .p-user-cell .value {
+}
+.payment-paper .paper-content {
+    min-height: 400px;
+}
+.payment-paper .paper-content .paper-detail {
+    width: 100%;
+    text-align: center;
+}
+.payment-paper .paper-content .paper-content-line {
+    text-align: center;
+    line-height: 45px;
+    position: relative;
+}
+.payment-paper .paper-content .paper-content-line span {
+    position: relative;
+}
+.payment-paper .paper-content .paper-content-line span::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    width: 70px;
+    height: 1px;
+    background: #000;
+}
+.payment-paper .paper-content .paper-content-line span::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: 70px;
+    height: 1px;
+    background: #000;
+}
+.payment-paper .paper-content .paper-detail thead {
+}
+.payment-paper .paper-content .paper-detail th,
+td {
+    height: 30px;
+    vertical-align: middle;
+}
+.payment-paper .paper-foot {
+}
+.payment-paper .paper-foot .payment-num {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.payment-paper .paper-foot .payment-num .pay-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 50%;
+}
+
+.payment-paper .paper-foot .paper-for-doctor {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 10px 0;
+    margin: 10px 0;
+}
+.payment-paper .paper-foot .paper-for-doctor .item {
+    width: 33.33%;
+}
+.payment-paper .paper-foot .paper-tips {
+}
+.payment-paper .paper-foot .paper-tips .paper-tips-content {
+    text-indent: 30px;
+}
+.payment-paper .paper-foot .coustom-sign {
+    padding: 30px 0;
+    text-align: right;
+}
+.payment-paper .paper-foot .coustom-sign .line {
+    display: inline-block;
+    width: 100px;
+    border-bottom: 1px solid #000;
+}

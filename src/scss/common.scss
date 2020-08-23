@@ -1,0 +1,113 @@
+@import "reset", "global";
+
+.app-layout {
+  // padding-top: 46px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  .app-content {
+    flex: 1;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    &.has-footer {
+      margin-bottom: 50px;
+    }
+  }
+}
+.inner-bg {
+  background: url(../images/doctor-bg.png) top center no-repeat #eceff8;
+  background-size: 100% auto;
+  padding-top: 20px;
+}
+
+.common-dialog {
+  &.van-dialog {
+    background: transparent;
+    border-radius: 0;
+    .van-dialog__content {
+      background: #fff;
+      border-radius: 5px;
+      min-height: 150px;
+    }
+    .van-dialog__footer {
+      text-align: center;
+      &::after {
+        display: none;
+      }
+    }
+    .van-button {
+      width: 30px;
+      height: 30px;
+      margin: 0 auto;
+      border-radius: 50%;
+      .van-button__text {
+        font-size: 0;
+        &::before {
+          position: relative;
+          display: inline-block;
+          font: normal normal normal 14px/1 "vant-icon";
+          font-size: inherit;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+          content: "\F042";
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+.common-card {
+  background: #fff;
+  border-radius: 5px;
+  .c-card-head {
+    @include flex(space-between);
+    border-bottom: 1px solid #eee;
+    height: 50px;
+    padding: 0 10px;
+    .user {
+      color: $text-color;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .time {
+      color: $text-light-color;
+      font-size: 14px;
+    }
+    .head-right-now {
+      @include flex(flex-end);
+      .right-now-txt {
+        color: $text-light-color;
+        font-size: 13px;
+      }
+    }
+  }
+  .c-card-body {
+    padding: 10px 10px;
+    color: $text-light-color;
+    @include flex(space-between);
+    .c-card-content {
+      flex: 1;
+    }
+    .pay-money {
+      font-size: 26px;
+      font-weight: bold;
+      color: $theme-color;
+    }
+    .c-card-cell {
+      @include flex(flex-start);
+      padding-bottom: 5px;
+      font-size: 14px;
+      .label {
+      }
+      .val {
+      }
+    }
+  }
+  .c-card-foot {
+    padding: 10px 10px;
+    text-align: right;
+    .van-button {
+      padding: 0 25px;
+    }
+  }
+}

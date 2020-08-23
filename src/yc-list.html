@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="viewport"
+      content="initial-scale=1.0, maximum-scale=1, user-scalable=no, width=device-width, height=device-height,user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="x5-orientation" content="portrait" />
+    <title>义齿查询</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/vant.css" />
+    <link rel="stylesheet" href="./css/yc.css" />
+    <script src="./script/lib/vue.min.js"></script>
+    <script src="./script/lib/vant.min.js"></script>
+    <script src="./script/lib/rem.js"></script>
+  </head>
+  <body>
+    <div class="app-layout" id="ycList">
+      <!-- 顶部导航栏 -->
+      <van-nav-bar
+        title="义齿查询"
+        left-arrow
+        @click-left="onClickLeft"
+      ></van-nav-bar>
+      <div class="app-content gray-bg has-footer">
+        <div class="yc-list">
+          <van-list
+            v-model="loading"
+            :finished="finished"
+            finished-text="没有更多了"
+          >
+            <van-cell>
+              <a href="./yc-detail.html" class="yc-item">
+                <div class="yc-order">
+                  <div class="order-status">
+                    <span>订单编号：20209178233</span>
+                    <span class="back status-btn">返工件</span>
+                  </div>
+                  <div class="order-time">
+                    <span>进件：2020-03-01 </span>
+                    <span>预出：2020-03-02</span>
+                  </div>
+                </div>
+                <div class="yc-result">
+                  <span class="yc-r-time">2020-03-02 17:29</span>
+                  <span class="yc-r-end">张三 完成 固定OP</span>
+                </div>
+              </a>
+            </van-cell>
+            <van-cell>
+              <a href="./yc-detail.html" class="yc-item">
+                <div class="yc-order">
+                  <div class="order-status">
+                    <span>订单编号：20209178233</span>
+                    <span class="ing status-btn">正做件</span>
+                  </div>
+                  <div class="order-time">
+                    <span>进件：2020-03-01 </span>
+                    <span>预出：2020-03-02</span>
+                  </div>
+                </div>
+                <div class="yc-result">
+                  <span class="yc-r-time">2020-03-02 17:29</span>
+                  <span class="yc-r-end">张三 完成 固定OP</span>
+                </div>
+              </a>
+            </van-cell>
+            <van-cell>
+              <a href="./yc-detail.html" class="yc-item">
+                <div class="yc-order">
+                  <div class="order-status">
+                    <span>订单编号：20209178233</span>
+                    <span class="success status-btn">成功</span>
+                  </div>
+                  <div class="order-time">
+                    <span>进件：2020-03-01 </span>
+                    <span>预出：2020-03-02</span>
+                  </div>
+                </div>
+                <div class="yc-result">
+                  <span class="yc-r-time">2020-03-02 17:29</span>
+                  <span class="yc-r-end">张三 完成 固定OP</span>
+                </div>
+              </a>
+            </van-cell>
+            <van-cell>
+              <a href="./yc-detail.html" class="yc-item">
+                <div class="yc-order">
+                  <div class="order-status">
+                    <span>订单编号：20209178233</span>
+                    <span class="fail status-btn">失败</span>
+                  </div>
+                  <div class="order-time">
+                    <span>进件：2020-03-01 </span>
+                    <span>预出：2020-03-02</span>
+                  </div>
+                </div>
+                <div class="yc-result">
+                  <span class="yc-r-time">2020-03-02 17:29</span>
+                  <span class="yc-r-end">张三 完成 固定OP</span>
+                </div>
+              </a>
+            </van-cell>
+          </van-list>
+        </div>
+        <!-- 全局底部导航 -->
+        <van-tabbar v-model="active" active-color="#3d4ce2">
+          <van-tabbar-item icon="wap-home" name="home"
+            >就诊服务</van-tabbar-item
+          >
+          <van-tabbar-item icon="service" name="online"
+            >在线问诊</van-tabbar-item
+          >
+          <van-tabbar-item icon="cart" name="hop">优选商城</van-tabbar-item>
+          <van-tabbar-item icon="manager" name="usercenter"
+            >个人中心</van-tabbar-item
+          >
+        </van-tabbar>
+      </div>
+    </div>
+  </body>
+  <script>
+    new Vue({
+      el: "#ycList",
+      data: {
+        active: "home",
+        list: [],
+        loading: false,
+        finished: false,
+      },
+      methods: {
+        onClickLeft() {},
+        onClickRight() {
+          console.log("====");
+        },
+      },
+    });
+  </script>
+</html>

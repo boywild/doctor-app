@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="viewport"
+      content="initial-scale=1.0, maximum-scale=1, user-scalable=no, width=device-width, height=device-height,user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="x5-orientation" content="portrait" />
+    <title>医生列表</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/vant.css" />
+    <link rel="stylesheet" href="./css/doctor-list.css" />
+    <script src="./script/lib/vue.min.js"></script>
+    <script src="./script/lib/vant.min.js"></script>
+    <script src="./script/lib/rem.js"></script>
+  </head>
+  <body>
+    <div class="app-layout" id="doctor">
+      <!-- 顶部导航栏 -->
+      <van-nav-bar
+        title="医生列表"
+        left-arrow
+        @click-left="onClickLeft"
+      ></van-nav-bar>
+      <div class="app-content gray-bg has-footer">
+        <div class="inner-bg">
+          <!-- 功能模块 -->
+          <div class="tooth-row">
+            <div class="t-cell">
+              <div class="t-img icon1"></div>
+              <div class="t-text">种植</div>
+            </div>
+            <div class="t-cell">
+              <div class="t-img icon2"></div>
+              <div class="t-text">正畸</div>
+            </div>
+            <div class="t-cell">
+              <div class="t-img icon3"></div>
+              <div class="t-text">洁牙</div>
+            </div>
+            <div class="t-cell">
+              <div class="t-img icon4"></div>
+              <div class="t-text">拔牙</div>
+            </div>
+            <div class="t-cell">
+              <div class="t-img icon1"></div>
+              <div class="t-text">种植</div>
+            </div>
+            <div class="t-cell">
+              <div class="t-img icon2"></div>
+              <div class="t-text">正畸</div>
+            </div>
+            <div class="t-cell">
+              <div class="t-img icon3"></div>
+              <div class="t-text">洁牙</div>
+            </div>
+            <div class="t-cell">
+              <div class="t-img icon4"></div>
+              <div class="t-text">拔牙</div>
+            </div>
+          </div>
+          <div class="adv-area">
+            <van-row gutter="10">
+              <van-col span="12">
+                <img src="./uploads/adv1.png" />
+              </van-col>
+              <van-col span="12">
+                <img class="mgb10" src="./uploads/adv2.png" />
+                <img src="./uploads/adv3.png" />
+              </van-col>
+            </van-row>
+          </div>
+          <!-- 下拉筛选 -->
+          <van-dropdown-menu>
+            <van-dropdown-item
+              v-model="location"
+              :options="locationList"
+            ></van-dropdown-item>
+            <van-dropdown-item
+              v-model="near"
+              :options="nearList"
+            ></van-dropdown-item>
+          </van-dropdown-menu>
+          <!-- 医生列表 -->
+          <div class="doctor-list">
+            <van-list
+              v-model="loading"
+              :finished="finished"
+              finished-text="没有更多了"
+              @load="onLoad"
+            >
+              <van-cell v-for="item in list" :key="item">
+                <a href="./doctor-detail.html" class="doctor-item">
+                  <div class="d-base-info">
+                    <div class="d-thumb">
+                      <img src="./images/doctor-default.png" />
+                    </div>
+                    <div class="name">钟龙飞</div>
+                    <div class="km">距离130km</div>
+                  </div>
+                  <div class="d-main-info">
+                    <div class="d-main-rate">
+                      <van-rate
+                        v-model="rate"
+                        :size="16"
+                        color="#ffd21e"
+                        void-icon="star"
+                        void-color="#eee"
+                      ></van-rate>
+                      <span class="num">5.0</span>
+                    </div>
+                    <div class="main-info-row position">
+                      <div class="label">主任医师、医务主任</div>
+                      <div class="content"></div>
+                    </div>
+                    <div class="main-info-row best">
+                      <div class="label">擅长：</div>
+                      <div class="content">种植、正畸、拔牙</div>
+                    </div>
+                    <div class="main-info-row address">
+                      <div class="label">门店：</div>
+                      <div class="content">双流华美口腔医院</div>
+                    </div>
+                  </div>
+                </a>
+              </van-cell>
+            </van-list>
+          </div>
+          <!-- 全局底部导航 -->
+          <van-tabbar v-model="active" active-color="#3d4ce2">
+            <van-tabbar-item icon="wap-home" name="home"
+              >就诊服务</van-tabbar-item
+            >
+            <van-tabbar-item icon="service" name="online"
+              >在线问诊</van-tabbar-item
+            >
+            <van-tabbar-item icon="cart" name="hop">优选商城</van-tabbar-item>
+            <van-tabbar-item
+              icon="manager"
+              name="usercenter"
+              url="/user-center.html"
+              >个人中心</van-tabbar-item
+            >
+          </van-tabbar>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    new Vue({
+      el: "#doctor",
+      data: {
+        active: "home",
+        location: "all",
+        near: "a",
+        list: [],
+        loading: false,
+        finished: false,
+        locationList: [
+          { text: "全部地区", value: "all" },
+          { text: "重庆", value: "cq" },
+          { text: "城都", value: "cd" },
+          { text: "武汉", value: "wh" },
+          { text: "北京", value: "bj" },
+          { text: "上海", value: "sh" },
+          { text: "广州", value: "gz" },
+        ],
+        nearList: [
+          { text: "智能排序", value: "a" },
+          { text: "离我最近", value: "b" },
+          { text: "好评度", value: "c" },
+          { text: "预约次数", value: "d" },
+        ],
+        rate: 4,
+      },
+      methods: {
+        onClickLeft() {},
+        onLoad() {
+          // 模拟异步加载数据
+          setTimeout(() => {
+            for (let i = 0; i < 10; i++) {
+              this.list.push(this.list.length + 1);
+            }
+            // 加载状态结束
+            this.loading = false;
+            // 数据全部加载完成
+            if (this.list.length >= 40) {
+              this.finished = true;
+            }
+          }, 1000);
+        },
+      },
+    });
+  </script>
+</html>

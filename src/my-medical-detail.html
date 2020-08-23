@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+            name="viewport"
+            content="initial-scale=1.0, maximum-scale=1, user-scalable=no, width=device-width, height=device-height,user-scalable=no, viewport-fit=cover"
+        />
+        <meta name="x5-orientation" content="portrait" />
+        <title>病历详情</title>
+        <link rel="stylesheet" href="./css/common.css" />
+        <link rel="stylesheet" href="./css/vant.css" />
+        <link rel="stylesheet" href="./css/my-medical.css" />
+        <script src="./script/lib/vue.min.js"></script>
+        <script src="./script/lib/vant.min.js"></script>
+        <script src="./script/lib/rem.js"></script>
+    </head>
+    <body>
+        <div class="app-layout" id="myMedicalDetail">
+            <!-- 顶部导航栏 -->
+            <van-nav-bar title="病历详情" left-arrow @click-left="onClickLeft"></van-nav-bar>
+            <div class="app-content has-footer">
+                <div class="medical-detail">
+                    <div class="m-d-page">
+                        <div class="m-d-page-title">成华建设路口腔门诊部</div>
+                        <div class="m-d-page-name">门诊就诊病历</div>
+                        <div class="m-page-article">
+                            <div class="m-page-cell inline">
+                                <div class="label">姓名：</div>
+                                <div class="content">测试1</div>
+                            </div>
+                            <div class="m-page-cell inline">
+                                <div class="label">病历编号：</div>
+                                <div class="content">GDJZBH1011000027</div>
+                            </div>
+                            <div class="m-page-cell inline">
+                                <div class="label">就诊时间：</div>
+                                <div class="content">2020-03-05 15:51:25</div>
+                            </div>
+                            <div class="m-page-cell">
+                                <div class="label">主诉：</div>
+                                <div class="content">3444</div>
+                            </div>
+                            <div class="m-page-cell">
+                                <div class="label">现病史：</div>
+                                <div class="content">2020-03-05 15:51:25</div>
+                            </div>
+                            <div class="m-page-cell">
+                                <div class="label">既往史/个人史/家族史：</div>
+                                <div class="content">2020-03-05 15:51:25</div>
+                            </div>
+                            <div class="m-page-cell">
+                                <div class="label">体格检查：</div>
+                                <div class="content">
+                                    1.阿瑟东flask觉得啊螺丝扣搭街坊爱丽丝的肌肤爱上了对方就啦爱丽丝的肌肤两岸三,地就发射点立刻反击爱上了对方就啊上了的法律思考达拉斯飞机大山里的发<br />
+                                    2.23423523453 <br />
+                                    3.23423523453 <br />
+                                    4.23423523453 <br />
+                                    5.23423523453 <br />
+                                </div>
+                            </div>
+                            <div class="m-page-cell">
+                                <div class="label">辅助检查：</div>
+                                <div class="content">
+                                    1.23423523453 <br />
+                                    2.23423523453 <br />
+                                    3.23423523453 <br />
+                                    4.23423523453 <br />
+                                    5.23423523453 <br />
+                                </div>
+                            </div>
+                            <div class="m-page-cell">
+                                <div class="label">诊断：</div>
+                                <div class="content">
+                                    1.23423523453 <br />
+                                    2.23423523453 <br />
+                                    3.23423523453 <br />
+                                    4.23423523453 <br />
+                                    5.23423523453 <br />
+                                </div>
+                            </div>
+                            <div class="m-page-cell">
+                                <div class="label">治疗方案：</div>
+                                <div class="content">
+                                    1.23423523453 <br />
+                                    2.23423523453 <br />
+                                    3.23423523453 <br />
+                                    4.23423523453 <br />
+                                    5.23423523453 <br />
+                                </div>
+                            </div>
+                            <div class="m-page-cell">
+                                <div class="label">处理：</div>
+                                <div class="content">
+                                    1.23423523453 <br />
+                                    2.23423523453 <br />
+                                    3.23423523453 <br />
+                                    4.23423523453 <br />
+                                    5.23423523453 <br />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="doctor-talk">
+                            <div class="tit">医嘱：</div>
+                            <div class="content">按时吃药，即时复诊</div>
+                        </div>
+                        <div class="m-page-tips">
+                            *此病历仅作为参考，如需病历请至就诊门店查询打印
+                        </div>
+                    </div>
+                </div>
+                <!-- 全局底部导航 -->
+                <van-tabbar v-model="active" active-color="#3d4ce2">
+                    <van-tabbar-item icon="wap-home" name="home">就诊服务</van-tabbar-item>
+                    <van-tabbar-item icon="service" name="online">在线问诊</van-tabbar-item>
+                    <van-tabbar-item icon="cart" name="hop">优选商城</van-tabbar-item>
+                    <van-tabbar-item icon="manager" name="usercenter">个人中心</van-tabbar-item>
+                </van-tabbar>
+            </div>
+        </div>
+    </body>
+    <script>
+        new Vue({
+            el: '#myMedicalDetail',
+            data: {
+                active: 'usercenter',
+                show: false,
+                good: '',
+                attitude: '',
+                message: '',
+            },
+            methods: {
+                onClickLeft() {},
+            },
+        })
+    </script>
+</html>

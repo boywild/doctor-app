@@ -1,0 +1,60 @@
+@import 'var', 'mixins';
+.medical-box {
+    margin: 10px;
+}
+.comment-for-doctor {
+    padding: 20px 10px 0px 10px;
+    .comment-title {
+        padding-bottom: 10px;
+        font-size: 14px;
+    }
+    .van-radio-group {
+        margin-bottom: 10px;
+    }
+    .van-cell {
+        padding: 0;
+        border: 1px solid #eee;
+    }
+    .van-button {
+        margin-top: 10px;
+    }
+}
+.medical-detail {
+    padding: 20px;
+}
+.m-d-page {
+    font-size: 13px;
+    .m-d-page-title {
+        text-align: center;
+        font-weight: bold;
+    }
+    .m-d-page-name {
+        text-align: center;
+    }
+    .m-page-article {
+        .m-page-cell {
+            padding-bottom: 5px;
+            &.inline {
+                @include flex(flex-start);
+                padding-bottom: 2px;
+                .label {
+                    padding-bottom: 0;
+                }
+            }
+            .label {
+                padding-bottom: 5px;
+                font-weight: bold;
+            }
+            .content{
+            }
+        }
+    }
+    .doctor-talk {
+      font-weight: bold;
+      padding: 10px 0;
+    }
+    .m-page-tips {
+      text-align: center;
+      color: #f00;
+    }
+}

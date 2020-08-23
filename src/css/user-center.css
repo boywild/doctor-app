@@ -1,0 +1,144 @@
+.user-bg {
+  background: #5664f6; }
+
+.user-info {
+  color: #fff;
+  font-size: 0.8125rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
+  padding: 1.25rem 0.9375rem 1.875rem 0.9375rem; }
+  .user-info .base-info .name {
+    font-size: 1.125rem; }
+  .user-info .base-info .sys-id {
+    padding: 0.3125rem 0 2.8125rem 0; }
+  .user-info .base-info .switch {
+    border: 0.0625rem solid #fff;
+    border-radius: 1.25rem;
+    text-align: center;
+    padding: 0.1875rem 0;
+    vertical-align: baseline; }
+    .user-info .base-info .switch a {
+      color: #fff; }
+  .user-info .qr-img {
+    width: 6.875rem;
+    padding: 0.625rem;
+    background: #fff;
+    border-radius: 0.1875rem;
+    color: #333; }
+    .user-info .qr-img img {
+      max-width: 100%;
+      display: block; }
+
+.vip-box {
+  position: relative; }
+  .vip-box .txt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    padding-left: 0.625rem;
+    color: #33312e;
+    font-size: 0.875rem; }
+  .vip-box img {
+    display: block;
+    max-width: 100%; }
+
+.account-view {
+  background: #fff;
+  padding: 0.625rem;
+  height: 4.375rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row; }
+  .account-view .account-item {
+    width: 25%;
+    color: #333;
+    text-align: center; }
+    .account-view .account-item .num {
+      font-size: 1rem;
+      font-weight: bold;
+      padding-bottom: 0.3125rem; }
+    .account-view .account-item .txt {
+      font-size: 0.75rem; }
+
+.user-block {
+  padding: 0.625rem;
+  background: #fff;
+  border-radius: 0.625rem;
+  margin: 0.625rem;
+  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.08); }
+  .user-block .user-b-tit {
+    font-size: 0.875rem;
+    padding-bottom: 0.625rem; }
+  .user-block .user-b-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-flow: wrap; }
+    .user-block .user-b-content .user-b-order {
+      width: 25%;
+      text-align: center;
+      margin-bottom: 0.9375rem; }
+      .user-block .user-b-content .user-b-order .icon {
+        width: 1.875rem;
+        height: 1.875rem;
+        margin: 0 auto;
+        background-size: contain !important; }
+        .user-block .user-b-content .user-b-order .icon.order {
+          background: url(../images/icon-dd.png) center center no-repeat; }
+        .user-block .user-b-content .user-b-order .icon.dfk {
+          background: url(../images/icon-dfk.png) center center no-repeat; }
+        .user-block .user-b-content .user-b-order .icon.wsy {
+          background: url(../images/icon-wsy.png) center center no-repeat; }
+        .user-block .user-b-content .user-b-order .icon.dfh {
+          background: url(../images/icon-dfh.png) center center no-repeat; }
+        .user-block .user-b-content .user-b-order .icon.yy {
+          background: url(../images/icon-yy.png) center center no-repeat; }
+        .user-block .user-b-content .user-b-order .icon.yzbl {
+          background: url(../images/icon-yzbl.png) center center no-repeat; }
+        .user-block .user-b-content .user-b-order .icon.wgjf {
+          background: url(../images/icon-wgjf.png) center center no-repeat; }
+        .user-block .user-b-content .user-b-order .icon.fy {
+          background: url(../images/icon-wgjf.png) center center no-repeat; }
+        .user-block .user-b-content .user-b-order .icon.pjys {
+          background: url(../images/icon-pjys.png) center center no-repeat; }
+        .user-block .user-b-content .user-b-order .icon.jgj {
+          background: url(../images/icon-jgj.png) center center no-repeat; }
+        .user-block .user-b-content .user-b-order .icon.gzys {
+          background: url(../images/icon-gzys.png) center center no-repeat; }
+        .user-block .user-b-content .user-b-order .icon.gzsp {
+          background: url(../images/icon-gzys.png) center center no-repeat; }
+      .user-block .user-b-content .user-b-order .txt {
+        padding-top: 0.3125rem; }
+
+.logout-btn {
+  width: 70%;
+  margin: 0.9375rem auto; }
+
+.invoice {
+  margin: 0 0.625rem; }
+  .invoice > img {
+    max-width: 100%; }
+
+.qr-detail {
+  text-align: center;
+  padding: 0.625rem 0; }
+  .qr-detail .shape {
+    width: 70%;
+    margin: 0 auto; }
+  .qr-detail .qr {
+    width: 7.5rem;
+    height: 7.5rem;
+    margin: 0.625rem auto; }
+  .qr-detail img {
+    max-width: 100%;
+    display: block; }

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+            name="viewport"
+            content="initial-scale=1.0, maximum-scale=1, user-scalable=no, width=device-width, height=device-height,user-scalable=no, viewport-fit=cover"
+        />
+        <meta name="x5-orientation" content="portrait" />
+        <title>档案列表</title>
+        <link rel="stylesheet" href="./css/common.css" />
+        <link rel="stylesheet" href="./css/vant.css" />
+        <link rel="stylesheet" href="./css/relation.css" />
+        <script src="./script/lib/vue.min.js"></script>
+        <script src="./script/lib/vant.min.js"></script>
+        <script src="./script/lib/rem.js"></script>
+    </head>
+    <body>
+        <div class="app-layout" id="relationList">
+            <!-- 顶部导航栏 -->
+            <van-nav-bar title="档案列表" left-arrow @click-left="onClickLeft"></van-nav-bar>
+            <div class="app-content has-footer">
+                <van-notice-bar wrapable :scrollable="false" text="您还可以新增/关联3份档案"></van-notice-bar>
+                <div class="relation-box">
+                    <div class="relation-list">
+                        <div class="relation-item mgb10">
+                            <div class="relation-msg">
+                                <div class="name">
+                                    <span>钟龙飞</span>
+                                </div>
+                                <div class="id">XYX820102839</div>
+                                <a href="./relation-unbind.html" class="manager-block">点击此处进行档案管理<van-icon name="arrow" size="16" /></a>
+                            </div>
+                            <div class="qr-img">
+                                <img src="./uploads/qr.png" alt="" />
+                            </div>
+                        </div>
+                        <div class="relation-item mgb10">
+                            <div class="relation-msg">
+                                <div class="name">
+                                    <span>钟龙飞</span>
+                                </div>
+                                <div class="id">XYX820102839</div>
+                                <a href="./relation-unbind.html" class="manager-block">点击此处进行档案管理<van-icon name="arrow" size="16" /></a>
+                            </div>
+                            <div class="qr-img">
+                                <img src="./uploads/qr.png" alt="" />
+                            </div>
+                        </div>
+                        <div class="relation-item">
+                            <div class="relation-msg">
+                                <div class="name">
+                                    <span>钟龙飞</span>
+                                </div>
+                                <div class="id">XYX820102839</div>
+                                <a href="./relation-unbind.html" class="manager-block">点击此处进行档案管理<van-icon name="arrow" size="16" /></a>
+                            </div>
+                            <div class="qr-img">
+                                <img src="./uploads/qr.png" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relation-btn">
+                        <van-button block type="primary" url="./relation-bind.html">关联档案</van-button>
+                        <van-button block type="info" url="./relation-add.html">新增档案</van-button>
+                    </div>
+                    <div class="relation-tips mgt10">
+                        <div class="title">温馨提示：</div>
+                        <div class="content">
+                            您所关联的档案是由您验证手机号自动关联，如您发现所关联档案信息错误请联系华美牙科
+                            4006-889-189 或至就近华美牙科门店进行处理。
+                        </div>
+                    </div>
+                </div>
+                <!-- 全局底部导航 -->
+                <van-tabbar v-model="active" active-color="#3d4ce2">
+                    <van-tabbar-item icon="wap-home" name="home">就诊服务</van-tabbar-item>
+                    <van-tabbar-item icon="service" name="online">在线问诊</van-tabbar-item>
+                    <van-tabbar-item icon="cart" name="hop">优选商城</van-tabbar-item>
+                    <van-tabbar-item icon="manager" name="usercenter">个人中心</van-tabbar-item>
+                </van-tabbar>
+            </div>
+        </div>
+    </body>
+    <script>
+        new Vue({
+            el: '#relationList',
+            data: {
+                active: 'usercenter',
+            },
+            methods: {
+                onClickLeft() {},
+            },
+        })
+    </script>
+</html>

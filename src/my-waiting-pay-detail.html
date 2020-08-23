@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+            name="viewport"
+            content="initial-scale=1.0, maximum-scale=1, user-scalable=no, width=device-width, height=device-height,user-scalable=no, viewport-fit=cover"
+        />
+        <meta name="x5-orientation" content="portrait" />
+        <title>待缴费用明细</title>
+        <link rel="stylesheet" href="./css/common.css" />
+        <link rel="stylesheet" href="./css/vant.css" />
+        <link rel="stylesheet" href="./css/my-pay.css" />
+        <script src="./script/lib/vue.min.js"></script>
+        <script src="./script/lib/vant.min.js"></script>
+        <script src="./script/lib/rem.js"></script>
+    </head>
+    <body>
+        <div class="app-layout" id="myMedical">
+            <!-- 顶部导航栏 -->
+            <van-nav-bar title="待缴费用明细" left-arrow @click-left="onClickLeft"></van-nav-bar>
+            <div class="app-content gray-bg">
+                <div class="my-pay-detail mg10">
+                    <div class="pay-d-list mgb10">
+                        <div class="tit">费用清单</div>
+                        <div :class="['pay-list-row',showMore?'active':'']">
+                            <div class="pay-list-head">
+                                <div class="pay-list-item">
+                                    <div class="item-cell">项目</div>
+                                    <div class="item-cell">数量</div>
+                                    <div class="item-cell">单价</div>
+                                    <div class="item-cell">折扣</div>
+                                    <div class="item-cell">合计</div>
+                                    <div class="item-cell">免除</div>
+                                    <div class="item-cell">实收</div>
+                                </div>
+                            </div>
+                            <div class="pay-list-body">
+                                <div class="pay-list-item">
+                                    <div class="item-cell">银离子明胶海银离子明胶海银离子明胶海银离子明胶海</div>
+                                    <div class="item-cell">2片</div>
+                                    <div class="item-cell">500</div>
+                                    <div class="item-cell">90%</div>
+                                    <div class="item-cell">1000</div>
+                                    <div class="item-cell">100</div>
+                                    <div class="item-cell">800</div>
+                                </div>
+                                <div class="pay-list-item">
+                                    <div class="item-cell">银离子明胶海</div>
+                                    <div class="item-cell">2片</div>
+                                    <div class="item-cell">500</div>
+                                    <div class="item-cell">90%</div>
+                                    <div class="item-cell">1000</div>
+                                    <div class="item-cell">100</div>
+                                    <div class="item-cell">800</div>
+                                </div>
+                                <div class="pay-list-item">
+                                    <div class="item-cell">银离子明胶海</div>
+                                    <div class="item-cell">2片</div>
+                                    <div class="item-cell">500</div>
+                                    <div class="item-cell">90%</div>
+                                    <div class="item-cell">1000</div>
+                                    <div class="item-cell">100</div>
+                                    <div class="item-cell">800</div>
+                                </div>
+                                <div class="pay-list-item">
+                                    <div class="item-cell">银离子明胶海</div>
+                                    <div class="item-cell">2片</div>
+                                    <div class="item-cell">500</div>
+                                    <div class="item-cell">90%</div>
+                                    <div class="item-cell">1000</div>
+                                    <div class="item-cell">100</div>
+                                    <div class="item-cell">800</div>
+                                </div>
+                                <div class="pay-list-item">
+                                    <div class="item-cell">银离子明胶海</div>
+                                    <div class="item-cell">2片</div>
+                                    <div class="item-cell">500</div>
+                                    <div class="item-cell">90%</div>
+                                    <div class="item-cell">1000</div>
+                                    <div class="item-cell">100</div>
+                                    <div class="item-cell">800</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="show-more" @click="showMore=!showMore">
+                            {{showMore?'收起信息':'展开完整信息'}}<van-icon
+                                :name="showMore?'arrow-up':'arrow-down'"
+                                size="18"
+                            />
+                        </div>
+                    </div>
+                    <div class="pay-num mgb10">
+                        <div class="pay-num-item">
+                            <div class="label">缴费总额：</div>
+                            <div class="value">￥6000</div>
+                        </div>
+                        <div class="pay-num-item">
+                            <div class="label">免除：</div>
+                            <div class="value">￥300</div>
+                        </div>
+                        <div class="pay-num-item">
+                            <div class="label">优惠：</div>
+                            <div class="value">￥300</div>
+                        </div>
+                        <div class="pay-num-item">
+                            <div class="label">支付有理：</div>
+                            <div class="value">￥0.5</div>
+                        </div>
+                        <div class="pay-result">
+                            <span>实付款：</span>
+                            <span class="num">￥5399.05</span>
+                        </div>
+                    </div>
+                    <div class="pay-way">
+                        <van-radio-group v-model="payWay">
+                            <van-radio name="1">微信支付</van-radio>
+                            <van-radio name="2">预交金支付（可用余额：￥3800.00）</van-radio>
+                        </van-radio-group>
+                        <div class="checked-coupon" @click="showCoupon=!showCoupon">
+                            <div class="coupon-label">选择优惠卷</div>
+                            <div class="coupon-content">
+                                <div class="coupon-val">{{coupon.text}}</div>
+                                <van-icon name="arrow" size="18" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="going-pay fixed-bottom-btn">
+                    <van-button block type="info">立即支付</van-button>
+                </div>
+                <!-- 优惠卷选择 -->
+                <div :class="['picker-coupon',showCoupon?'active':'']">
+                    <van-picker
+                        title="优惠卷"
+                        show-toolbar
+                        :columns="columns"
+                        @confirm="onConfirm"
+                        @cancel="onCancel"
+                    ></van-picker>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        new Vue({
+            el: '#myMedical',
+            data: {
+                active: 'usercenter',
+                payWay: '1',
+                showMore: false,
+                showCoupon: false,
+                coupon: {
+                    val: '',
+                    text: '暂未选择',
+                },
+                columns: [
+                    '超爽洁牙 VIP全免（抵扣洁牙项目费用）',
+                    '超爽洁牙 VIP全免（抵扣洁牙项目费用）',
+                    '超爽洁牙 VIP全免（抵扣洁牙项目费用）',
+                ],
+            },
+            methods: {
+                onClickLeft() {},
+                onConfirm(value, index) {
+                    this.showCoupon = false
+                    this.coupon = {
+                        val: index,
+                        text: value,
+                    }
+                    this.$toast(`当前值：${value}, 当前索引：${index}`)
+                },
+                onCancel() {
+                    this.showCoupon = false
+                    this.$toast('取消')
+                },
+            },
+        })
+    </script>
+</html>

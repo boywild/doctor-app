@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="viewport"
+      content="initial-scale=1.0, maximum-scale=1, user-scalable=no, width=device-width, height=device-height,user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="x5-orientation" content="portrait" />
+    <title>义齿加工件</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/vant.css" />
+    <link rel="stylesheet" href="./css/yc.css" />
+    <script src="./script/lib/vue.min.js"></script>
+    <script src="./script/lib/vant.min.js"></script>
+    <script src="./script/lib/rem.js"></script>
+  </head>
+  <body>
+    <div class="app-layout" id="ycDetail">
+      <!-- 顶部导航栏 -->
+      <van-nav-bar
+        title="义齿加工件"
+        left-arrow
+        @click-left="onClickLeft"
+      ></van-nav-bar>
+      <div class="app-content gray-bg has-footer">
+        <div class="yc-detail-box">
+          <div class="yc-base">
+            <div class="base-cell">
+              <div class="bc-item">
+                <span class="label">颜色：</span>
+                <span class="value">2M1</span>
+              </div>
+              <div class="bc-item">
+                <span class="label">加急：</span>
+                <span class="value">正常</span>
+              </div>
+            </div>
+            <div class="base-cell">
+              <div class="bc-item">
+                <span class="label">进件：</span>
+                <span class="value">2020-03-01</span>
+              </div>
+              <div class="bc-item">
+                <span class="label">预出：</span>
+                <span class="value">2020-03-08</span>
+              </div>
+            </div>
+            <div class="base-cell">
+              <div class="bc-item">
+                <span class="label">编号：</span>
+                <span class="value">28738437802</span>
+              </div>
+              <div class="bc-item">
+                <span class="label">盒号：</span>
+                <span class="value">GB012</span>
+              </div>
+            </div>
+          </div>
+          <div class="yc-product">
+            <div class="ycp-head">
+              <div class="ycp-cell">牙位</div>
+              <div class="ycp-cell">产品名称</div>
+              <div class="ycp-cell">数量</div>
+            </div>
+            <div class="ycp-body">
+              <div class="ycp-item">
+                <div class="ycp-cell">
+                  <div class="ycp-yw">
+                    <div class="one">23790</div>
+                    <div class="two">2567</div>
+                    <div class="three">2567</div>
+                    <div class="four">2567</div>
+                  </div>
+                </div>
+                <div class="ycp-cell">e.max易美铸瓷/返工件</div>
+                <div class="ycp-cell">2</div>
+              </div>
+              <div class="ycp-item">
+                <div class="ycp-cell">
+                  <div class="ycp-yw">
+                    <div class="one">23790</div>
+                    <div class="two">2567</div>
+                    <div class="three">2567</div>
+                    <div class="four">2567</div>
+                  </div>
+                </div>
+                <div class="ycp-cell">e.max易美铸瓷/返工件</div>
+                <div class="ycp-cell">2</div>
+              </div>
+              <div class="ycp-item">
+                <div class="ycp-cell">
+                  <div class="ycp-yw">
+                    <div class="one">23790</div>
+                    <div class="two">2567</div>
+                    <div class="three">2567</div>
+                    <div class="four">2567</div>
+                  </div>
+                </div>
+                <div class="ycp-cell">e.max易美铸瓷/返工件</div>
+                <div class="ycp-cell">2</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 流转记录 -->
+        <div class="flow-step">
+          <div class="step-tit">流转记录</div>
+          <van-steps direction="vertical" :active="0" active-color="#3d4ce2">
+            <van-step>
+              <h3>张三 完成 固定OP</h3>
+              <p>2016-07-12 12:40</p>
+            </van-step>
+            <van-step>
+              <h3>张三 完成 固定OP</h3>
+              <p>2020-03-02 17:29</p>
+            </van-step>
+            <van-step>
+              <h3>张三 完成 固定OP</h3>
+              <p>2020-03-02 17:29</p>
+            </van-step>
+          </van-steps>
+        </div>
+
+        <!-- 全局底部导航 -->
+        <van-tabbar v-model="active" active-color="#3d4ce2">
+          <van-tabbar-item icon="wap-home" name="home"
+            >就诊服务</van-tabbar-item
+          >
+          <van-tabbar-item icon="service" name="online"
+            >在线问诊</van-tabbar-item
+          >
+          <van-tabbar-item icon="cart" name="hop">优选商城</van-tabbar-item>
+          <van-tabbar-item icon="manager" name="usercenter"
+            >个人中心</van-tabbar-item
+          >
+        </van-tabbar>
+      </div>
+    </div>
+  </body>
+  <script>
+    new Vue({
+      el: "#ycDetail",
+      data: {
+        active: "home",
+      },
+      methods: {
+        onClickLeft() {},
+      },
+    });
+  </script>
+</html>

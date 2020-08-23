@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="viewport"
+      content="initial-scale=1.0, maximum-scale=1, user-scalable=no, width=device-width, height=device-height,user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="x5-orientation" content="portrait" />
+    <title>我的预约</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/vant.css" />
+    <link rel="stylesheet" href="./css/my-appoint.css" />
+    <script src="./script/lib/vue.min.js"></script>
+    <script src="./script/lib/vant.min.js"></script>
+    <script src="./script/lib/rem.js"></script>
+  </head>
+  <body>
+    <div class="app-layout" id="myAppoint">
+      <!-- 顶部导航栏 -->
+      <van-nav-bar
+        title="我的预约"
+        left-arrow
+        @click-left="onClickLeft"
+      ></van-nav-bar>
+      <div class="app-content gray-bg has-footer">
+        <div class="my-appoint">
+          <div class="appoint-list">
+            <div class="appoint-item">
+              <div class="apponit-info">
+                <div class="a-msg">
+                  <div class="a-msg-cell main">
+                    <div class="label">张三丰</div>
+                    <div class="value">XYX2873433859</div>
+                  </div>
+                  <div class="a-msg-cell">
+                    <div class="label">预约内容：</div>
+                    <div class="value">根管治疗/复诊</div>
+                  </div>
+                  <div class="a-msg-cell">
+                    <div class="label">预约时间：</div>
+                    <div class="value">2020-03-18 14:00-15:00</div>
+                  </div>
+                  <div class="a-msg-cell">
+                    <div class="label">预约门店：</div>
+                    <div class="value">双流华美口腔医院</div>
+                  </div>
+                  <div class="a-msg-cell">
+                    <div class="label">预约医生：</div>
+                    <div class="value">钟龙飞</div>
+                  </div>
+                </div>
+                <div class="a-status">
+                  <van-tag type="danger">未确认</van-tag>
+                </div>
+              </div>
+              <div class="apponit-btn">
+                <van-button
+                  size="small"
+                  type="primary"
+                  url="./market-detail.html"
+                  >去门店</van-button
+                >
+                <van-button size="small" type="info" url="./doctor-detail.html"
+                  >找医生</van-button
+                >
+              </div>
+            </div>
+            <div class="appoint-item">
+              <div class="apponit-info">
+                <div class="a-msg">
+                  <div class="a-msg-cell main">
+                    <div class="label">张三丰</div>
+                    <div class="value">XYX2873433859</div>
+                  </div>
+                  <div class="a-msg-cell">
+                    <div class="label">预约内容：</div>
+                    <div class="value">根管治疗/复诊</div>
+                  </div>
+                  <div class="a-msg-cell">
+                    <div class="label">预约时间：</div>
+                    <div class="value">2020-03-18 14:00-15:00</div>
+                  </div>
+                  <div class="a-msg-cell">
+                    <div class="label">预约门店：</div>
+                    <div class="value">双流华美口腔医院</div>
+                  </div>
+                  <div class="a-msg-cell">
+                    <div class="label">预约医生：</div>
+                    <div class="value">钟龙飞</div>
+                  </div>
+                </div>
+                <div class="a-status">
+                  <van-tag type="success">已确认</van-tag>
+                </div>
+              </div>
+              <div class="apponit-btn">
+                <van-button
+                  size="small"
+                  type="primary"
+                  url="./market-detail.html"
+                  >去门店</van-button
+                >
+                <van-button size="small" type="info" url="./doctor-detail.html"
+                  >找医生</van-button
+                >
+              </div>
+            </div>
+          </div>
+          <div class="want-apponit">
+            <van-button block round type="warning" url="./doctor-list.html"
+              >我要预约</van-button
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    new Vue({
+      el: "#myAppoint",
+      data: {
+        active: "usercenter",
+        tab: 0,
+        showMarketPicker: false,
+        list: [],
+        loading: false,
+        finished: false,
+      },
+      methods: {
+        onClickLeft() {},
+      },
+    });
+  </script>
+</html>

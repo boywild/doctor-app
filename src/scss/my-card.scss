@@ -1,0 +1,105 @@
+@import "var", "mixins";
+.my-card{
+  .van-tabs__line{
+    background-color: $theme-color;
+  }
+}
+.card-row {
+  margin: 10px;
+  .van-cell{
+    background: transparent;
+    padding: 0;
+    &::after{
+      display: none;
+    }
+  }
+  .card-col {
+    @include flex();
+    flex-wrap: wrap;
+    border-radius: 5px;
+    background: #fff;
+    margin-bottom: 10px;
+    .card-icon {
+      @include flex();
+      width: 70px;
+      height: 70px;
+      //   background: url(../images/icon-coupon.png) center center;
+      //   background-size: 100% auto;
+      border-radius: 50%;
+      background: #6adfe9;
+      color: #fff;
+      margin: 0 10px;
+    }
+    .content {
+      flex: 1;
+      .tit {
+        font-size: 16px;
+        padding-bottom: 5px;
+      }
+      .desc {
+        color: #666666;
+        line-height: normal;
+        font-size: 12px;
+      }
+    }
+    .action-btn {
+      @include flex();
+      width: 50px;
+      height: 87px;
+      padding: 0 5px 0 10px;
+      background: url(../images/icon-coupon-btn.png) center center;
+      background-size: 100% auto;
+      color: #fff;
+      font-size: 15px;
+      margin-left: 5px;
+      &.end{
+        background: url(../images/icon-coupon-end.png) center center;
+        background-size: 100% auto;
+      }
+    }
+  }
+}
+.my-card-buy{
+  background: $white-bg;
+  border-radius: 5px;
+  width: 80%;
+  margin: 40px auto 10px auto;
+  padding: 10px;
+  text-align: center;
+  img{
+    max-width: 100%;
+  }
+  .card-detail-head{
+    padding: 0 0 15px 0;
+    margin: 0 0 15px 0;
+    border-bottom: 1px dashed $text-color;
+    .card-name{
+      font-weight: bold;
+      font-size: 17px;
+    }
+    .card-desc{
+      color: #f00;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      padding: 5px 0 5px 0;
+    }
+    .card-time-range{
+      color: #919aa2;
+    }
+  }
+  .qr-bxo{
+    .qr-code{
+      padding: 10px 0;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+}
+.use-desc{
+  color: #fff;
+  width: 80%;
+  margin: 0 auto 10px auto;
+  line-height: normal;
+  line-height: 24px;
+}

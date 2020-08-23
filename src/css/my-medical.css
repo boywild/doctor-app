@@ -1,0 +1,45 @@
+.medical-box {
+  margin: 0.625rem; }
+
+.comment-for-doctor {
+  padding: 1.25rem 0.625rem 0 0.625rem; }
+  .comment-for-doctor .comment-title {
+    padding-bottom: 0.625rem;
+    font-size: 0.875rem; }
+  .comment-for-doctor .van-radio-group {
+    margin-bottom: 0.625rem; }
+  .comment-for-doctor .van-cell {
+    padding: 0;
+    border: 0.0625rem solid #eee; }
+  .comment-for-doctor .van-button {
+    margin-top: 0.625rem; }
+
+.medical-detail {
+  padding: 1.25rem; }
+
+.m-d-page {
+  font-size: 0.8125rem; }
+  .m-d-page .m-d-page-title {
+    text-align: center;
+    font-weight: bold; }
+  .m-d-page .m-d-page-name {
+    text-align: center; }
+  .m-d-page .m-page-article .m-page-cell {
+    padding-bottom: 0.3125rem; }
+    .m-d-page .m-page-article .m-page-cell.inline {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: row;
+      padding-bottom: 0.125rem; }
+      .m-d-page .m-page-article .m-page-cell.inline .label {
+        padding-bottom: 0; }
+    .m-d-page .m-page-article .m-page-cell .label {
+      padding-bottom: 0.3125rem;
+      font-weight: bold; }
+  .m-d-page .doctor-talk {
+    font-weight: bold;
+    padding: 0.625rem 0; }
+  .m-d-page .m-page-tips {
+    text-align: center;
+    color: #f00; }

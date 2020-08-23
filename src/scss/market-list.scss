@@ -1,0 +1,86 @@
+@import "var", "mixins";
+.market-swipe {
+  margin-bottom: 10px;
+}
+.market-list {
+  background: #fff;
+  &.card {
+    border-radius: 10px;
+    margin: 10px;
+    overflow: hidden;
+  }
+  .van-cell {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+.market-item {
+  @include flex(flex-start);
+  background: #fff;
+  font-size: 12px;
+  &.detail {
+    padding: 5px 0;
+    .market-info .tit {
+      height: 30px;
+    }
+  }
+  .store-thumb {
+    width: 80px;
+    height: 80px;
+    flex: 0 0 80px;
+    background: #eee;
+    img {
+      max-width: 100%;
+    }
+  }
+  .market-info {
+    flex: 1 1 auto;
+    padding-left: 15px;
+    overflow: hidden;
+    .tit {
+      font-size: 15px;
+      font-weight: bold;
+      color: $text-color;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      line-height: normal;
+    }
+    .phone {
+      color: #949494;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      line-height: normal;
+    }
+    .address {
+      color: #949494;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      line-height: normal;
+    }
+  }
+  .guide {
+    width: 60px;
+    flex: 0 0 60px;
+    text-align: center;
+    .km {
+      color: $theme-color;
+    }
+    .destination {
+      color: #949494;
+      .icon {
+        color: #fff;
+        width: 30px;
+        height: 30px;
+        background: $theme-color;
+        border-radius: 50%;
+        overflow: hidden;
+        @include flex();
+        margin: 0 auto;
+      }
+    }
+  }
+}

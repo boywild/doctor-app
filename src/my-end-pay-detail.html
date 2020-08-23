@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+
+        <meta name="x5-orientation" content="portrait" />
+        <title>已缴费用明细</title>
+        <link rel="stylesheet" href="./css/common.css" />
+        <link rel="stylesheet" href="./css/vant.css" />
+        <link rel="stylesheet" href="./css/my-pay-detail.css" />
+        <script src="./script/lib/vue.min.js"></script>
+        <script src="./script/lib/vant.min.js"></script>
+    </head>
+    <body>
+        <div class="app-layout" id="myMedical">
+            <!-- 顶部导航栏 -->
+            <van-nav-bar title="已缴费用明细" left-arrow @click-left="onClickLeft"></van-nav-bar>
+            <div class="app-content">
+                <div class="wrapper-box">
+                    <div class="payment-paper">
+                        <div class="paper-title">缴费明细单</div>
+                        <div class="paper-head">
+                            <div class="department">门诊部门</div>
+                            <div class="payment-user">
+                                <div class="p-user-cell">
+                                    <div class="label">姓名：</div>
+                                    <div class="value">测试</div>
+                                </div>
+                                <div class="p-user-cell">
+                                    <div class="label">编号：</div>
+                                    <div class="value">XF34090349</div>
+                                </div>
+                                <div class="p-user-cell">
+                                    <div class="label">性别：</div>
+                                    <div class="value">男</div>
+                                </div>
+                                <div class="p-user-cell">
+                                    <div class="label">年龄：</div>
+                                    <div class="value">1岁</div>
+                                </div>
+                                <div class="p-user-cell">
+                                    <div class="label">就诊时间：</div>
+                                    <div class="value">2020-10-03 11:11:11</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paper-content">
+                            <table class="paper-detail">
+                                <thead>
+                                    <tr>
+                                        <th>项目</th>
+                                        <th>数量</th>
+                                        <th>单位</th>
+                                        <th>原价</th>
+                                        <th>应收</th>
+                                        <th>实收</th>
+                                        <th>欠费</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>哈哈哈哈套餐</td>
+                                        <td>1</td>
+                                        <td>每颗</td>
+                                        <td>198000</td>
+                                        <td>198989898</td>
+                                        <td>23898293</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>哈哈哈哈套餐</td>
+                                        <td>1</td>
+                                        <td>每颗</td>
+                                        <td>198000</td>
+                                        <td>198989898</td>
+                                        <td>23898293</td>
+                                        <td>0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="paper-content-line"><span>以下是空白</span></div>
+                        </div>
+                        <div class="paper-foot">
+                            <div class="payment-num">
+                                <div class="pay-item">
+                                    <div class="label">本项欠费：</div>
+                                    <div class="value">100.00</div>
+                                </div>
+                                <div class="pay-item">
+                                    <div class="label">本页缴费：</div>
+                                    <div class="value">100.00</div>
+                                </div>
+                                <div class="pay-item">
+                                    <div class="label">欠费合计：</div>
+                                    <div class="value">100.00</div>
+                                </div>
+                                <div class="pay-item">
+                                    <div class="label">缴费合计：</div>
+                                    <div class="value">100.00</div>
+                                </div>
+                            </div>
+                            <div class="paper-for-doctor">
+                                <div class="item">打印时间：2020-01-18 12:46:46</div>
+                                <div class="item">打印人：测试医生</div>
+                                <div class="item">医生：演示医生</div>
+                            </div>
+                            <div class="paper-tips">
+                                <h1>温馨提示：</h1>
+                                <div class="paper-tips-content">
+                                    尊敬的客户，为了向您提供优质的服务，请确认医生已经向您介绍了本次治疗的项目及相关费用，并征得你的同意。
+                                </div>
+                            </div>
+                            <div class="coustom-sign"><span>客户签名：</span><span class="line"></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        new Vue({
+            el: '#myMedical',
+            data: {
+                active: 'usercenter',
+                currentTab: 1,
+            },
+            methods: {
+                onClickLeft() {},
+            },
+        })
+    </script>
+</html>

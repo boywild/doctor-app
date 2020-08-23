@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="viewport"
+      content="initial-scale=1.0, maximum-scale=1, user-scalable=no, width=device-width, height=device-height,user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="x5-orientation" content="portrait" />
+    <title>我的卡卷</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/vant.css" />
+    <link rel="stylesheet" href="./css/my-card.css" />
+    <script src="./script/lib/vue.min.js"></script>
+    <script src="./script/lib/vant.min.js"></script>
+    <script src="./script/lib/rem.js"></script>
+  </head>
+  <body>
+    <div class="app-layout" id="myCard">
+      <!-- 顶部导航栏 -->
+      <van-nav-bar
+        title="我的卡卷"
+        left-arrow
+        @click-left="onClickLeft"
+      ></van-nav-bar>
+      <div class="app-content gray-bg has-footer">
+        <div class="my-card">
+          <van-tabs v-model="tab">
+            <van-tab title="未使用">
+              <div class="card-row">
+                <van-list
+                v-model="loading"
+                :finished="finished"
+                finished-text="没有更多了"
+                @load="onLoad"
+              >
+                <van-cell v-for="item in list" :key="item">
+                  <a href="./my-card-buy.html" class="card-col">
+                    <div class="card-icon"><van-icon name="coupon" size="44" /></div>
+                    <div class="content">
+                      <div class="tit">微医优惠券</div>
+                      <div class="desc">
+                        领取优惠券进入粉丝福利购可享受较低折扣,上有券啦
+                      </div>
+                    </div>
+                    <div class="action-btn">立即使用</div>
+                  </a>
+                  </van-cell>
+                </van-list>
+              </div>
+            </van-tab>
+            <van-tab title="已经使用">
+              <div class="card-row">
+                <van-list
+                v-model="loading"
+                :finished="finished"
+                finished-text="没有更多了"
+                @load="onLoad"
+              >
+                <van-cell v-for="item in list" :key="item">
+                  <div class="card-col">
+                    <div class="card-icon"><van-icon name="coupon" size="44" /></div>
+                    <div class="content">
+                      <div class="tit">微医优惠券</div>
+                      <div class="desc">
+                        领取优惠券进入粉丝福利购可享受较低折扣,上有券啦
+                      </div>
+                    </div>
+                    <div class="action-btn end">已经使用</div>
+                  </div>
+                  </van-cell>
+                </van-list>
+              </div>
+            </van-tab>
+            <van-tab title="已过期">已过期</van-tab>
+          </van-tabs>
+        </div>
+        <!-- 全局底部导航 -->
+        <van-tabbar v-model="active" active-color="#3d4ce2">
+          <van-tabbar-item icon="wap-home" name="home"
+            >就诊服务</van-tabbar-item
+          >
+          <van-tabbar-item icon="service" name="online"
+            >在线问诊</van-tabbar-item
+          >
+          <van-tabbar-item icon="cart" name="hop">优选商城</van-tabbar-item>
+          <van-tabbar-item icon="manager" name="usercenter"
+            >个人中心</van-tabbar-item
+          >
+        </van-tabbar>
+      </div>
+    </div>
+  </body>
+  <script>
+    new Vue({
+      el: "#myCard",
+      data: {
+        active: "usercenter",
+        tab: 0,
+        showMarketPicker: false,
+        list: [],
+        loading: false,
+        finished: false,
+      },
+      methods: {
+        onClickLeft() {},
+        onLoad() {
+          // 模拟异步加载数据
+          setTimeout(() => {
+            for (let i = 0; i < 10; i++) {
+              this.list.push(this.list.length + 1);
+            }
+            // 加载状态结束
+            this.loading = false;
+            // 数据全部加载完成
+            if (this.list.length >= 40) {
+              this.finished = true;
+            }
+          }, 1000);
+        },
+      },
+    });
+  </script>
+</html>

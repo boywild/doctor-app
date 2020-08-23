@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="viewport"
+      content="initial-scale=1.0, maximum-scale=1, user-scalable=no, width=device-width, height=device-height,user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="x5-orientation" content="portrait" />
+    <title>卡券查询</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/vant.css" />
+    <link rel="stylesheet" href="./css/coupon.css" />
+    <script src="./script/lib/vue.min.js"></script>
+    <script src="./script/lib/vant.min.js"></script>
+    <script src="./script/lib/rem.js"></script>
+  </head>
+  <body>
+    <div class="app-layout" id="marketDetail">
+      <!-- 顶部导航栏 -->
+      <van-nav-bar
+        title="卡券查询"
+        left-arrow
+        @click-left="onClickLeft"
+      ></van-nav-bar>
+      <div class="app-content gray-bg has-footer">
+        <van-form class="card-form" @submit="onSubmit">
+          <van-field
+            readonly
+            clickable
+            v-model="cardType"
+            right-icon="arrow-down"
+            @click="show = true"
+          ></van-field>
+          <van-field v-model="cardNo" placeholder="请输入卡券编号"></van-field>
+          <van-button block type="info" url="/coupon-detail.html" native-type="submit">
+            查询
+          </van-button>
+        </van-form>
+        <van-action-sheet
+          v-model="show"
+          :actions="actions"
+          @select="onSelect"
+        ></van-action-sheet>
+        <!-- 全局底部导航 -->
+        <van-tabbar v-model="active" active-color="#3d4ce2">
+          <van-tabbar-item icon="wap-home" name="home"
+            >就诊服务</van-tabbar-item
+          >
+          <van-tabbar-item icon="service" name="online"
+            >在线问诊</van-tabbar-item
+          >
+          <van-tabbar-item icon="cart" name="hop">优选商城</van-tabbar-item>
+          <van-tabbar-item icon="manager" name="usercenter"
+            >个人中心</van-tabbar-item
+          >
+        </van-tabbar>
+      </div>
+    </div>
+  </body>
+  <script>
+    new Vue({
+      el: "#marketDetail",
+      data: {
+        active: "home",
+        cardType: "卡卷编号",
+        cardNo: "",
+        show: false,
+        actions: [
+          { name: "卡卷编号", code: 1 },
+          { name: "扫描查询", code: 2 },
+        ],
+      },
+      methods: {
+        onClickLeft() {},
+        onSubmit(values) {
+          console.log("submit", values);
+        },
+        onSelect(item) {
+          this.show = false;
+          this.cardType = item.name;
+        },
+      },
+    });
+  </script>
+</html>

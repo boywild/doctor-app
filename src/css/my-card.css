@@ -1,0 +1,91 @@
+.my-card .van-tabs__line {
+  background-color: #3d4ce2; }
+
+.card-row {
+  margin: 0.625rem; }
+  .card-row .van-cell {
+    background: transparent;
+    padding: 0; }
+    .card-row .van-cell::after {
+      display: none; }
+  .card-row .card-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-radius: 0.3125rem;
+    background: #fff;
+    margin-bottom: 0.625rem; }
+    .card-row .card-col .card-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      width: 4.375rem;
+      height: 4.375rem;
+      border-radius: 50%;
+      background: #6adfe9;
+      color: #fff;
+      margin: 0 0.625rem; }
+    .card-row .card-col .content {
+      flex: 1; }
+      .card-row .card-col .content .tit {
+        font-size: 1rem;
+        padding-bottom: 0.3125rem; }
+      .card-row .card-col .content .desc {
+        color: #666666;
+        line-height: normal;
+        font-size: 0.75rem; }
+    .card-row .card-col .action-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      width: 3.125rem;
+      height: 5.4375rem;
+      padding: 0 0.3125rem 0 0.625rem;
+      background: url(../images/icon-coupon-btn.png) center center;
+      background-size: 100% auto;
+      color: #fff;
+      font-size: 0.9375rem;
+      margin-left: 0.3125rem; }
+      .card-row .card-col .action-btn.end {
+        background: url(../images/icon-coupon-end.png) center center;
+        background-size: 100% auto; }
+
+.my-card-buy {
+  background: #fff;
+  border-radius: 0.3125rem;
+  width: 80%;
+  margin: 2.5rem auto 0.625rem auto;
+  padding: 0.625rem;
+  text-align: center; }
+  .my-card-buy img {
+    max-width: 100%; }
+  .my-card-buy .card-detail-head {
+    padding: 0 0 0.9375rem 0;
+    margin: 0 0 0.9375rem 0;
+    border-bottom: 0.0625rem dashed #333; }
+    .my-card-buy .card-detail-head .card-name {
+      font-weight: bold;
+      font-size: 1.0625rem; }
+    .my-card-buy .card-detail-head .card-desc {
+      color: #f00;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      padding: 0.3125rem 0 0.3125rem 0; }
+    .my-card-buy .card-detail-head .card-time-range {
+      color: #919aa2; }
+  .my-card-buy .qr-bxo .qr-code {
+    padding: 0.625rem 0;
+    font-size: 1rem;
+    font-weight: bold; }
+
+.use-desc {
+  color: #fff;
+  width: 80%;
+  margin: 0 auto 0.625rem auto;
+  line-height: normal;
+  line-height: 1.5rem; }

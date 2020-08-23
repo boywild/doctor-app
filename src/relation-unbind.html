@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+            name="viewport"
+            content="initial-scale=1.0, maximum-scale=1, user-scalable=no, width=device-width, height=device-height,user-scalable=no, viewport-fit=cover"
+        />
+        <meta name="x5-orientation" content="portrait" />
+        <title>解绑档案</title>
+        <link rel="stylesheet" href="./css/common.css" />
+        <link rel="stylesheet" href="./css/vant.css" />
+        <link rel="stylesheet" href="./css/relation.css" />
+        <script src="./script/lib/vue.min.js"></script>
+        <script src="./script/lib/vant.min.js"></script>
+        <script src="./script/lib/rem.js"></script>
+    </head>
+    <body>
+        <div class="app-layout" id="relationUnBind">
+            <!-- 顶部导航栏 -->
+            <van-nav-bar title="解绑档案" left-arrow @click-left="onClickLeft"></van-nav-bar>
+            <div class="app-content gray-bg has-footer">
+                <van-form input-align="right">
+                    <van-field v-model="name" name="name" label="姓名" readonly placeholder="暂无"></van-field>
+                    <van-field v-model="id" name="id" label="编号" readonly placeholder="暂无"></van-field>
+                    <van-field v-model="phone" name="phone" label="手机" readonly placeholder="暂无"></van-field>
+                    <van-field v-model="idCard" name="idCard" label="身份证" readonly placeholder="暂无"> </van-field>
+                    <van-field v-model="time" name="time" label="关联时间" readonly placeholder="暂无"> </van-field>
+                    <div style="margin: 16px;">
+                        <van-button block type="danger">
+                            解除关联
+                        </van-button>
+                    </div>
+                </van-form>
+                <!-- 全局底部导航 -->
+                <van-tabbar v-model="active" active-color="#3d4ce2">
+                    <van-tabbar-item icon="wap-home" name="home">就诊服务</van-tabbar-item>
+                    <van-tabbar-item icon="service" name="online">在线问诊</van-tabbar-item>
+                    <van-tabbar-item icon="cart" name="hop">优选商城</van-tabbar-item>
+                    <van-tabbar-item icon="manager" name="usercenter">个人中心</van-tabbar-item>
+                </van-tabbar>
+            </div>
+        </div>
+    </body>
+    <script>
+        new Vue({
+            el: '#relationUnBind',
+            data: {
+                active: 'usercenter',
+                name: '钟龙飞',
+                id: 'XYX08398390',
+                phone: '18980063676',
+                idCard: '5100012200000000000',
+                time: '2020-03-05  18:24:00',
+            },
+            methods: {
+                onClickLeft() {},
+            },
+        })
+    </script>
+</html>

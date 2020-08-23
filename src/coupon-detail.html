@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="viewport"
+      content="initial-scale=1.0, maximum-scale=1, user-scalable=no, width=device-width, height=device-height,user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="x5-orientation" content="portrait" />
+    <title>卡券详情</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/vant.css" />
+    <link rel="stylesheet" href="./css/coupon.css" />
+    <link rel="stylesheet" href="./css/market-list.css" />
+    <script src="./script/lib/vue.min.js"></script>
+    <script src="./script/lib/vant.min.js"></script>
+    <script src="./script/lib/rem.js"></script>
+  </head>
+  <body>
+    <div class="app-layout" id="marketDetail">
+      <!-- 顶部导航栏 -->
+      <van-nav-bar
+        title="卡券详情"
+        left-arrow
+        @click-left="onClickLeft"
+      ></van-nav-bar>
+
+      <div class="app-content gray-bg has-footer">
+        <!-- 卡卷详情 -->
+        <div class="coupon-card">
+          <div class="card-base">
+            <div class="title">种植有术风行卡</div>
+            <div class="desc">这里是卡券介绍区，优惠种植活动专享卡券..</div>
+          </div>
+          <div class="card-detail">
+            <div class="card-cell">
+              <div class="label">渠道：</div>
+              <div class="val">沃尔玛</div>
+            </div>
+            <div class="card-cell">
+              <div class="label">效期：</div>
+              <div class="val">2020.12.12~2020.12.30</div>
+            </div>
+            <div class="card-cell">
+              <div class="label">抵用：</div>
+              <div class="val">￥500.00元</div>
+            </div>
+          </div>
+          <ul class="card-t-use">
+            <li>
+              <div class="txt">适用门店：可适用25家门店</div>
+              <van-icon name="arrow" />
+            </li>
+            <li>
+              <div class="txt">适用项目：可适用12个项目</div>
+              <van-icon name="arrow" />
+            </li>
+          </ul>
+        </div>
+        <!-- 门店列表 -->
+        <div class="market-list card">
+          <van-cell>
+            <a href="./market-detail.html" class="market-item">
+              <div class="market-info">
+                <div class="tit">双流华美口腔医院超长名字的医院测试aaa</div>
+                <div class="phone">电话：028-72372733477</div>
+                <div class="address">
+                  地址：双流敲他3号双流敲他3号双流敲他3号
+                </div>
+              </div>
+              <div class="guide">
+                <div class="km">129km</div>
+                <div class="destination">
+                  <div class="icon"><van-icon name="share" /></div>
+                  <span>到这去</span>
+                </div>
+              </div>
+            </a>
+          </van-cell>
+          <van-cell>
+            <a href="./market-detail.html" class="market-item">
+              <div class="market-info">
+                <div class="tit">双流华美口腔医院超长名字的医院测试aaa</div>
+                <div class="phone">电话：028-72372733477</div>
+                <div class="address">
+                  地址：双流敲他3号双流敲他3号双流敲他3号
+                </div>
+              </div>
+              <div class="guide">
+                <div class="km">129km</div>
+                <div class="destination">
+                  <div class="icon"><van-icon name="share" /></div>
+                  <span>到这去</span>
+                </div>
+              </div>
+            </a>
+          </van-cell>
+        </div>
+        <!-- 项目列表 -->
+        <div class="suitable">
+          <table>
+            <thead>
+              <tr>
+                <th width="30%">名称</th>
+                <th width="20%">剩余次数</th>
+                <th width="25%">抵扣金额</th>
+                <th width="25%">最低消费</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="name">超爽洁牙套餐</div></td>
+                <td>2</td>
+                <td>￥999200.00</td>
+                <td>￥500.00</td>
+              </tr>
+              <tr>
+                <td><div class="name">超爽洁牙套餐</div></td>
+                <td>2</td>
+                <td>￥200.00</td>
+                <td>￥500.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- 领券按钮 -->
+        <div class="receice-coupon">
+          <van-button round block type="info">
+            领取卡卷
+          </van-button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    new Vue({
+      el: "#marketDetail",
+      data: {
+        active: "home",
+      },
+      methods: {
+        onClickLeft() {},
+      },
+    });
+  </script>
+</html>

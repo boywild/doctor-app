@@ -1,0 +1,78 @@
+@import "var", "mixins";
+.card-form {
+  margin: 30px 20px;
+  .van-cell {
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+}
+.receice-coupon {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 20px;
+  height: 50px;
+  @include flex();
+  background: #fff;
+}
+.coupon-card {
+  font-size: 13px;
+  margin: 10px;
+  border-radius: 10px;
+  background: #fff;
+  padding: 10px;
+  .card-base {
+    padding-left: 15px;
+    .title {
+      font-size: $font-size-large;
+      color: $text-color;
+      font-weight: bold;
+    }
+    .desc {
+      color: $text-light-color;
+    }
+  }
+  .card-detail {
+    padding: 8px 0 8px 15px;
+    .card-cell {
+      @include flex(flex-start);
+      padding-bottom: 3px;
+      .label {
+      }
+      .val {
+        color: $text-light-color;
+      }
+    }
+  }
+  .card-t-use {
+    li {
+      @include flex(space-between);
+      height: 30px;
+      padding-left: 15px;
+      &:first-child {
+        border-bottom: 1px solid #ebedf0;
+      }
+    }
+  }
+}
+.suitable {
+  background: #fff;
+  border-radius: 10px;
+  margin: 10px;
+  font-size: 12px;
+  width: calc(100% - 20px);
+  text-align: center;
+  table-layout: fixed;
+  min-height: 200px;
+  tbody td,
+  thead th {
+    height: 30px;
+    vertical-align: middle;
+    .name{
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+  }
+}
