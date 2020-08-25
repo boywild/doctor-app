@@ -130,7 +130,7 @@
                     </div>
                 </div>
                 <div class="going-pay fixed-bottom-btn">
-                    <van-button block type="info">立即支付</van-button>
+                    <van-button block type="info" @click="payModel=!payModel">立即支付</van-button>
                 </div>
                 <!-- 优惠卷选择 -->
                 <div :class="['picker-coupon',showCoupon?'active':'']">
@@ -142,6 +142,39 @@
                         @cancel="onCancel"
                     ></van-picker>
                 </div>
+                <!-- 支付弹窗 -->
+                <van-popup class="pay-confirm" v-model="payModel" position="bottom" closeable :style="{ height: '60%' }">
+                    <van-form>
+                        <van-field>
+                            <template #input>
+                                <van-radio-group v-model="paytype" direction="horizontal">
+                                    <van-radio name="1">本人缴费</van-radio>
+                                    <van-radio name="2">他人缴费</van-radio>
+                                </van-radio-group>
+                            </template>
+                        </van-field>
+                        <van-field
+                            v-model="phone"
+                            :readonly="paytype==='1'"
+                            type="tel"
+                            name="phone"
+                            label="用户名"
+                            placeholder="用户名"
+                        ></van-field>
+                        <van-field v-model="sms" name="sms" label="验证码" placeholder="验证码">
+                            <template #button>
+                                <van-button size="small" :disabled="!canClick" type="primary" @click="countDown"
+                                    >{{content}}</van-button
+                                >
+                            </template>
+                        </van-field>
+                        <div style="margin: 16px;">
+                            <van-button round block type="info" :disabled="payLoading" :loading="payLoading" @click="submit">
+                                确认支付
+                            </van-button>
+                        </div>
+                    </van-form>
+                </van-popup>
             </div>
         </div>
     </body>
@@ -162,6 +195,27 @@
                     '超爽洁牙 VIP全免（抵扣洁牙项目费用）',
                     '超爽洁牙 VIP全免（抵扣洁牙项目费用）',
                 ],
+                payModel: false,
+                currentUserPhone: '18827032021',
+                phone: '',
+                sms: '',
+                paytype: '1',
+                content: '发送验证码',
+                totalTime: 120,
+                canClick: true,
+                payLoading: false,
+            },
+            created() {
+                this.phone = this.currentUserPhone
+            },
+            watch: {
+                paytype(val) {
+                    if (val !== '1') {
+                        this.phone = ''
+                    } else {
+                        this.phone = this.currentUserPhone
+                    }
+                },
             },
             methods: {
                 onClickLeft() {},
@@ -176,6 +230,29 @@
                 onCancel() {
                     this.showCoupon = false
                     this.$toast('取消')
+                },
+                countDown() {
+                    if (!this.canClick) return
+                    this.canClick = false
+                    this.content = this.totalTime + 's'
+                    let clock = setInterval(() => {
+                        this.totalTime--
+                        this.content = this.totalTime + 's'
+                        if (this.totalTime < 0) {
+                            clearInterval(clock)
+                            this.content = '发送验证码'
+                            this.totalTime = 10
+                            this.canClick = true //这里重新开启
+                        }
+                    }, 1000)
+                },
+                submit() {
+                    this.payLoading = true
+                    setTimeout(() => {
+                        this.payModel = false
+                        this.payLoading = false
+                        this.$toast('支付成功')
+                    }, 2000)
                 },
             },
         })

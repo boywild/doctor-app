@@ -1,219 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta
-      name="viewport"
-      content="initial-scale=1.0, maximum-scale=1, user-scalable=no, width=device-width, height=device-height,user-scalable=no, viewport-fit=cover"
-    />
-    <meta name="x5-orientation" content="portrait" />
-    <title>我的待缴费用</title>
-    <link rel="stylesheet" href="./css/common.css" />
-    <link rel="stylesheet" href="./css/vant.css" />
-    <link rel="stylesheet" href="./css/my-pay.css" />
-    <script src="./script/lib/vue.min.js"></script>
-    <script src="./script/lib/vant.min.js"></script>
-    <script src="./script/lib/rem.js"></script>
-  </head>
-  <body>
-    <div class="app-layout" id="myMedical">
-      <!-- 顶部导航栏 -->
-      <van-nav-bar
-        title="我的待缴费用"
-        left-arrow
-        @click-left="onClickLeft"
-      ></van-nav-bar>
-      <div class="app-content gray-bg has-footer">
-        <div class="my-pay-box mg10">
-          <van-tabs type="card" v-model="currentTab">
-            <van-tab title="待缴费">
-              <div class="pay-list">
-                <div class="common-card mgb20 mgt10">
-                  <div class="c-card-head">
-                    <div class="head-msg">
-                      <div class="user">张三 XYX783493894</div>
-                      <div class="time">2020-03-23 18:00:23</div>
-                    </div>
-                    <div class="head-right-now">
-                      <span class="right-now-txt">立即缴费</span>
-                      <van-icon name="arrow" size="18" />
-                    </div>
-                  </div>
-                  <div class="c-card-body">
-                    <div class="c-card-content">
-                      <div class="c-card-cell">
-                        <div class="label">门诊：</div>
-                        <div class="val">双流华美口腔医院</div>
-                      </div>
-                      <div class="c-card-cell">
-                        <div class="label">医生：</div>
-                        <div class="val">张三丰</div>
-                      </div>
-                    </div>
-                    <div class="pay-money">1539</div>
-                  </div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+            name="viewport"
+            content="initial-scale=1.0, maximum-scale=1, user-scalable=no, width=device-width, height=device-height,user-scalable=no, viewport-fit=cover"
+        />
+        <meta name="x5-orientation" content="portrait" />
+        <title>我的待缴费用</title>
+        <link rel="stylesheet" href="./css/common.css" />
+        <link rel="stylesheet" href="./css/vant.css" />
+        <link rel="stylesheet" href="./css/my-pay.css" />
+        <script src="./script/lib/vue.min.js"></script>
+        <script src="./script/lib/vant.min.js"></script>
+        <script src="./script/lib/rem.js"></script>
+    </head>
+    <body>
+        <div class="app-layout" id="myMedical">
+            <!-- 顶部导航栏 -->
+            <van-nav-bar title="我的待缴费用" left-arrow @click-left="onClickLeft"></van-nav-bar>
+            <div class="app-content gray-bg has-footer">
+                <div class="my-pay-box mg10">
+                    <van-tabs type="card" v-model="currentTab">
+                        <van-tab title="待缴费">
+                            <div class="pay-list">
+                                <div class="common-card mgb20 mgt10">
+                                    <div class="c-card-head">
+                                        <div class="head-msg">
+                                            <div class="user">张三 XYX783493894</div>
+                                            <div class="time">2020-03-23 18:00:23</div>
+                                        </div>
+                                        <div class="head-right-now">
+                                            <span class="right-now-txt">立即缴费</span>
+                                            <van-icon name="arrow" size="18" />
+                                        </div>
+                                    </div>
+                                    <div class="c-card-body">
+                                        <div class="c-card-content">
+                                            <div class="c-card-cell">
+                                                <div class="label">门诊：</div>
+                                                <div class="val">双流华美口腔医院</div>
+                                            </div>
+                                            <div class="c-card-cell">
+                                                <div class="label">医生：</div>
+                                                <div class="val">张三丰</div>
+                                            </div>
+                                        </div>
+                                        <div class="pay-money">1539</div>
+                                    </div>
+                                </div>
+                                <div class="common-card mgb20 mgt10">
+                                    <div class="c-card-head">
+                                        <div class="head-msg">
+                                            <div class="user">张三 XYX783493894</div>
+                                            <div class="time">2020-03-23 18:00:23</div>
+                                        </div>
+                                        <div class="head-right-now">
+                                            <span class="right-now-txt">立即缴费</span>
+                                            <van-icon name="arrow" size="18" />
+                                        </div>
+                                    </div>
+                                    <div class="c-card-body">
+                                        <div class="c-card-content">
+                                            <div class="c-card-cell">
+                                                <div class="label">门诊：</div>
+                                                <div class="val">双流华美口腔医院</div>
+                                            </div>
+                                            <div class="c-card-cell">
+                                                <div class="label">医生：</div>
+                                                <div class="val">张三丰</div>
+                                            </div>
+                                        </div>
+                                        <div class="pay-money">1539</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </van-tab>
+                        <van-tab title="已缴费">
+                            <div class="pay-list">
+                                <div class="common-card mgb20 mgt10">
+                                    <a href="./my-end-pay-detail.html">
+                                        <div class="c-card-head">
+                                            <div class="head-msg">
+                                                <div class="user">张三 XYX783493894</div>
+                                                <div class="time">2020-03-23 18:00:23</div>
+                                            </div>
+                                            <van-icon name="arrow" size="18" />
+                                        </div>
+                                        <div class="c-card-body">
+                                            <div class="c-card-content">
+                                                <div class="c-card-cell">
+                                                    <div class="val">双流华美口腔医院 （Dr.钟龙飞）</div>
+                                                </div>
+                                                <div class="pay-detail-msg">
+                                                    <div class="pay-d-cell">
+                                                        <div class="desc">缴费：</div>
+                                                        <div class="num">99999.22</div>
+                                                    </div>
+                                                    <div class="pay-d-cell">
+                                                        <div class="desc">优惠：</div>
+                                                        <div class="num">99999.22</div>
+                                                    </div>
+                                                    <div class="pay-d-cell">
+                                                        <div class="desc">预交金：</div>
+                                                        <div class="num">99999.22</div>
+                                                    </div>
+                                                    <div class="pay-d-cell">
+                                                        <div class="desc">微信：</div>
+                                                        <div class="num">99999.22</div>
+                                                    </div>
+                                                    <div class="pay-d-cell block">
+                                                        <div class="desc">优惠赠送：</div>
+                                                        <div class="num">99999.22</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="c-card-foot">
+                                        <van-button size="small" disabled type="primary" @click="show=!show"
+                                            >下载收费单</van-button
+                                        >
+                                        <van-button size="small" type="info" @click="emailShow=!emailShow"
+                                            >发送到邮箱</van-button
+                                        >
+                                    </div>
+                                </div>
+                                <div class="common-card mgb20 mgt10">
+                                    <a href="./my-end-pay-detail.html">
+                                        <div class="c-card-head">
+                                            <div class="head-msg">
+                                                <div class="user">张三 XYX783493894</div>
+                                                <div class="time">2020-03-23 18:00:23</div>
+                                            </div>
+                                            <van-icon name="arrow" size="18" />
+                                        </div>
+                                        <div class="c-card-body">
+                                            <div class="c-card-content">
+                                                <div class="c-card-cell">
+                                                    <div class="val">双流华美口腔医院 （Dr.钟龙飞）</div>
+                                                </div>
+                                                <div class="pay-detail-msg">
+                                                    <div class="pay-d-cell">
+                                                        <div class="desc">缴费</div>
+                                                        <div class="num">99999.22</div>
+                                                    </div>
+                                                    <div class="pay-d-cell">
+                                                        <div class="desc">优惠</div>
+                                                        <div class="num">99999.22</div>
+                                                    </div>
+                                                    <div class="pay-d-cell">
+                                                        <div class="desc">预交金</div>
+                                                        <div class="num">99999.22</div>
+                                                    </div>
+                                                    <div class="pay-d-cell">
+                                                        <div class="desc">微信</div>
+                                                        <div class="num">99999.22</div>
+                                                    </div>
+                                                    <div class="pay-d-cell block">
+                                                        <div class="desc">优惠赠送</div>
+                                                        <div class="num">99999.22</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="c-card-foot">
+                                        <van-button size="small" type="primary" @click="show=!show"
+                                            >下载收费单</van-button
+                                        >
+                                        <van-button size="small" disabled type="info">发送到邮箱</van-button>
+                                    </div>
+                                </div>
+                            </div>
+                        </van-tab>
+                    </van-tabs>
                 </div>
-                <div class="common-card mgb20 mgt10">
-                  <div class="c-card-head">
-                    <div class="head-msg">
-                      <div class="user">张三 XYX783493894</div>
-                      <div class="time">2020-03-23 18:00:23</div>
-                    </div>
-                    <div class="head-right-now">
-                      <span class="right-now-txt">立即缴费</span>
-                      <van-icon name="arrow" size="18" />
-                    </div>
-                  </div>
-                  <div class="c-card-body">
-                    <div class="c-card-content">
-                      <div class="c-card-cell">
-                        <div class="label">门诊：</div>
-                        <div class="val">双流华美口腔医院</div>
-                      </div>
-                      <div class="c-card-cell">
-                        <div class="label">医生：</div>
-                        <div class="val">张三丰</div>
-                      </div>
-                    </div>
-                    <div class="pay-money">1539</div>
-                  </div>
-                </div>
-              </div>
-            </van-tab>
-            <van-tab title="已缴费">
-              <div class="pay-list">
-                <div class="common-card mgb20 mgt10">
-                  <a href="./my-end-pay-detail.html">
-                    <div class="c-card-head">
-                      <div class="head-msg">
-                        <div class="user">张三 XYX783493894</div>
-                        <div class="time">2020-03-23 18:00:23</div>
-                      </div>
-                      <van-icon name="arrow" size="18" />
-                    </div>
-                    <div class="c-card-body">
-                      <div class="c-card-content">
-                        <div class="c-card-cell">
-                          <div class="val">双流华美口腔医院 （Dr.钟龙飞）</div>
-                        </div>
-                        <div class="pay-detail-msg">
-                          <div class="pay-d-cell">
-                            <div class="desc">缴费：</div>
-                            <div class="num">99999.22</div>
-                          </div>
-                          <div class="pay-d-cell">
-                            <div class="desc">优惠：</div>
-                            <div class="num">99999.22</div>
-                          </div>
-                          <div class="pay-d-cell">
-                            <div class="desc">预交金：</div>
-                            <div class="num">99999.22</div>
-                          </div>
-                          <div class="pay-d-cell">
-                            <div class="desc">微信：</div>
-                            <div class="num">99999.22</div>
-                          </div>
-                          <div class="pay-d-cell block">
-                            <div class="desc">优惠赠送：</div>
-                            <div class="num">99999.22</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                  <div class="c-card-foot">
-                    <van-button
-                      size="small"
-                      disabled
-                      type="primary"
-                      @click="show=!show"
-                      >下载收费单</van-button
-                    >
-                    <van-button size="small" type="info">发送到邮箱</van-button>
-                  </div>
-                </div>
-                <div class="common-card mgb20 mgt10">
-                  <a href="./my-end-pay-detail.html">
-                    <div class="c-card-head">
-                      <div class="head-msg">
-                        <div class="user">张三 XYX783493894</div>
-                        <div class="time">2020-03-23 18:00:23</div>
-                      </div>
-                      <van-icon name="arrow" size="18" />
-                    </div>
-                    <div class="c-card-body">
-                      <div class="c-card-content">
-                        <div class="c-card-cell">
-                          <div class="val">双流华美口腔医院 （Dr.钟龙飞）</div>
-                        </div>
-                        <div class="pay-detail-msg">
-                          <div class="pay-d-cell">
-                            <div class="desc">缴费</div>
-                            <div class="num">99999.22</div>
-                          </div>
-                          <div class="pay-d-cell">
-                            <div class="desc">优惠</div>
-                            <div class="num">99999.22</div>
-                          </div>
-                          <div class="pay-d-cell">
-                            <div class="desc">预交金</div>
-                            <div class="num">99999.22</div>
-                          </div>
-                          <div class="pay-d-cell">
-                            <div class="desc">微信</div>
-                            <div class="num">99999.22</div>
-                          </div>
-                          <div class="pay-d-cell block">
-                            <div class="desc">优惠赠送</div>
-                            <div class="num">99999.22</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                  <div class="c-card-foot">
-                    <van-button size="small" type="primary" @click="show=!show"
-                      >下载收费单</van-button
-                    >
-                    <van-button size="small" disabled type="info"
-                      >发送到邮箱</van-button
-                    >
-                  </div>
-                </div>
-              </div>
-            </van-tab>
-          </van-tabs>
+                <!-- 邮件弹窗 -->
+                <van-dialog
+                    v-model="emailShow"
+                    title="发送到邮箱"
+                    show-cancel-button
+                    confirm-button-text="已确认，立即发送"
+                >
+                    <van-field class="email-inp" label-width="40" v-model="email" label="邮箱" placeholder="请输入邮箱"></van-field>
+                    <van-field>
+                        <template #input>
+                            <van-radio-group v-model="receive">
+                                <van-radio name="1"
+                                    >请确认您的收件邮箱是否准确无误，如果错误可能有隐私泄露风险。</van-radio
+                                >
+                            </van-radio-group>
+                        </template>
+                    </van-field>
+                </van-dialog>
+                <!-- 全局底部导航 -->
+                <van-tabbar v-model="active" active-color="#3d4ce2">
+                    <van-tabbar-item icon="wap-home" name="home">就诊服务</van-tabbar-item>
+                    <van-tabbar-item icon="service" name="online">在线问诊</van-tabbar-item>
+                    <van-tabbar-item icon="cart" name="hop">优选商城</van-tabbar-item>
+                    <van-tabbar-item icon="manager" name="usercenter">个人中心</van-tabbar-item>
+                </van-tabbar>
+            </div>
         </div>
-
-        <!-- 全局底部导航 -->
-        <van-tabbar v-model="active" active-color="#3d4ce2">
-          <van-tabbar-item icon="wap-home" name="home"
-            >就诊服务</van-tabbar-item
-          >
-          <van-tabbar-item icon="service" name="online"
-            >在线问诊</van-tabbar-item
-          >
-          <van-tabbar-item icon="cart" name="hop">优选商城</van-tabbar-item>
-          <van-tabbar-item icon="manager" name="usercenter"
-            >个人中心</van-tabbar-item
-          >
-        </van-tabbar>
-      </div>
-    </div>
-  </body>
-  <script>
-    new Vue({
-      el: "#myMedical",
-      data: {
-        active: "usercenter",
-        currentTab: 1,
-      },
-      methods: {
-        onClickLeft() {},
-      },
-    });
-  </script>
+    </body>
+    <script>
+        new Vue({
+            el: '#myMedical',
+            data: {
+                active: 'usercenter',
+                currentTab: 1,
+                emailShow: false,
+                email: '',
+                receive: '',
+            },
+            methods: {
+                onClickLeft() {},
+            },
+        })
+    </script>
 </html>

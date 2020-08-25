@@ -161,3 +161,11 @@
   .picker-coupon.active {
     transform: translateY(0);
     z-index: 50; }
+
+.email-inp {
+  background: #eee;
+  margin: 0.625rem;
+  width: calc(100% - 1.25rem); }
+
+.pay-confirm {
+  padding-top: 2.5rem; }
