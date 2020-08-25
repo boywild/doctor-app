@@ -128,17 +128,3 @@
   margin: 0 0.625rem; }
   .invoice > img {
     max-width: 100%; }
-
-.qr-detail {
-  text-align: center;
-  padding: 0.625rem 0; }
-  .qr-detail .shape {
-    width: 70%;
-    margin: 0 auto; }
-  .qr-detail .qr {
-    width: 7.5rem;
-    height: 7.5rem;
-    margin: 0.625rem auto; }
-  .qr-detail img {
-    max-width: 100%;
-    display: block; }

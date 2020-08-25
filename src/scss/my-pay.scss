@@ -1,170 +1,166 @@
-@import 'var', 'mixins';
+@import "var", "mixins";
 .my-pay-box {
-    .van-tabs__nav--card {
-        border-color: $theme-color;
-    }
-    .van-tabs__nav--card .van-tab {
-        color: $theme-color;
-        border-color: $theme-color;
-    }
-    .van-tabs__nav--card .van-tab.van-tab--active {
-        background-color: $theme-color;
-        color: #fff;
-    }
+  .van-tabs__nav--card {
+    border-color: $theme-color;
+  }
+  .van-tabs__nav--card .van-tab {
+    color: $theme-color;
+    border-color: $theme-color;
+  }
+  .van-tabs__nav--card .van-tab.van-tab--active {
+    background-color: $theme-color;
+    color: #fff;
+  }
 }
 .pay-detail-msg {
-    @include flex();
-    flex-wrap: wrap;
-    border: 1px solid #eee;
-    border-bottom: none;
-    .pay-d-cell {
-        width: calc(100% / 2);
-        text-align: center;
-        padding: 3px 0;
-        border-bottom: 1px solid #eee;
-        &:nth-child(2n) {
-            border-left: 1px solid #eee;
-        }
-        &.block {
-            width: 100%;
-        }
-        .num {
-            color: $theme-color;
-            font-weight: bold;
-            font-size: 18px;
-        }
-        .desc {
-            color: $text-light-color;
-        }
+  @include flex(flex-start);
+  flex-wrap: wrap;
+  .pay-d-cell {
+    @include flex(flex-start);
+    text-align: center;
+    padding: 3px 0;
+    width: 50%;
+    &.block {
+      width: 100%;
     }
+    .num {
+      color: $theme-color;
+      font-size: 16px;
+    }
+    .desc {
+      color: $text-light-color;
+      margin-right: 5px;
+      text-align: left;
+    }
+  }
 }
 .pay-d-list {
-    @include radius-box();
-    font-size: 13px;
-    .tit {
-        font-weight: bold;
-        font-size: 15px;
-        padding-bottom: 10px;
+  @include radius-box();
+  font-size: 13px;
+  .tit {
+    font-weight: bold;
+    font-size: 15px;
+    padding-bottom: 10px;
+  }
+  .pay-list-row {
+    &.active {
+      .pay-list-body {
+        height: auto;
+      }
     }
-    .pay-list-row {
-        &.active {
-            .pay-list-body {
-                height: auto;
-            }
-        }
-        .pay-list-head,
-        .pay-list-body {
-            .pay-list-item {
-                @include flex(space-between);
-                flex-wrap: wrap;
-                text-align: center;
-                .item-cell {
-                    height: 30px;
-                    @include flex();
-                    &:nth-child(1) {
-                        flex: 1;
-                        text-align: left;
-                        white-space: nowrap;
-                        text-overflow: ellipsis;
-                        overflow: hidden;
-                        justify-content: flex-start;
-                    }
-                    &:nth-child(2) {
-                        width: 12%;
-                    }
-                    &:nth-child(3) {
-                        width: 12%;
-                    }
-                    &:nth-child(4) {
-                        width: 12%;
-                    }
-                    &:nth-child(5) {
-                        width: 12%;
-                    }
-                    &:nth-child(6) {
-                        width: 12%;
-                    }
-                    &:nth-child(7) {
-                        width: 12%;
-                    }
-                }
-            }
-        }
-        .pay-list-head {
-        }
-        .pay-list-body {
-            height: 90px;
-            overflow: hidden;
-        }
-    }
-    .show-more {
+    .pay-list-head,
+    .pay-list-body {
+      .pay-list-item {
+        @include flex(space-between);
+        flex-wrap: wrap;
         text-align: center;
-        @include flex();
-        color: $theme-color;
+        .item-cell {
+          height: 30px;
+          @include flex();
+          &:nth-child(1) {
+            flex: 1;
+            text-align: left;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            justify-content: flex-start;
+          }
+          &:nth-child(2) {
+            width: 12%;
+          }
+          &:nth-child(3) {
+            width: 12%;
+          }
+          &:nth-child(4) {
+            width: 12%;
+          }
+          &:nth-child(5) {
+            width: 12%;
+          }
+          &:nth-child(6) {
+            width: 12%;
+          }
+          &:nth-child(7) {
+            width: 12%;
+          }
+        }
+      }
     }
+    .pay-list-head {
+    }
+    .pay-list-body {
+      height: 90px;
+      overflow: hidden;
+    }
+  }
+  .show-more {
+    text-align: center;
+    @include flex();
+    color: $theme-color;
+  }
 }
 .pay-num {
-    @include radius-box();
-    font-size: 13px;
-    .pay-num-item {
-        @include flex(space-between);
-        height: 30px;
-        .value {
-            font-weight: bold;
-            font-size: 15px;
-            color: $theme-color;
-        }
+  @include radius-box();
+  font-size: 13px;
+  .pay-num-item {
+    @include flex(space-between);
+    height: 30px;
+    .value {
+      font-weight: bold;
+      font-size: 15px;
+      color: $theme-color;
     }
-    .pay-result {
-        text-align: right;
-        .num {
-            font-size: 18px;
-            color: #f00;
-        }
+  }
+  .pay-result {
+    text-align: right;
+    .num {
+      font-size: 18px;
+      color: #f00;
     }
+  }
 }
 .pay-way {
-    @include radius-box();
-    font-size: 13px;
-    .van-radio-group {
-        .van-radio {
-            margin-bottom: 10px;
-        }
+  @include radius-box();
+  font-size: 13px;
+  .van-radio-group {
+    .van-radio {
+      margin-bottom: 10px;
     }
-    .checked-coupon {
-        @include flex(space-between);
-        height: 40px;
-        .coupon-label {
-          width: 80px;
-        }
-        .coupon-content {
-            @include flex(space-between);
-            flex: 1;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            overflow: hidden;
-            .coupon-val {
-                color: $text-light-color;
-                text-align: right;
-                flex: 1;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                overflow: hidden;
-                color: $text-light-color;
-            }
-        }
+  }
+  .checked-coupon {
+    @include flex(space-between);
+    height: 40px;
+    .coupon-label {
+      width: 80px;
     }
+    .coupon-content {
+      @include flex(space-between);
+      flex: 1;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      .coupon-val {
+        color: $text-light-color;
+        text-align: right;
+        flex: 1;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        color: $text-light-color;
+      }
+    }
+  }
 }
 .picker-coupon {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    transition: all 0.3s ease-in-out;
-    transform: translateY(100%);
-    z-index: 0;
-    &.active {
-        transform: translateY(0);
-        z-index: 50;
-    }
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+  transform: translateY(100%);
+  z-index: 0;
+  &.active {
+    transform: translateY(0);
+    z-index: 50;
+  }
 }

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="viewport"
+      content="initial-scale=1.0, maximum-scale=1, user-scalable=no, width=device-width, height=device-height,user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="x5-orientation" content="portrait" />
+    <title>预约管理</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/vant.css" />
+    <link rel="stylesheet" href="./css/app-doctor.css" />
+    <script src="./script/lib/vue.min.js"></script>
+    <script src="./script/lib/vant.min.js"></script>
+    <script src="./script/lib/rem.js"></script>
+  </head>
+  <body>
+    <div class="app-layout" id="appDoctorMeet">
+      <!-- 顶部导航栏 -->
+      <van-nav-bar
+        title="预约管理"
+        left-arrow
+        @click-left="onClickLeft"
+      ></van-nav-bar>
+      <div class="app-content gray-bg" :class="active===1?'has-footer':''">
+        <div class="hospital-address">
+          <div class="hospital-name">
+            双流华美口腔医院<van-icon name="arrow-down" size="16"></van-icon>
+          </div>
+          <div class="concat">
+            <div class="phone">027-8238283238</div>
+            <div class="gps">
+              <div class="location-icon">
+                <van-icon name="share" size="16"></van-icon>
+              </div>
+              <div class="txt">987km</div>
+            </div>
+          </div>
+        </div>
+        <div class="doctor-for-custom">
+          <van-tabs v-model="active">
+            <van-tab title="今日预约">
+              <div class="clients-list">
+                <div class="clients-item">
+                  <div class="clients-index">
+                    <div class="status">
+                      <van-tag type="success">已经确认</van-tag>
+                    </div>
+                    <div class="degree">初诊</div>
+                  </div>
+                  <div class="clients-content">
+                    <div class="c-c-cell">
+                      <div class="label">姓名</div>
+                      <div class="value">李四</div>
+                    </div>
+                    <div class="c-c-cell">
+                      <div class="label">时间</div>
+                      <div class="value">14:10~15:20</div>
+                    </div>
+                    <div class="c-c-cell block">
+                      <div class="label">内容</div>
+                      <div class="value">
+                        拔牙、根管治疗/大数据的哈萨克打分函数的接口还
+                      </div>
+                    </div>
+                    <div class="c-c-cell block">
+                      <div class="label">备注</div>
+                      <div class="value">拔牙、根管治疗</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="clients-item">
+                  <div class="clients-index">
+                    <div class="status">
+                      <van-tag type="warning">未确认</van-tag>
+                    </div>
+                    <div class="degree">初诊</div>
+                  </div>
+                  <div class="clients-content">
+                    <div class="c-c-cell">
+                      <div class="label">姓名</div>
+                      <div class="value">李四</div>
+                    </div>
+                    <div class="c-c-cell">
+                      <div class="label">时间</div>
+                      <div class="value">14:10~15:20</div>
+                    </div>
+                    <div class="c-c-cell block">
+                      <div class="label">内容</div>
+                      <div class="value">
+                        拔牙、根管治疗/大数据的哈萨克打分函数的接口还
+                      </div>
+                    </div>
+                    <div class="c-c-cell block">
+                      <div class="label">备注</div>
+                      <div class="value">拔牙、根管治疗</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="clients-item">
+                  <div class="clients-index">
+                    <div class="status">
+                      <van-tag type="primary">已到</van-tag>
+                    </div>
+                    <div class="degree">初诊</div>
+                  </div>
+                  <div class="clients-content">
+                    <div class="c-c-cell">
+                      <div class="label">姓名</div>
+                      <div class="value">李四</div>
+                    </div>
+                    <div class="c-c-cell">
+                      <div class="label">时间</div>
+                      <div class="value">14:10~15:20</div>
+                    </div>
+                    <div class="c-c-cell block">
+                      <div class="label">内容</div>
+                      <div class="value">
+                        拔牙、根管治疗/大数据的哈萨克打分函数的接口还
+                      </div>
+                    </div>
+                    <div class="c-c-cell block">
+                      <div class="label">备注</div>
+                      <div class="value">拔牙、根管治疗</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </van-tab>
+            <van-tab>
+              <template #title>
+                预约管理<van-icon
+                  @click.stop="cleander"
+                  name="notes-o"
+                  size="20"
+              /></template>
+              <div class="meet-filter">
+                <van-dropdown-menu direction="up">
+                  <van-dropdown-item
+                    v-model="value1"
+                    :options="option1"
+                  ></van-dropdown-item>
+                  <van-dropdown-item
+                    v-model="value2"
+                    :options="option2"
+                  ></van-dropdown-item>
+                </van-dropdown-menu>
+              </div>
+              <div class="clients-list">
+                <div class="clients-item">
+                  <div class="clients-index">
+                    <div class="status">
+                      <van-tag type="success">已经确认</van-tag>
+                    </div>
+                    <div class="degree">初诊</div>
+                  </div>
+                  <div class="clients-content">
+                    <div class="c-c-cell">
+                      <div class="label">姓名</div>
+                      <div class="value">李四</div>
+                    </div>
+                    <div class="c-c-cell">
+                      <div class="label">时间</div>
+                      <div class="value">14:10~15:20</div>
+                    </div>
+                    <div class="c-c-cell block">
+                      <div class="label">内容</div>
+                      <div class="value">
+                        拔牙、根管治疗/大数据的哈萨克打分函数的接口还
+                      </div>
+                    </div>
+                    <div class="c-c-cell block">
+                      <div class="label">备注</div>
+                      <div class="value">拔牙、根管治疗</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="clients-item">
+                  <div class="clients-index">
+                    <div class="status">
+                      <van-tag type="warning">未确认</van-tag>
+                    </div>
+                    <div class="degree">初诊</div>
+                  </div>
+                  <div class="clients-content">
+                    <div class="c-c-cell">
+                      <div class="label">姓名</div>
+                      <div class="value">李四</div>
+                    </div>
+                    <div class="c-c-cell">
+                      <div class="label">时间</div>
+                      <div class="value">14:10~15:20</div>
+                    </div>
+                    <div class="c-c-cell block">
+                      <div class="label">内容</div>
+                      <div class="value">
+                        拔牙、根管治疗/大数据的哈萨克打分函数的接口还
+                      </div>
+                    </div>
+                    <div class="c-c-cell block">
+                      <div class="label">备注</div>
+                      <div class="value">拔牙、根管治疗</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="clients-item">
+                  <div class="clients-index">
+                    <div class="status">
+                      <van-tag type="primary">已到</van-tag>
+                    </div>
+                    <div class="degree">初诊</div>
+                  </div>
+                  <div class="clients-content">
+                    <div class="c-c-cell">
+                      <div class="label">姓名</div>
+                      <div class="value">李四</div>
+                    </div>
+                    <div class="c-c-cell">
+                      <div class="label">时间</div>
+                      <div class="value">14:10~15:20</div>
+                    </div>
+                    <div class="c-c-cell block">
+                      <div class="label">内容</div>
+                      <div class="value">
+                        拔牙、根管治疗/大数据的哈萨克打分函数的接口还
+                      </div>
+                    </div>
+                    <div class="c-c-cell block">
+                      <div class="label">备注</div>
+                      <div class="value">拔牙、根管治疗</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </van-tab>
+          </van-tabs>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    new Vue({
+      el: "#appDoctorMeet",
+      data: {
+        active: 0,
+        value1: 0,
+        value2: "a",
+        option1: [
+          { text: "全部状态", value: 0 },
+          { text: "已到", value: 1 },
+          { text: "未到", value: 2 },
+        ],
+        option2: [
+          { text: "全部医生", value: "a" },
+          { text: "教授", value: "b" },
+          { text: "主任医生", value: "c" },
+        ],
+      },
+      methods: {
+        onClickLeft() {},
+        cleander() {
+          console.log("=======");
+        },
+      },
+    });
+  </script>
+</html>

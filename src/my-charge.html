@@ -51,8 +51,12 @@
               </div>
             </div>
             <div class="charge-btn">
-              <van-button size="small" type="primary" url='./my-charge-pay.html'>充值</van-button>
-              <van-button size="small" type="info">支付</van-button>
+              <van-button size="small" type="primary" url="./my-charge-pay.html"
+                >充值</van-button
+              >
+              <van-button size="small" type="info" @click="paying"
+                >支付</van-button
+              >
             </div>
           </div>
           <div class="expense-record mg10 border-radius10">
@@ -110,6 +114,18 @@
             </van-tabs>
           </div>
         </div>
+        <!-- 支付弹窗 -->
+        <van-dialog class="common-dialog" v-model="dialogPay">
+          <div class="qr-detail">
+            <div class="shape">
+              <img src="./uploads/shape.png" alt="" />
+            </div>
+            <div class="qr">
+              <img src="./uploads/qr.png" alt="" />
+            </div>
+            <span>XYX820102839</span>
+          </div>
+        </van-dialog>
         <!-- 全局底部导航 -->
         <van-tabbar v-model="active" active-color="#3d4ce2">
           <van-tabbar-item icon="wap-home" name="home"
@@ -131,6 +147,7 @@
       el: "#myCharge",
       data: {
         active: "usercenter",
+        dialogPay: false,
         list: [],
         loading: false,
         finished: false,
@@ -139,6 +156,9 @@
         onClickLeft() {},
         tabChange(name, title) {
           console.log(name, title);
+        },
+        paying() {
+          this.dialogPay = true;
         },
         onLoad() {
           // 模拟异步加载数据

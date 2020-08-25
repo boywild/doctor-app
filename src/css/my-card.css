@@ -42,14 +42,15 @@
       justify-content: center;
       align-items: center;
       flex-direction: row;
-      width: 3.125rem;
-      height: 5.4375rem;
-      padding: 0 0.3125rem 0 0.625rem;
+      width: 3.75rem;
+      height: 5.0625rem;
+      padding: 0 0.625rem 0 0.625rem;
       background: url(../images/icon-coupon-btn.png) center center;
       background-size: 100% auto;
       color: #fff;
       font-size: 0.9375rem;
-      margin-left: 0.3125rem; }
+      margin-left: 0.3125rem;
+      text-align: center; }
       .card-row .card-col .action-btn.end {
         background: url(../images/icon-coupon-end.png) center center;
         background-size: 100% auto; }
@@ -89,3 +90,7 @@
   margin: 0 auto 0.625rem auto;
   line-height: normal;
   line-height: 1.5rem; }
+
+.can-use-market {
+  padding: 0.625rem;
+  font-size: 0.875rem; }

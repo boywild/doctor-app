@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="viewport"
+      content="initial-scale=1.0, maximum-scale=1, user-scalable=no, width=device-width, height=device-height,user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="x5-orientation" content="portrait" />
+    <title>移动DIS</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/vant.css" />
+    <script src="./script/lib/vue.min.js"></script>
+    <script src="./script/lib/vant.min.js"></script>
+    <script src="./script/lib/rem.js"></script>
+  </head>
+  <body>
+    <div class="app-layout" id="appDoctor">
+      <!-- 顶部导航栏 -->
+      <van-nav-bar
+        title="移动DIS"
+        left-arrow
+        @click-left="onClickLeft"
+      ></van-nav-bar>
+      <div class="app-content gray-bg">
+        <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
+          <van-swipe-item>
+            <van-image src="./uploads/market-banner.png"></van-image>
+          </van-swipe-item>
+          <van-swipe-item>
+            <van-image src="./uploads/market-banner2.png"></van-image>
+          </van-swipe-item>
+          <van-swipe-item>
+            <van-image src="./uploads/market-banner3.png"></van-image>
+          </van-swipe-item>
+        </van-swipe>
+        <div class="asdf">
+          <van-grid :column-num="3">
+            <van-grid-item
+              v-for="value in 6"
+              :key="value"
+              icon="photo-o"
+              text="文字"
+            ></van-grid-item>
+          </van-grid>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    new Vue({
+      el: "#appDoctor",
+      data: {},
+      methods: {
+        onClickLeft() {},
+      },
+    });
+  </script>
+</html>

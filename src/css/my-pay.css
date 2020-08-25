@@ -11,27 +11,27 @@
 
 .pay-detail-msg {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: row;
-  flex-wrap: wrap;
-  border: 0.0625rem solid #eee;
-  border-bottom: none; }
+  flex-wrap: wrap; }
   .pay-detail-msg .pay-d-cell {
-    width: calc(100% / 2);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
     text-align: center;
     padding: 0.1875rem 0;
-    border-bottom: 0.0625rem solid #eee; }
-    .pay-detail-msg .pay-d-cell:nth-child(2n) {
-      border-left: 0.0625rem solid #eee; }
+    width: 50%; }
     .pay-detail-msg .pay-d-cell.block {
       width: 100%; }
     .pay-detail-msg .pay-d-cell .num {
       color: #3d4ce2;
-      font-weight: bold;
-      font-size: 1.125rem; }
+      font-size: 1rem; }
     .pay-detail-msg .pay-d-cell .desc {
-      color: #7d7d7d; }
+      color: #7d7d7d;
+      margin-right: 0.3125rem;
+      text-align: left; }
 
 .pay-d-list {
   border-radius: 0.3125rem;
