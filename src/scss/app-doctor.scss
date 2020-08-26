@@ -1,81 +1,103 @@
-@import "var", "mixins";
+@import 'var', 'mixins';
 .hospital-address {
-  @include flex(space-between);
-  background: #fff;
-  padding: 0 10px;
-  font-size: 13px;
-  height: 45px;
-  .hospital-name {
-    @include flex();
-  }
-  .concat {
-    @include flex();
-    .phone{
-        color: $theme-color;
-    }
-    .gps {
-      font-size: 12px;
-      text-align: center;
-      margin-left: 10px;
-      .location-icon {
+    @include flex(space-between);
+    background: #fff;
+    padding: 0 10px;
+    font-size: 13px;
+    height: 45px;
+    .hospital-name {
         @include flex();
-        background: $theme-color;
-        color: #fff;
-        border-radius: 50%;
-        overflow: hidden;
-        text-align: center;
-        width: 20px;
-        height: 20px;
-        margin: 0 auto;
-      }
-      .txt {
-        color: #f00;
-      }
     }
-  }
+    .concat {
+        @include flex();
+        .phone {
+            color: $theme-color;
+        }
+        .gps {
+            font-size: 12px;
+            text-align: center;
+            margin-left: 10px;
+            .location-icon {
+                @include flex();
+                background: $theme-color;
+                color: #fff;
+                border-radius: 50%;
+                overflow: hidden;
+                text-align: center;
+                width: 20px;
+                height: 20px;
+                margin: 0 auto;
+            }
+            .txt {
+                color: #f00;
+            }
+        }
+    }
 }
 .clients-list {
-  margin: 10px;
-  .clients-item {
-    background: #fff;
-    border-radius: 5px;
-    font-size: 13px;
-    margin-bottom: 10px;
-    .clients-index {
-      @include flex(space-between);
-      height: 40px;
-      border-bottom: 1px solid #eee;
-      padding: 0 10px;
-      .status {
-      }
-      .degree {
-      }
+    margin: 10px;
+    .clients-item {
+        background: #fff;
+        border-radius: 5px;
+        font-size: 13px;
+        margin-bottom: 10px;
+        .clients-index {
+            @include flex(space-between);
+            height: 40px;
+            border-bottom: 1px solid #eee;
+            padding: 0 10px;
+            .status {
+            }
+            .degree {
+            }
+        }
+        .clients-content {
+            padding: 10px;
+            @include flex(space-between);
+            flex-wrap: wrap;
+            .c-c-cell {
+                width: 50%;
+                padding-bottom: 5px;
+                @include flex(flex-start);
+                &.block {
+                    width: 100%;
+                }
+                .label {
+                    width: 40px;
+                    font-weight: bold;
+                }
+                .value {
+                    color: $text-light-color;
+                }
+            }
+        }
     }
-    .clients-content {
-      padding: 10px;
-      @include flex(space-between);
-      flex-wrap: wrap;
-      .c-c-cell {
-        width: 50%;
-        padding-bottom: 5px;
-        @include flex(flex-start);
-        &.block {
-          width: 100%;
-        }
-        .label {
-          width: 40px;
-          font-weight: bold;
-        }
-        .value {
-          color: $text-light-color;
-        }
-      }
-    }
-  }
 }
-.meet-filter{
+.meet-filter {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
+}
+.meet-manager {
+    @include flex();
+    .van-icon {
+        margin-left: 15px;
+    }
+}
+.add-one-meet {
+    @include flex(center, center, column);
+    width: 55px;
+    height: 55px;
+    padding: 10px;
+    background: $theme-color;
+    border-radius: 50%;
+    overflow: hidden;
+    color: #fff;
+    font-size: 12px;
+    position: fixed;
+    z-index: 100;
+    right: 10px;
+    bottom: 70px;
+    text-align: center;
 }

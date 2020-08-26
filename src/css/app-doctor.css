@@ -81,3 +81,30 @@
   bottom: 0;
   left: 0;
   right: 0; }
+
+.meet-manager {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row; }
+  .meet-manager .van-icon {
+    margin-left: 0.9375rem; }
+
+.add-one-meet {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 3.4375rem;
+  height: 3.4375rem;
+  padding: 0.625rem;
+  background: #3d4ce2;
+  border-radius: 50%;
+  overflow: hidden;
+  color: #fff;
+  font-size: 0.75rem;
+  position: fixed;
+  z-index: 100;
+  right: 0.625rem;
+  bottom: 4.375rem;
+  text-align: center; }
