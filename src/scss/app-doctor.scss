@@ -101,3 +101,32 @@
     bottom: 70px;
     text-align: center;
 }
+.meet-card {
+    background: #fff;
+    .meet-card-head {
+        @include flex(space-between);
+        height: 45px;
+        border-bottom: 1px solid #eee;
+        padding: 0 10px;
+    }
+    .meet-card-body {
+        padding: 10px;
+    }
+}
+.meet-time-desc {
+    text-align: center;
+    background: $white-bg;
+    padding: 10px 0;
+    .meet-time {
+        font-weight: bold;
+        font-size: 20px;
+        color: $theme-color;
+    }
+}
+.notice-to-user{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+}

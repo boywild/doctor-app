@@ -108,3 +108,32 @@
   right: 0.625rem;
   bottom: 4.375rem;
   text-align: center; }
+
+.meet-card {
+  background: #fff; }
+  .meet-card .meet-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    height: 2.8125rem;
+    border-bottom: 0.0625rem solid #eee;
+    padding: 0 0.625rem; }
+  .meet-card .meet-card-body {
+    padding: 0.625rem; }
+
+.meet-time-desc {
+  text-align: center;
+  background: #fff;
+  padding: 0.625rem 0; }
+  .meet-time-desc .meet-time {
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: #3d4ce2; }
+
+.notice-to-user {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20; }
