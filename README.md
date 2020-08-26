@@ -40,8 +40,8 @@ yarn run server
 23. `relation-add.html`-新建档案
 24. `relation-bind.html`-关联档案
 25. `relation-unbind.html`-解绑档案
-26. `app-doctor-home.html`-医生端首页
-27. `app-doctor-meet.html`-医生端预约
-28. `app-doctor-meet-detail.html`-医生端预约详情
-29. `home`-客户端首页
-30. `xxxx`-超级会员页
+26. `app-doctor-home.html`-医生端首页-待开发
+27. `app-doctor-meet.html`-医生端预约-待开发
+28. `app-doctor-meet-detail.html`-医生端预约详情-待开发
+29. `home`-客户端首页-待开发
+30. `super-vip.html`-超级会员页-待开发
