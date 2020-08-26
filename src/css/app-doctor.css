@@ -137,3 +137,14 @@
   right: 0;
   bottom: 0;
   z-index: 20; }
+
+.side-bar-content {
+  padding: 0.625rem 0.625rem 0 0; }
+  .side-bar-content h1 {
+    font-size: 1.125rem;
+    padding: 0.625rem 0;
+    color: #3d4ce2; }
+  .side-bar-content h4 {
+    padding-bottom: 0.3125rem; }
+  .side-bar-content img {
+    max-width: 100%; }

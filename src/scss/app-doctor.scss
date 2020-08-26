@@ -123,10 +123,24 @@
         color: $theme-color;
     }
 }
-.notice-to-user{
+.notice-to-user {
     position: fixed;
     left: 0;
     right: 0;
     bottom: 0;
     z-index: 20;
+}
+.side-bar-content {
+    padding: 10px 10px 0 0;
+    h1 {
+        font-size: 18px;
+        padding: 10px 0;
+        color: $theme-color;
+    }
+    h4 {
+        padding-bottom: 5px;
+    }
+    img {
+        max-width: 100%;
+    }
 }

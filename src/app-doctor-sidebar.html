@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+            name="viewport"
+            content="initial-scale=1.0, maximum-scale=1, user-scalable=no, width=device-width, height=device-height,user-scalable=no, viewport-fit=cover"
+        />
+        <meta name="x5-orientation" content="portrait" />
+        <title>图文通用</title>
+        <link rel="stylesheet" href="./css/common.css" />
+        <link rel="stylesheet" href="./css/vant.css" />
+        <link rel="stylesheet" href="./css/app-doctor.css" />
+        <script src="./script/lib/vue.min.js"></script>
+        <script src="./script/lib/vant.min.js"></script>
+        <script src="./script/lib/rem.js"></script>
+    </head>
+    <body>
+        <div class="app-layout" id="appDoctorSidebar">
+            <!-- 顶部导航栏 -->
+            <van-nav-bar title="图文通用" left-arrow @click-left="onClickLeft"></van-nav-bar>
+            <div class="app-content gray-bg">
+                <van-tree-select height="100vh" :items="items" :main-active-index.sync="activeIndex">
+                    <template #content>
+                        <div class="side-bar-content">
+                            <h1>牙冠修复</h1>
+                            <h4>暑期2020邀约活动</h4>
+                            <img src="./uploads/adv-sys.png" alt="" />
+                            <h4>暑期2020邀约活动</h4>
+                            <img src="./uploads/adv-sys.png" alt="" />
+                            <h1>桥修复</h1>
+                            <h4>暑期2020邀约活动</h4>
+                            <img src="./uploads/adv-sys.png" alt="" />
+                            <h4>暑期2020邀约活动</h4>
+                            <img src="./uploads/adv-sys.png" alt="" />
+                        </div>
+                    </template>
+                </van-tree-select>
+            </div>
+        </div>
+    </body>
+    <script>
+        new Vue({
+            el: '#appDoctorSidebar',
+            data: {
+                activeIndex: 0,
+                items: [
+                    { text: '固定修复', children: [], dot: true },
+                    { text: '正畸', children: [] },
+                    { text: '种植牙', children: [] },
+                ],
+            },
+            methods: {
+                onClickLeft() {},
+            },
+        })
+    </script>
+</html>
