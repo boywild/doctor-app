@@ -128,3 +128,80 @@
   margin: 0 0.625rem; }
   .invoice > img {
     max-width: 100%; }
+
+.super-vip .vip-head {
+  background: url(../images/vip-bg.png) center center no-repeat;
+  height: 15.25rem;
+  background-size: 100% auto;
+  padding: 5rem 2.1875rem 0 2.1875rem;
+  color: #fff; }
+  .super-vip .vip-head .vip-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom: 1.25rem; }
+    .super-vip .vip-head .vip-info .head-left {
+      flex: 1; }
+      .super-vip .vip-head .vip-info .head-left .level {
+        font-size: 1.875rem;
+        font-weight: bold;
+        color: #cbab5d; }
+      .super-vip .vip-head .vip-info .head-left .long-time {
+        font-size: 0.9375rem;
+        padding: 0.3125rem 0; }
+      .super-vip .vip-head .vip-info .head-left .join-group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        color: #ebcf9e;
+        background: #2d2c2c;
+        border-radius: 1.25rem;
+        width: 12.5rem;
+        height: 1.875rem;
+        text-align: center; }
+    .super-vip .vip-head .vip-info .icon-vip {
+      width: 4.375rem;
+      background: url(../images/icon-vip.png) center center no-repeat;
+      height: 4.0625rem;
+      background-size: 100% auto;
+      margin-left: 1.25rem; }
+  .super-vip .vip-head .equity-name {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    font-size: 0.875rem; }
+    .super-vip .vip-head .equity-name .icon-equity {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: row;
+      background: url(../images/icon-equity.png) left center no-repeat;
+      height: 1.5625rem;
+      background-size: 1.5625rem 1.5625rem;
+      padding-left: 1.875rem; }
+    .super-vip .vip-head .equity-name .icon-score {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: row;
+      background: url(../images/icon-score.png) left center no-repeat;
+      height: 1.5625rem;
+      background-size: 1.5625rem 1.5625rem;
+      padding-left: 1.875rem;
+      margin-left: 1.875rem; }
+
+.super-vip .vip-body .equity-area {
+  padding: 0.625rem;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row; }
+  .super-vip .vip-body .equity-area .tit {
+    font-weight: bold; }
+  .super-vip .vip-body .equity-area .desc {
+    color: #ebcf9e; }

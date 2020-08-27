@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="viewport"
+      content="initial-scale=1.0, maximum-scale=1, user-scalable=no, width=device-width, height=device-height,user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="x5-orientation" content="portrait" />
+    <title>超级会员</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/vant.css" />
+    <link rel="stylesheet" href="./css/user-center.css" />
+    <script src="./script/lib/vue.min.js"></script>
+    <script src="./script/lib/vant.min.js"></script>
+    <script src="./script/lib/rem.js"></script>
+  </head>
+  <body>
+    <div class="app-layout" id="superVip">
+      <!-- 顶部导航栏 -->
+      <van-nav-bar
+        title="超级会员"
+        left-arrow
+        @click-left="onClickLeft"
+      ></van-nav-bar>
+      <div class="app-content">
+        <div class="super-vip">
+          <div class="vip-head">
+            <div class="vip-info">
+              <div class="head-left">
+                <div class="level">LV1</div>
+                <div class="long-time">相遇的34354天里，感恩有您！</div>
+                <div class="join-group">立即加入199元/年</div>
+              </div>
+              <div class="icon-vip"></div>
+            </div>
+            <div class="equity-name">
+              <div class="icon-equity">使用专属权益</div>
+              <div class="icon-score">华美超级会员协议</div>
+            </div>
+          </div>
+          <div class="vip-body">
+            <div class="equity-area">
+              <div class="tit">超级会员独享权益</div>
+              <div class="desc">使用专属权益</div>
+            </div>
+            <div class="equity-img">
+              <img src="./uploads/vip.png" width="100%" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    new Vue({
+      el: "#superVip",
+      data: {},
+      methods: {
+        onClickLeft() {},
+      },
+    });
+  </script>
+</html>
