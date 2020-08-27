@@ -13,6 +13,7 @@
     <title>移动DIS</title>
     <link rel="stylesheet" href="./css/common.css" />
     <link rel="stylesheet" href="./css/vant.css" />
+    <link rel="stylesheet" href="./css/app-doctor.css" />
     <script src="./script/lib/vue.min.js"></script>
     <script src="./script/lib/vant.min.js"></script>
     <script src="./script/lib/rem.js"></script>
@@ -37,15 +38,71 @@
             <van-image src="./uploads/market-banner3.png"></van-image>
           </van-swipe-item>
         </van-swipe>
-        <div class="asdf">
-          <van-grid :column-num="3">
-            <van-grid-item
-              v-for="value in 6"
-              :key="value"
-              icon="photo-o"
-              text="文字"
-            ></van-grid-item>
-          </van-grid>
+        <div class="workstation">
+          <div class="work-num mgb10">
+            <div class="w-n-item">
+              <div class="num">100</div>
+              <div class="txt">今日未到</div>
+            </div>
+            <div class="w-n-item">
+              <div class="num">100</div>
+              <div class="txt">今日回访</div>
+            </div>
+            <div class="w-n-item">
+              <div class="num">100</div>
+              <div class="txt">明日预约</div>
+            </div>
+          </div>
+          <div class="work-card mgb10">
+            <div class="work-head">我的工作台</div>
+            <div class="work-body">
+              <div class="w-b-col">
+                <div class="icon"></div>
+                <div class="name">预约管理</div>
+              </div>
+              <div class="w-b-col">
+                <div class="icon"></div>
+                <div class="name">回访管理</div>
+              </div>
+              <div class="w-b-col">
+                <div class="icon"></div>
+                <div class="name">加工件</div>
+              </div>
+              <div class="w-b-col">
+                <div class="icon"></div>
+                <div class="name">培训学习</div>
+              </div>
+              <div class="w-b-col">
+                <div class="icon"></div>
+                <div class="name">我的评价</div>
+              </div>
+              <div class="w-b-col">
+                <div class="icon"></div>
+                <div class="name">沟通记录</div>
+              </div>
+            </div>
+          </div>
+          <div class="work-card">
+            <div class="work-head">沟通接待</div>
+            <div class="work-body">
+              <div class="w-b-col">
+                <div class="icon"></div>
+                <div class="name">视频沟通</div>
+              </div>
+              <div class="w-b-col">
+                <div class="icon"></div>
+                <div class="name">最新活动</div>
+              </div>
+              <div class="w-b-col">
+                <div class="icon"></div>
+                <div class="name">微商城</div>
+              </div>
+              <div class="w-b-col">
+                <div class="icon"></div>
+                <div class="name">门店导航</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
