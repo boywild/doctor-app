@@ -214,6 +214,36 @@
         background: #eee;
         border-radius: 50%;
         overflow: hidden; }
+      .work-card .work-body .w-b-col .icon-yygl {
+        background: url(../images/icon-yygl.png) center center no-repeat;
+        background-size: 100% 100%; }
+      .work-card .work-body .w-b-col .icon-hf {
+        background: url(../images/icon-hf.png) center center no-repeat;
+        background-size: 100% 100%; }
+      .work-card .work-body .w-b-col .icon-jg {
+        background: url(../images/icon-jg.png) center center no-repeat;
+        background-size: 100% 100%; }
+      .work-card .work-body .w-b-col .icon-px {
+        background: url(../images/icon-px.png) center center no-repeat;
+        background-size: 100% 100%; }
+      .work-card .work-body .w-b-col .icon-pj {
+        background: url(../images/icon-pj.png) center center no-repeat;
+        background-size: 100% 100%; }
+      .work-card .work-body .w-b-col .icon-gt {
+        background: url(../images/icon-gt.png) center center no-repeat;
+        background-size: 100% 100%; }
+      .work-card .work-body .w-b-col .icon-sp {
+        background: url(../images/icon-sp.png) center center no-repeat;
+        background-size: 100% 100%; }
+      .work-card .work-body .w-b-col .icon-hd {
+        background: url(../images/icon-hd.png) center center no-repeat;
+        background-size: 100% 100%; }
+      .work-card .work-body .w-b-col .icon-dh {
+        background: url(../images/icon-dh.png) center center no-repeat;
+        background-size: 100% 100%; }
+      .work-card .work-body .w-b-col .icon-sc {
+        background: url(../images/icon-sc.png) center center no-repeat;
+        background-size: 100% 100%; }
       .work-card .work-body .w-b-col .name {
         font-size: 0.875rem;
         margin-top: 0.3125rem; }
