@@ -115,16 +115,26 @@
   text-align: center;
   padding: 10px 0;
   .shape {
-      width: 70%;
-      margin: 0 auto;
+    width: 70%;
+    margin: 0 auto;
   }
   .qr {
-      width: 120px;
-      height: 120px;
-      margin: 10px auto;
+    width: 120px;
+    height: 120px;
+    margin: 10px auto;
   }
   img {
-      max-width: 100%;
-      display: block;
+    max-width: 100%;
+    display: block;
+  }
+}
+.radius10 {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.no-bg {
+  background: transparent !important;
+  .van-dialog__content {
+    background: transparent !important;
   }
 }

@@ -13,42 +13,295 @@
     <title>首页</title>
     <link rel="stylesheet" href="./css/common.css" />
     <link rel="stylesheet" href="./css/vant.css" />
+    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="./css/doctor-list.css" />
+    <link rel="stylesheet" href="./css/user-center.css" />
     <script src="./script/lib/vue.min.js"></script>
     <script src="./script/lib/vant.min.js"></script>
     <script src="./script/lib/rem.js"></script>
   </head>
   <body>
-    <div id="home">
-      <van-nav-bar
-        title="首页"
-        left-text="返回"
-        left-arrow
-        @click-left="onClickLeft"
-      ></van-nav-bar>
-      <ol>
-        <li v-for="todo in todos">
-          {{ todo.text }}
-        </li>
-      </ol>
-      <van-button type="primary">主要按钮</van-button>
+    <div class="app-layout" id="home">
+      <div class="app-content has-footer">
+        <div class="home-head">
+          <div class="home-search">
+            <div class="camera"></div>
+            <van-search
+              v-model="search"
+              shape="round"
+              placeholder="请输入搜索关键词"
+            >
+            </van-search>
+            <div class="sys-notice">
+              <div class="icon"></div>
+              <div class="notice-badge">22</div>
+            </div>
+          </div>
+          <div class="home-tab">
+            <div class="tab-item active">全部</div>
+            <div class="tab-item">拔牙</div>
+            <div class="tab-item">洁牙</div>
+            <div class="tab-item">正畸</div>
+            <div class="tab-item">种植</div>
+          </div>
+        </div>
+        <div class="mg10">
+          <div class="home-banner mgb10">
+            <van-swipe
+              class="my-swipe"
+              :autoplay="3000"
+              indicator-color="white"
+            >
+              <van-swipe-item>
+                <van-image
+                  fit="contain"
+                  src="./uploads/home-banner.png"
+                ></van-image>
+              </van-swipe-item>
+            </van-swipe>
+          </div>
+          <div class="home-body">
+            <div class="user-info">
+              <div class="base-info">
+                <div class="name"><span>钟农非</span></div>
+                <div class="sys-id">XYW10923823</div>
+                <div class="switch">
+                  <a href="./relation-list.html">
+                    <van-icon size="16" name="exchange"></van-icon>切换
+                  </a>
+                </div>
+              </div>
+              <div class="qr-img" @click="dialogShow=!dialogShow">
+                <img src="./uploads/qr.png" />
+                <span>刷卡时请点击</span>
+              </div>
+            </div>
+            <div class="user-block">
+              <div class="user-b-tit">特色服务</div>
+              <div class="user-b-content">
+                <div class="user-b-order">
+                  <a href="./my-appoint.html">
+                    <div class="icon yy"></div>
+                    <div class="txt">在线预约</div>
+                  </a>
+                </div>
+                <div class="user-b-order">
+                  <a href="./my-medical.html">
+                    <div class="icon yzbl"></div>
+                    <div class="txt">在线问诊</div>
+                  </a>
+                </div>
+                <div class="user-b-order">
+                  <a href="./my-waiting-pay.html">
+                    <div class="icon wgjf"></div>
+                    <div class="txt">积分商城</div>
+                  </a>
+                </div>
+                <div class="user-b-order">
+                  <a href="./my-end-pay.html">
+                    <div class="icon fy"></div>
+                    <div class="txt">优选商城</div>
+                  </a>
+                </div>
+                <div class="invoice radius10">
+                  <img src="./uploads/invoice.png" alt="" />
+                </div>
+              </div>
+            </div>
+            <div class="user-block">
+              <div class="user-b-tit">就诊服务</div>
+              <div class="user-b-content">
+                <div class="user-b-order">
+                  <a href="./my-appoint.html">
+                    <div class="icon yy"></div>
+                    <div class="txt">我的预约</div>
+                  </a>
+                </div>
+                <div class="user-b-order">
+                  <a href="./my-medical.html">
+                    <div class="icon yzbl"></div>
+                    <div class="txt">医嘱病历</div>
+                  </a>
+                </div>
+                <div class="user-b-order">
+                  <a href="./my-waiting-pay.html">
+                    <div class="icon wgjf"></div>
+                    <div class="txt">无感缴费</div>
+                  </a>
+                </div>
+                <div class="user-b-order">
+                  <a href="./my-end-pay.html">
+                    <div class="icon fy"></div>
+                    <div class="txt">我的费用</div>
+                  </a>
+                </div>
+                <div class="invoice radius10">
+                  <img src="./uploads/pay.png" alt="" />
+                </div>
+              </div>
+            </div>
+            <div class="hot-doctor">
+              <div class="hot-title">
+                <div class="name">推荐医生</div>
+                <div class="arrow">
+                  查看更多<van-icon name="arrow" size="18" />
+                </div>
+              </div>
+              <div class="hot-content">
+                <div class="doctor-list">
+                  <a href="./doctor-detail.html" class="doctor-item">
+                    <div class="d-base-info">
+                      <div class="d-thumb">
+                        <img src="./images/doctor-default.png" />
+                      </div>
+                      <div class="name">钟龙飞</div>
+                      <div class="km">距离130km</div>
+                    </div>
+                    <div class="d-main-info">
+                      <div class="d-main-rate">
+                        <van-rate
+                          v-model="rate"
+                          :size="16"
+                          color="#ffd21e"
+                          void-icon="star"
+                          void-color="#eee"
+                        ></van-rate>
+                        <span class="num">5.0</span>
+                      </div>
+                      <div class="main-info-row position">
+                        <div class="label">主任医师、医务主任</div>
+                        <div class="content"></div>
+                      </div>
+                      <div class="main-info-row best">
+                        <div class="label">擅长：</div>
+                        <div class="content">种植、正畸、拔牙</div>
+                      </div>
+                      <div class="main-info-row address">
+                        <div class="label">门店：</div>
+                        <div class="content">双流华美口腔医院</div>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="./doctor-detail.html" class="doctor-item">
+                    <div class="d-base-info">
+                      <div class="d-thumb">
+                        <img src="./images/doctor-default.png" />
+                      </div>
+                      <div class="name">钟龙飞</div>
+                      <div class="km">距离130km</div>
+                    </div>
+                    <div class="d-main-info">
+                      <div class="d-main-rate">
+                        <van-rate
+                          v-model="rate"
+                          :size="16"
+                          color="#ffd21e"
+                          void-icon="star"
+                          void-color="#eee"
+                        ></van-rate>
+                        <span class="num">5.0</span>
+                      </div>
+                      <div class="main-info-row position">
+                        <div class="label">主任医师、医务主任</div>
+                        <div class="content"></div>
+                      </div>
+                      <div class="main-info-row best">
+                        <div class="label">擅长：</div>
+                        <div class="content">种植、正畸、拔牙</div>
+                      </div>
+                      <div class="main-info-row address">
+                        <div class="label">门店：</div>
+                        <div class="content">双流华美口腔医院</div>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="./doctor-detail.html" class="doctor-item">
+                    <div class="d-base-info">
+                      <div class="d-thumb">
+                        <img src="./images/doctor-default.png" />
+                      </div>
+                      <div class="name">钟龙飞</div>
+                      <div class="km">距离130km</div>
+                    </div>
+                    <div class="d-main-info">
+                      <div class="d-main-rate">
+                        <van-rate
+                          v-model="rate"
+                          :size="16"
+                          color="#ffd21e"
+                          void-icon="star"
+                          void-color="#eee"
+                        ></van-rate>
+                        <span class="num">5.0</span>
+                      </div>
+                      <div class="main-info-row position">
+                        <div class="label">主任医师、医务主任</div>
+                        <div class="content"></div>
+                      </div>
+                      <div class="main-info-row best">
+                        <div class="label">擅长：</div>
+                        <div class="content">种植、正畸、拔牙</div>
+                      </div>
+                      <div class="main-info-row address">
+                        <div class="label">门店：</div>
+                        <div class="content">双流华美口腔医院</div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 二维码弹窗 -->
+      <van-dialog class="common-dialog" v-model="dialogShow">
+        <div class="qr-detail">
+          <div class="shape">
+            <img src="./uploads/shape.png" alt="" />
+          </div>
+          <div class="qr">
+            <img src="./uploads/qr.png" alt="" />
+          </div>
+          <span>XYX820102839</span>
+        </div>
+      </van-dialog>
+      <!-- 广告弹窗 -->
+      <van-dialog class="common-dialog no-bg" v-model="advShow">
+        <div class="home-adv">
+          <img src="./uploads/adv.png" />
+        </div>
+      </van-dialog>
+      <!-- 全局底部导航 -->
+      <van-tabbar v-model="active" active-color="#3d4ce2">
+        <van-tabbar-item icon="wap-home" name="home">就诊服务</van-tabbar-item>
+        <van-tabbar-item icon="service" name="online">在线问诊</van-tabbar-item>
+        <van-tabbar-item icon="cart" name="hop">优选商城</van-tabbar-item>
+        <van-tabbar-item
+          icon="manager"
+          name="usercenter"
+          url="/user-center.html"
+          >个人中心</van-tabbar-item
+        >
+      </van-tabbar>
     </div>
   </body>
   <script>
     new Vue({
       el: "#home",
       data: {
-        todos: [
-          { text: "学习 JavaScript" },
-          { text: "学习 Vue" },
-          { text: "整个牛项目" },
-        ],
+        active: "home",
+        search: "",
+        rate: 4,
+        dialogShow: false,
+        advShow: false,
       },
-      methods: {
-        onClickLeft() {},
-        onClickRight() {
-          console.log("====");
-        },
+      created() {
+        setTimeout(() => {
+          this.advShow = true;
+        }, 3000);
       },
+      methods: {},
     });
   </script>
 </html>

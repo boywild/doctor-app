@@ -1,0 +1,101 @@
+@import "var", "mixins";
+.home-head {
+  .home-search {
+    background: $white-bg;
+    padding: 10px 10px;
+    @include flex(space-between);
+    .van-search {
+      flex: 1;
+      padding: 0;
+      margin: 0 10px;
+    }
+    .camera {
+      width: 25px;
+      height: 25px;
+      background: url(../images/icon-camera.png);
+      background-size: 100% 100%;
+    }
+    .sys-notice {
+      position: relative;
+      .icon {
+        width: 25px;
+        height: 25px;
+        background: url(../images/icon-notice.png);
+        background-size: 100% 100%;
+      }
+      .notice-badge {
+        @include flex();
+        position: absolute;
+        top: 0;
+        right: -5px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #ff5723;
+        color: #fff;
+      }
+    }
+  }
+  .home-tab {
+    background: #fff;
+    @include flex(space-between);
+    flex-wrap: wrap;
+    padding: 5px 10px 5px 10px;
+    color: #707070;
+    font-size: 16px;
+    .tab-item {
+      width: 20%;
+      text-align: center;
+      &.active {
+        font-weight: bold;
+        color: $text-color;
+        font-size: 20px;
+      }
+    }
+  }
+}
+.home-body {
+  .user-block {
+    margin: 0 0 10px 0;
+    .user-b-tit {
+      color: $theme-color;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+  .hot-doctor {
+    .hot-title {
+      @include flex(space-between);
+      .name {
+        color: $theme-color;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .arrow {
+        @include flex(flex-end);
+        color: #999999;
+      }
+    }
+  }
+  .user-info {
+    color: $text-color;
+    padding: 10px;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    .base-info {
+      .switch {
+        a {
+          color: $text-color;
+        }
+
+        border-color: $text-color;
+      }
+    }
+  }
+}
+.home-adv{
+  img{
+    max-width: 100%;
+  }
+}

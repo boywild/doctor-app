@@ -43,8 +43,8 @@ yarn run server
 26. `app-doctor-home.html`-医生端首页
 27. `app-doctor-meet.html`-医生端预约
 28. `app-doctor-meet-detail.html`-医生端预约详情
-29. `xxxxx`-医生端回访-待开发
+29. `app-doctor-back-talk`-医生端回访
 30. `app-doctor-sidebar.html`-医生端图文通用
-31. `home`-客户端首页-待开发
+31. `home`-客户端首页
 32. `super-vip.html`-超级会员页
 

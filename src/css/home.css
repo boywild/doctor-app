@@ -1,0 +1,91 @@
+.home-head .home-search {
+  background: #fff;
+  padding: 0.625rem 0.625rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row; }
+  .home-head .home-search .van-search {
+    flex: 1;
+    padding: 0;
+    margin: 0 0.625rem; }
+  .home-head .home-search .camera {
+    width: 1.5625rem;
+    height: 1.5625rem;
+    background: url(../images/icon-camera.png);
+    background-size: 100% 100%; }
+  .home-head .home-search .sys-notice {
+    position: relative; }
+    .home-head .home-search .sys-notice .icon {
+      width: 1.5625rem;
+      height: 1.5625rem;
+      background: url(../images/icon-notice.png);
+      background-size: 100% 100%; }
+    .home-head .home-search .sys-notice .notice-badge {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      position: absolute;
+      top: 0;
+      right: -0.3125rem;
+      width: 1.25rem;
+      height: 1.25rem;
+      border-radius: 50%;
+      background: #ff5723;
+      color: #fff; }
+
+.home-head .home-tab {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0.3125rem 0.625rem 0.3125rem 0.625rem;
+  color: #707070;
+  font-size: 1rem; }
+  .home-head .home-tab .tab-item {
+    width: 20%;
+    text-align: center; }
+    .home-head .home-tab .tab-item.active {
+      font-weight: bold;
+      color: #333;
+      font-size: 1.25rem; }
+
+.home-body .user-block {
+  margin: 0 0 0.625rem 0; }
+  .home-body .user-block .user-b-tit {
+    color: #3d4ce2;
+    font-size: 1rem;
+    font-weight: bold; }
+
+.home-body .hot-doctor .hot-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row; }
+  .home-body .hot-doctor .hot-title .name {
+    color: #3d4ce2;
+    font-size: 1rem;
+    font-weight: bold; }
+  .home-body .hot-doctor .hot-title .arrow {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    color: #999999; }
+
+.home-body .user-info {
+  color: #333;
+  padding: 0.625rem;
+  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.08);
+  border-radius: 0.625rem;
+  margin-bottom: 0.625rem; }
+  .home-body .user-info .base-info .switch {
+    border-color: #333; }
+    .home-body .user-info .base-info .switch a {
+      color: #333; }
+
+.home-adv img {
+  max-width: 100%; }

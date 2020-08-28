@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="viewport"
+      content="initial-scale=1.0, maximum-scale=1, user-scalable=no, width=device-width, height=device-height,user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="x5-orientation" content="portrait" />
+    <title>回访</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/vant.css" />
+    <link rel="stylesheet" href="./css/app-doctor.css" />
+    <script src="./script/lib/vue.min.js"></script>
+    <script src="./script/lib/vant.min.js"></script>
+    <script src="./script/lib/rem.js"></script>
+  </head>
+  <body>
+    <div class="app-layout" id="appDoctorMeet">
+      <!-- 顶部导航栏 -->
+      <van-nav-bar
+        title="回访"
+        left-arrow
+        @click-left="onClickLeft"
+      ></van-nav-bar>
+      <div class="app-content gray-bg has-footer">
+        <van-form>
+          <van-field
+            v-model="user"
+            name="user"
+            readonly
+            label="用户"
+            placeholder="用户"
+          ></van-field>
+          <van-field
+            v-model="address"
+            name="address"
+            readonly
+            label="地址"
+            placeholder="地址"
+          ></van-field>
+          <van-field
+            v-model="time"
+            name="time"
+            readonly
+            label="时间"
+            placeholder="时间"
+          ></van-field>
+          <van-field
+            v-model="backType"
+            name="backType"
+            readonly
+            label="回访类别"
+            placeholder="回访类别"
+          ></van-field>
+          <van-field
+            v-model="backIll"
+            name="backIll"
+            readonly
+            label="回访病程"
+            placeholder="回访病程"
+          ></van-field>
+          <van-field
+            v-model="backPoint"
+            name="backPoint"
+            readonly
+            label="回访要点"
+            placeholder="回访要点"
+          ></van-field>
+          <van-field
+            v-model="satisficing"
+            name="satisficing"
+            clickable
+            readonly
+            right-icon="arrow"
+            label="满意度"
+            placeholder="满意度"
+            @click="ratePoupShow"
+          ></van-field>
+          <van-field
+            v-model="backResult"
+            name="backResult"
+            type="textarea"
+            row="2"
+            label="回访结果"
+            placeholder="回访结果"
+          ></van-field>
+          <div style="margin: 16px">
+            <van-button block type="info"> 修改回访 </van-button>
+          </div>
+        </van-form>
+      </div>
+      <!-- 立即通知 -->
+      <div class="notice-to-user">
+        <van-row>
+          <van-col span="12"
+            ><van-button block icon="notes-o">立即通知</van-button></van-col
+          >
+          <van-col span="12"
+            ><van-button block icon="phone-o">打电话</van-button></van-col
+          >
+        </van-row>
+      </div>
+      <!-- 满意度 -->
+      <van-popup
+        v-model="ratePoup"
+        position="bottom"
+        :style="{ height: '40%' }"
+      >
+        <van-picker
+          title="满意度"
+          show-toolbar
+          :columns="columns"
+          @confirm="onConfirm"
+          @cancel="ratePoupClose"
+        ></van-picker>
+      </van-popup>
+    </div>
+  </body>
+  <script>
+    new Vue({
+      el: "#appDoctorMeet",
+      data: {
+        ratePoup: false,
+        columns: ["满意", "非常满意", "不满意"],
+        user: "张甜甜 （女，23岁）  XYX278348933",
+        address: "双流华美口腔医院",
+        time: "2020年08月15日",
+        backType: "正畸",
+        backIll: "正畸拔牙以后",
+        backPoint: "询问拆线情况",
+        satisficing: "",
+        backResult: "",
+      },
+      methods: {
+        onClickLeft() {},
+        onSubmit(values) {
+          console.log("submit", values);
+        },
+        ratePoupClose() {
+          this.ratePoup = false;
+        },
+        ratePoupShow() {
+          this.ratePoup = true;
+        },
+        onConfirm(value, index) {
+          this.satisficing = value;
+          this.ratePoupClose();
+          this.$toast(`当前值：${value}, 当前索引：${index}`);
+        },
+      },
+    });
+  </script>
+</html>

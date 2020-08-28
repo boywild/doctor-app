@@ -485,3 +485,12 @@ a {
   .qr-detail img {
     max-width: 100%;
     display: block; }
+
+.radius10 {
+  border-radius: 0.625rem;
+  overflow: hidden; }
+
+.no-bg {
+  background: transparent !important; }
+  .no-bg .van-dialog__content {
+    background: transparent !important; }
