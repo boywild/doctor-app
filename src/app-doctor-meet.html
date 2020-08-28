@@ -24,7 +24,9 @@
             <van-nav-bar title="预约管理" left-arrow @click-left="onClickLeft"></van-nav-bar>
             <div class="app-content gray-bg" :class="active===1?'has-footer':''">
                 <div class="hospital-address">
-                    <div class="hospital-name">双流华美口腔医院<van-icon name="arrow-down" size="16"></van-icon></div>
+                    <div class="hospital-name" @click="changeHospital">
+                        {{currentHospital}}<van-icon name="arrow-down" size="16"></van-icon>
+                    </div>
                     <div class="concat">
                         <div class="phone">027-8238283238</div>
                         <div class="gps">
@@ -222,6 +224,16 @@
                 </div>
                 <div class="add-one-meet">新增预约</div>
             </div>
+            <!-- 修改医院 -->
+            <van-popup v-model="hospitalPoup" position="bottom" :style="{ height: '40%' }">
+                <van-picker
+                    title="切换医院"
+                    show-toolbar
+                    :columns="columns"
+                    @confirm="hospitalConfirm"
+                    @cancel="hospitalCancel"
+                ></van-picker>
+            </van-popup>
         </div>
     </body>
     <script>
@@ -245,6 +257,9 @@
                 maxDate: new Date(2025, 10, 1),
                 currentDate: new Date(),
                 time: '所有时间',
+                currentHospital: '双流华美口腔医院',
+                hospitalPoup: false,
+                columns: ['双流华美口腔医院', '城都医院', '武汉医院'],
             },
             methods: {
                 onClickLeft() {},
@@ -260,6 +275,17 @@
                 },
                 cancel() {
                     this.$refs.item.toggle()
+                },
+                changeHospital() {
+                    this.hospitalPoup = true
+                },
+                hospitalConfirm(value, index) {
+                    this.currentHospital = value
+                    this.hospitalPoup = false
+                    this.$toast(`当前值：${value}, 当前索引：${index}`)
+                },
+                hospitalCancel() {
+                    this.hospitalPoup = false
                 },
             },
         })
