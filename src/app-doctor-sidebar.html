@@ -23,25 +23,49 @@
             <!-- 顶部导航栏 -->
             <van-nav-bar title="图文通用" left-arrow @click-left="onClickLeft"></van-nav-bar>
             <div class="app-content gray-bg">
-                <van-tree-select height="100vh" :items="items" :main-active-index.sync="activeIndex">
-                    <template #content>
-                        <div class="side-bar-content">
-                            <h1>牙冠修复</h1>
-                            <h4>暑期2020邀约活动</h4>
-                            <img src="./uploads/adv-sys.png" alt="" />
-                            <h4>暑期2020邀约活动</h4>
-                            <img src="./uploads/adv-sys.png" alt="" />
-                            <h1>桥修复</h1>
-                            <h4>暑期2020邀约活动</h4>
-                            <img src="./uploads/adv-sys.png" alt="" />
-                            <h4>暑期2020邀约活动</h4>
-                            <img src="./uploads/adv-sys.png" alt="" />
+                <div class="side-bar">
+                    <div class="side-tree">
+                        <div class="tree-menu">
+                            <ul class="root-menu menu" v-for="item in myData">
+                                <tree-item
+                                    :data="item"
+                                    :node-id="currentNodeId"
+                                    @checked="selectedMenu"
+                                    @reset="reset"
+                                ></tree-item>
+                            </ul>
                         </div>
-                    </template>
-                </van-tree-select>
+                    </div>
+                    <div class="side-content">
+                        <template v-if="currentNodeId==='1_1'">
+                            <div class="side-bar-content">
+                                <h1>牙冠修复</h1>
+                                <h4>暑期2020邀约活动</h4>
+                                <img src="./uploads/adv-sys.png" alt="" />
+                                <h4>暑期2020邀约活动</h4>
+                                <img src="./uploads/adv-sys.png" alt="" />
+                                <h1>桥修复</h1>
+                                <h4>暑期2020邀约活动</h4>
+                                <img src="./uploads/adv-sys.png" alt="" />
+                                <h4>暑期2020邀约活动</h4>
+                                <img src="./uploads/adv-sys.png" alt="" />
+                            </div>
+                        </template>
+                        <template v-if="currentNodeId==='1_2'">
+                            <h1>two</h1>
+                        </template>
+                        <template v-if="currentNodeId==='1_3'">
+                            <h1>three</h1>
+                        </template>
+                        <template v-if="currentNodeId==='1_4'">
+                            <h1>four</h1>
+                        </template>
+                    </div>
+                </div>
             </div>
         </div>
     </body>
+    <script src="./script/components/tree-item.js"></script>
     <script>
         new Vue({
             el: '#appDoctorSidebar',
@@ -52,9 +76,59 @@
                     { text: '正畸', children: [] },
                     { text: '种植牙', children: [] },
                 ],
+                // 只支持2级嵌套
+                // node_id 唯一既可，规则不限
+                // open 作用于一级节点，用于设置默认展开
+                // checked作用于二级几点，用于设置默认选中
+                myData: [
+                    {
+                        name: '固定修复',
+                        node_id: '1',
+                        open: true,
+                        children: [
+                            {
+                                name: '牙冠修复',
+                                node_id: '1_1',
+                                checked: true,
+                            },
+                            {
+                                name: '桥修复',
+                                node_id: '1_2',
+                            }
+                        ],
+                    },
+                    {
+                        name: '正畸',
+                        node_id: '2',
+                        children: [
+                            {
+                                name: '图片',
+                                node_id: '2_1',
+                            },
+                            {
+                                name: '新闻',
+                                node_id: '2_2',
+                                children: [],
+                            },
+                        ],
+                    },
+                    {
+                        name: '种植牙',
+                        node_id: '3',
+                    },
+                ],
+                currentNodeId: '1_1',
             },
             methods: {
                 onClickLeft() {},
+                selectedMenu(id) {
+                    this.currentNodeId = id
+                    console.log(this.currentNodeId)
+                },
+                reset() {
+                    this.myData[0].open = false
+                    this.myData[0].children[0].checked = false
+                },
             },
         })
     </script>

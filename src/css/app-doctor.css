@@ -247,3 +247,50 @@
       .work-card .work-body .w-b-col .name {
         font-size: 0.875rem;
         margin-top: 0.3125rem; }
+
+.side-bar {
+  position: relative;
+  display: flex;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  height: 100vh; }
+  .side-bar .side-tree {
+    flex: 1;
+    overflow-y: auto;
+    background-color: #f7f8fa;
+    -webkit-overflow-scrolling: touch; }
+  .side-bar .side-content {
+    flex: 2;
+    overflow-y: auto;
+    background-color: #fff;
+    -webkit-overflow-scrolling: touch; }
+  .side-bar .tree-menu .menu-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    box-sizing: border-box;
+    padding: 0.9375rem 0.75rem;
+    overflow: hidden;
+    color: #323233;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    word-wrap: break-word;
+    background-color: #f7f8fa;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+     -ms-user-select: none;
+         user-select: none;
+    transition: all 0.3s ease-in-out; }
+    .side-bar .tree-menu .menu-title.active {
+      background: #3d4ce2;
+      color: #fff; }
+    .side-bar .tree-menu .menu-title.current {
+      border-left: 0.3125rem solid #3d4ce2;
+      background: #fff; }
+    .side-bar .tree-menu .menu-title .van-icon {
+      transform: rotate(90deg); }

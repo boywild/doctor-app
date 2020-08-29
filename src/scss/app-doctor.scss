@@ -1,257 +1,304 @@
-@import "var", "mixins";
+@import 'var', 'mixins';
 .hospital-address {
-  @include flex(space-between);
-  background: #fff;
-  padding: 0 10px;
-  font-size: 13px;
-  height: 45px;
-  .hospital-name {
-    @include flex();
-  }
-  .concat {
-    @include flex();
-    .phone {
-      color: $theme-color;
-    }
-    .gps {
-      font-size: 12px;
-      text-align: center;
-      margin-left: 10px;
-      .location-icon {
+    @include flex(space-between);
+    background: #fff;
+    padding: 0 10px;
+    font-size: 13px;
+    height: 45px;
+    .hospital-name {
         @include flex();
-        background: $theme-color;
-        color: #fff;
-        border-radius: 50%;
-        overflow: hidden;
-        text-align: center;
-        width: 20px;
-        height: 20px;
-        margin: 0 auto;
-      }
-      .txt {
-        color: #f00;
-      }
     }
-  }
+    .concat {
+        @include flex();
+        .phone {
+            color: $theme-color;
+        }
+        .gps {
+            font-size: 12px;
+            text-align: center;
+            margin-left: 10px;
+            .location-icon {
+                @include flex();
+                background: $theme-color;
+                color: #fff;
+                border-radius: 50%;
+                overflow: hidden;
+                text-align: center;
+                width: 20px;
+                height: 20px;
+                margin: 0 auto;
+            }
+            .txt {
+                color: #f00;
+            }
+        }
+    }
 }
 .clients-list {
-  margin: 10px;
-  .clients-item {
-    background: #fff;
-    border-radius: 5px;
-    font-size: 13px;
-    margin-bottom: 10px;
-    .clients-index {
-      @include flex(space-between);
-      height: 40px;
-      border-bottom: 1px solid #eee;
-      padding: 0 10px;
-      .status {
-      }
-      .degree {
-      }
+    margin: 10px;
+    .clients-item {
+        background: #fff;
+        border-radius: 5px;
+        font-size: 13px;
+        margin-bottom: 10px;
+        .clients-index {
+            @include flex(space-between);
+            height: 40px;
+            border-bottom: 1px solid #eee;
+            padding: 0 10px;
+            .status {
+            }
+            .degree {
+            }
+        }
+        .clients-content {
+            padding: 10px;
+            @include flex(space-between);
+            flex-wrap: wrap;
+            .c-c-cell {
+                width: 50%;
+                padding-bottom: 5px;
+                @include flex(flex-start);
+                &.block {
+                    width: 100%;
+                }
+                .label {
+                    width: 40px;
+                    font-weight: bold;
+                }
+                .value {
+                    color: $text-light-color;
+                }
+            }
+        }
     }
-    .clients-content {
-      padding: 10px;
-      @include flex(space-between);
-      flex-wrap: wrap;
-      .c-c-cell {
-        width: 50%;
-        padding-bottom: 5px;
-        @include flex(flex-start);
-        &.block {
-          width: 100%;
-        }
-        .label {
-          width: 40px;
-          font-weight: bold;
-        }
-        .value {
-          color: $text-light-color;
-        }
-      }
-    }
-  }
 }
 .meet-filter {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 .meet-manager {
-  @include flex();
-  .van-icon {
-    margin-left: 15px;
-  }
+    @include flex();
+    .van-icon {
+        margin-left: 15px;
+    }
 }
 .add-one-meet {
-  @include flex(center, center, column);
-  width: 55px;
-  height: 55px;
-  padding: 10px;
-  background: $theme-color;
-  border-radius: 50%;
-  overflow: hidden;
-  color: #fff;
-  font-size: 12px;
-  position: fixed;
-  z-index: 100;
-  right: 10px;
-  bottom: 70px;
-  text-align: center;
+    @include flex(center, center, column);
+    width: 55px;
+    height: 55px;
+    padding: 10px;
+    background: $theme-color;
+    border-radius: 50%;
+    overflow: hidden;
+    color: #fff;
+    font-size: 12px;
+    position: fixed;
+    z-index: 100;
+    right: 10px;
+    bottom: 70px;
+    text-align: center;
 }
 .meet-card {
-  background: #fff;
-  .meet-card-head {
-    @include flex(space-between);
-    height: 45px;
-    border-bottom: 1px solid #eee;
-    padding: 0 10px;
-  }
-  .meet-card-body {
-    padding: 10px;
-  }
+    background: #fff;
+    .meet-card-head {
+        @include flex(space-between);
+        height: 45px;
+        border-bottom: 1px solid #eee;
+        padding: 0 10px;
+    }
+    .meet-card-body {
+        padding: 10px;
+    }
 }
 .meet-time-desc {
-  text-align: center;
-  background: $white-bg;
-  padding: 10px 0;
-  .meet-time {
-    font-weight: bold;
-    font-size: 20px;
-    color: $theme-color;
-  }
+    text-align: center;
+    background: $white-bg;
+    padding: 10px 0;
+    .meet-time {
+        font-weight: bold;
+        font-size: 20px;
+        color: $theme-color;
+    }
 }
 .notice-to-user {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 20;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
 }
 .side-bar-content {
-  padding: 10px 10px 0 0;
-  h1 {
-    font-size: 18px;
-    padding: 10px 0;
-    color: $theme-color;
-  }
-  h4 {
-    padding-bottom: 5px;
-  }
-  img {
-    max-width: 100%;
-  }
+    padding: 10px 10px 0 0;
+    h1 {
+        font-size: 18px;
+        padding: 10px 0;
+        color: $theme-color;
+    }
+    h4 {
+        padding-bottom: 5px;
+    }
+    img {
+        max-width: 100%;
+    }
 }
 .workstation {
-  margin: 10px;
+    margin: 10px;
 }
 .work-num {
-  border-radius: 5px;
-  background: #fff;
-  padding: 10px;
-  @include flex();
-  flex-wrap: wrap;
-  .w-n-item {
-    @include flex(center, center, column);
-    width: calc(100% / 3);
-    &:nth-child(1) {
-      .num {
-        color: #ee0a24;
-      }
+    border-radius: 5px;
+    background: #fff;
+    padding: 10px;
+    @include flex();
+    flex-wrap: wrap;
+    .w-n-item {
+        @include flex(center, center, column);
+        width: calc(100% / 3);
+        &:nth-child(1) {
+            .num {
+                color: #ee0a24;
+            }
+        }
+        &:nth-child(2) {
+            .num {
+                color: $theme-color;
+            }
+        }
+        &:nth-child(3) {
+            .num {
+                color: #07c160;
+            }
+        }
+        .num {
+            font-weight: bold;
+            font-size: 20px;
+            padding-bottom: 5px;
+        }
+        .txt {
+            font-size: 14px;
+        }
     }
-    &:nth-child(2) {
-      .num {
-        color: $theme-color;
-      }
-    }
-    &:nth-child(3) {
-      .num {
-        color: #07c160;
-      }
-    }
-    .num {
-      font-weight: bold;
-      font-size: 20px;
-      padding-bottom: 5px;
-    }
-    .txt {
-      font-size: 14px;
-    }
-  }
 }
 .work-card {
-  border-radius: 5px;
-  background: #fff;
-  .work-head {
-    @include flex(flex-start);
-    font-weight: bold;
-    font-size: 15px;
-    height: 45px;
-    padding: 0 10px;
-    border-bottom: 1px solid #eee;
-  }
-  .work-body {
-    @include flex(flex-start);
-    flex-wrap: wrap;
-    padding: 10px;
-    .w-b-col {
-      @include flex(center, center, column);
-      height: 70px;
-      width: calc(100% / 3);
-      margin-bottom: 10px;
-      .icon {
-        width: 40px;
-        height: 40px;
-        background: #eee;
-        border-radius: 50%;
-        overflow: hidden;
-      }
-      .icon-yygl {
-        background: url(../images/icon-yygl.png) center center no-repeat;
-        background-size: 100% 100%;
-      }
-      .icon-hf {
-        background: url(../images/icon-hf.png) center center no-repeat;
-        background-size: 100% 100%;
-      }
-      .icon-jg {
-        background: url(../images/icon-jg.png) center center no-repeat;
-        background-size: 100% 100%;
-      }
-      .icon-px {
-        background: url(../images/icon-px.png) center center no-repeat;
-        background-size: 100% 100%;
-      }
-      .icon-pj {
-        background: url(../images/icon-pj.png) center center no-repeat;
-        background-size: 100% 100%;
-      }
-      .icon-gt {
-        background: url(../images/icon-gt.png) center center no-repeat;
-        background-size: 100% 100%;
-      }
-      .icon-sp {
-        background: url(../images/icon-sp.png) center center no-repeat;
-        background-size: 100% 100%;
-      }
-      .icon-hd {
-        background: url(../images/icon-hd.png) center center no-repeat;
-        background-size: 100% 100%;
-      }
-      .icon-dh {
-        background: url(../images/icon-dh.png) center center no-repeat;
-        background-size: 100% 100%;
-      }
-      .icon-sc {
-        background: url(../images/icon-sc.png) center center no-repeat;
-        background-size: 100% 100%;
-      }
-      .name {
-        font-size: 14px;
-        margin-top: 5px;
-      }
+    border-radius: 5px;
+    background: #fff;
+    .work-head {
+        @include flex(flex-start);
+        font-weight: bold;
+        font-size: 15px;
+        height: 45px;
+        padding: 0 10px;
+        border-bottom: 1px solid #eee;
     }
-  }
+    .work-body {
+        @include flex(flex-start);
+        flex-wrap: wrap;
+        padding: 10px;
+        .w-b-col {
+            @include flex(center, center, column);
+            height: 70px;
+            width: calc(100% / 3);
+            margin-bottom: 10px;
+            .icon {
+                width: 40px;
+                height: 40px;
+                background: #eee;
+                border-radius: 50%;
+                overflow: hidden;
+            }
+            .icon-yygl {
+                background: url(../images/icon-yygl.png) center center no-repeat;
+                background-size: 100% 100%;
+            }
+            .icon-hf {
+                background: url(../images/icon-hf.png) center center no-repeat;
+                background-size: 100% 100%;
+            }
+            .icon-jg {
+                background: url(../images/icon-jg.png) center center no-repeat;
+                background-size: 100% 100%;
+            }
+            .icon-px {
+                background: url(../images/icon-px.png) center center no-repeat;
+                background-size: 100% 100%;
+            }
+            .icon-pj {
+                background: url(../images/icon-pj.png) center center no-repeat;
+                background-size: 100% 100%;
+            }
+            .icon-gt {
+                background: url(../images/icon-gt.png) center center no-repeat;
+                background-size: 100% 100%;
+            }
+            .icon-sp {
+                background: url(../images/icon-sp.png) center center no-repeat;
+                background-size: 100% 100%;
+            }
+            .icon-hd {
+                background: url(../images/icon-hd.png) center center no-repeat;
+                background-size: 100% 100%;
+            }
+            .icon-dh {
+                background: url(../images/icon-dh.png) center center no-repeat;
+                background-size: 100% 100%;
+            }
+            .icon-sc {
+                background: url(../images/icon-sc.png) center center no-repeat;
+                background-size: 100% 100%;
+            }
+            .name {
+                font-size: 14px;
+                margin-top: 5px;
+            }
+        }
+    }
+}
+.side-bar {
+    position: relative;
+    display: flex;
+    user-select: none;
+    height: 100vh;
+    .side-tree {
+        flex: 1;
+        overflow-y: auto;
+        background-color: #f7f8fa;
+        -webkit-overflow-scrolling: touch;
+    }
+    .side-content {
+        flex: 2;
+        overflow-y: auto;
+        background-color: #fff;
+        -webkit-overflow-scrolling: touch;
+    }
+    .tree-menu {
+        .menu-title {
+            @include flex(space-between);
+            position: relative;
+            box-sizing: border-box;
+            padding: 15px 12px;
+            overflow: hidden;
+            color: #323233;
+            font-size: 14px;
+            line-height: 20px;
+            word-wrap: break-word;
+            background-color: #f7f8fa;
+            cursor: pointer;
+            -webkit-user-select: none;
+            user-select: none;
+            transition: all 0.3s ease-in-out;
+            &.active {
+                background: $theme-color;
+                color: #fff;
+            }
+            &.current {
+                border-left: 5px solid $theme-color;
+                background: #fff;
+            }
+            .van-icon {
+                transform: rotate(90deg);
+            }
+        }
+    }
 }
